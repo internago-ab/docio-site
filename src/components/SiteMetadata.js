@@ -6,6 +6,10 @@ const useSiteMetadata = () => {
       query SITE_METADATA_QUERY {
         site {
           siteMetadata {
+            social {
+              twitter
+              linkedin
+            }
             title
             description
           }

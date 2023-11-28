@@ -1,13 +1,20 @@
-import * as React from "react";
-import Layout from "../components/Layout";
+import * as React from "react"
 
-const NotFoundPage = () => (
-  <Layout>
-    <div>
-      <h1>NOT FOUND</h1>
-      <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
-    </div>
-  </Layout>
-);
+import Layout from "../components/Layout"
 
-export default NotFoundPage;
+const NotFoundPage = ({ data, location }) => {
+
+  return (
+    <Layout>
+      <section className="error-page">
+        <h1>404: Not Found</h1>
+        <p>The page that you are looking does not exist.</p>
+        <div className="cta-btn">
+          <a to="/" >Go to homepage</a>
+        </div>
+      </section>
+    </Layout>
+  )
+}
+
+export default NotFoundPage

@@ -1,0 +1,360 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --spacing-xxl: 19.5rem;
+  /* 310px - Padding on side for medium wide section */
+  --spacing-xl: 13.125rem;
+  /* 210px - Padding on side for wide section */
+  --spacing-l: 8.125rem;
+  /* 130px - Spacing between each section vertically */
+  --spacing-m: 6.25rem;
+  /* 100px - Padding on top and bottom for grey section */
+  --spacing-s: 3.75rem;
+  /* 60px - Padding on top and bottom of footer and sections that goes together */
+  --spacing-xs: 2.1875rem;
+  /* 35px - Spacing between content in sections */
+  --spacing-xxs: 0.9375rem;
+  /* 15px - Padding top and bottom on navbar */
+
+  --font: "Poppins", sans-serif;
+  --fontWeight-normal: 400;
+  --fontWeight-semibold: 600;
+  --fontWeight-bold: 700;
+
+  --lineHeight-large: 2;
+  --lineHeight: 1.6;
+  --fontSize-root: 19px;
+  --fontSize-h1: 3rem;
+  --fontSize-h1-responsive: 2.5rem;
+  --fontSize-h2: 2.3rem;
+  --fontSize-h2-responsive: 1.85rem;
+  --fontSize-h3: 1.5rem;
+  --fontSize-p-l: 1.4rem;
+  --fontSize-p: 1.2rem;
+  --fontSize-p-m: 1.1rem;
+  --fontSize-p-s: 1rem;
+  --fontSize-p-xs: 0.9rem;
+
+  --black: #282829;
+  --white: #ffffff;
+  --light-white: rgba(255, 255, 255, 0.85);
+  --dark-grey: #5c5c5c;
+  --light-grey: #e0e0e0;
+  --green: #93b09a;
+  --lighter-grey: rgba(208, 208, 208, 0.25);
+  --lighter-green: rgba(147, 176, 154, 0.35);
+  --lightest-green: rgba(147, 176, 154, 0.25);
+}
+
+html {
+  font-size: var(--fontSize-root);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font);
+}
+
+h1,
+h2,
+h3 {
+  font-weight: var(--fontWeight-bold);
+  color: var(--black);
+  line-height: 1.2;
+}
+
+p,
+li,
+a {
+  line-height: var(--lineHeight);
+  color: var(--dark-grey);
+  text-decoration: none;
+}
+
+a {
+  padding: 0;
+  position: relative;
+}
+
+a::before {
+  padding: 0;
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 1px;
+  background-color: var(--dark-grey);
+  transition: width 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.white-link::before {
+  background-color: var(--white);
+}
+
+.anchorlink::before {
+  display: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  a:hover::before {
+    left: 0;
+    right: auto;
+    width: 100%;
+  }
+}
+
+h1 {
+  font-size: var(--fontSize-h1);
+}
+
+h2 {
+  font-size: var(--fontSize-h2);
+}
+
+h3 {
+  font-size: var(--fontSize-h3);
+}
+
+a {
+  font-size: var(--fontSize-p);
+}
+
+strong {
+  font-size: var(--fontSize-p-m);
+}
+
+p {
+  font-size: var(--fontSize-p-s);
+}
+
+a,
+button {
+  cursor: pointer;
+}
+
+.error-page a {
+  padding: 10px 20px;
+}
+
+.cta-btn {
+  font-size: inherit !important;
+  border: 2px solid var(--green);
+  border-radius: 100rem;
+  display: inline-block;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  width: fit-content;
+  background-color: var(--green);
+  color: var(--white);
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+#inverted {
+  border: 2px solid var(--green);
+  background-color: var(--white);
+  color: var(--green);
+}
+
+.cta-btn-button {
+  padding: 10px 20px;
+}
+
+.cta-btn a {
+  display: block;
+  padding: 10px 20px;
+  color: var(--white);
+}
+
+#inverted a {
+  color: var(--green);
+}
+
+.cta-btn a::before {
+  display: none;
+}
+
+.cta-btn::after {
+  content: "";
+  background: var(--white);
+  position: absolute;
+  z-index: -1;
+  display: block;
+  top: 0;
+  bottom: 0;
+  left: -100%;
+  right: 100%;
+  color: var(--green) !important;
+}
+
+#inverted::after {
+  background: var(--green);
+  color: var(--white) !important;
+}
+
+.cta-btn:hover::after {
+  background: var(--white);
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  transition: all 0.35s;
+  color: var(--green);
+}
+
+#inverted:hover::after {
+  background: var(--green);
+  color: var(--white);
+}
+
+.cta-btn:hover {
+  cursor: pointer;
+  color: var(--green);
+}
+
+#inverted:hover {
+  color: var(--white);
+}
+
+.cta-btn a:hover {
+  cursor: pointer;
+  color: var(--green);
+}
+
+#inverted a:hover {
+  color: var(--white);
+}
+
+.show-more {
+  display: none;
+}
+
+main {
+  margin-top: 88px;
+}
+
+main > :first-child {
+  margin-top: 0;
+}
+
+main > section {
+  margin-top: var(--spacing-s);
+}
+
+section.error-page {
+  padding: var(--spacing-l) var(--spacing-xl);
+}
+
+section.error-page > * {
+  margin-bottom: var(--spacing-xs);
+}
+
+.section > div:first-of-type {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.section-top {
+  margin-top: var(--spacing-m);
+}
+
+@media screen and (max-width: 1800px) {
+  :root {
+    --fontSize-root: 17px;
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  main {
+    margin-top: 80px;
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .section > div:first-of-type {
+    width: 100%;
+    max-width: 1150px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .section > div:first-of-type {
+    width: 85%;
+  }
+}
+
+@media screen and (max-width: 1780px) {
+  main {
+    margin-top: 70px;
+  }
+
+  p {
+    font-size: var(--fontSize-p-s);
+  }
+
+  a {
+    font-size: var(--fontSize-p-m);
+  }
+
+  h3 {
+    font-size: var(--fontSize-p);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  p,
+  a,
+  .menu-link {
+    font-size: var(--fontSize-p-s);
+  }
+
+  a {
+    font-size: var(--fontSize-p-s);
+  }
+
+  section.error-page {
+    padding: var(--spacing-m);
+  }
+
+  .section-top {
+    margin-top: var(--spacing-s);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  section.error-page {
+    padding: var(--spacing-s);
+  }
+
+  main > section {
+    padding-top: 0;
+  }
+
+  h1 {
+    font-size: var(--fontSize-h1-responsive);
+  }
+
+  h2 {
+    font-size: var(--fontSize-h2-responsive);
+  }
+
+  .show-more {
+    display: block;
+  }
+}
+
+.margin-top-none {
+  margin-top: 0 !important;
+}
