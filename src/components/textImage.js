@@ -1,38 +1,36 @@
-import React, { useEffect } from "react"
+import React from "react"
+import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 import arrow from '../images/icons/arrow-black.svg'
 
-import "./text-image.scss"
+import "./text-image.css"
 
-
-
-const TextImage = props => {
+const TextImage = mainpitch => {
+  console.log(mainpitch.mainpitch, 'mainpicth!!')
 
   return (
     <section className="section">
-    <div className={`imagetext ${props.reverse}`}>
+    <div className={`imagetext`}>
        <div className="imagetext-content">
-            <h2 >{props.title}</h2>
+            <h2 >{mainpitch.mainpitch.title}</h2>
             <p
           
             className="paragraph"
-            dangerouslySetInnerHTML={{ __html: props.text }}
+            dangerouslySetInnerHTML={{ __html: mainpitch.mainpitch.description }}
           ></p>
           <div className='link-arrow-black'>
-            {props.button && <a href={props.link}>{props.button} <img alt="arrow icon" src={arrow}/></a>}
+            {mainpitch.mainpitch.button && <a href={mainpitch.mainpitch.link}>{mainpitch.mainpitch.button} <img alt="arrow icon" src={arrow}/></a>}
           </div>
         
         </div>
        <div className="imagetext-img">
-            <img 
-             src={props.image}
-             alt={props.alt}
-             className="img-imagetext"
-             style={
-               props.reverse
-                 ? { marginRight: "var(--spacing-s)" }
-                 : { marginLeft: "var(--spacing-s)" }
-             }
-            />
+       <PreviewCompatibleImage imageInfo={mainpitch.mainpitch.image} alt=''
+           className="img-imagetext"
+          //  style={
+          //   item.reverse
+          //      ? { marginRight: "var(--spacing-s)" }
+          //      : { marginLeft: "var(--spacing-s)" }
+          //  }
+           /> 
        </div>
     </div>
     </section>

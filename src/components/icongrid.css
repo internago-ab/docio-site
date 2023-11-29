@@ -28,7 +28,7 @@
   }
 }
 .icon-wrapper .icon-text {
-  max-width: 1000px;
+  max-width: 1050px;
 }
 .icon-wrapper .icon-btn {
   padding-top: var(--spacing-xxs);
@@ -103,7 +103,7 @@
   transition: all 0.8s ease-in;
   cursor: pointer;
   background: var(--white);
-  box-shadow: 0px 4px 4px #000;
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 10px 20px;
   -webkit-transition: box-shadow 1s ease-in;
 }
 @media only screen and (max-width: 1024px) {

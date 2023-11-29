@@ -8,6 +8,7 @@ backend:
     uploadMedia: "[skip ci] Upload “{{path}}”"
     deleteMedia: "[skip ci] Delete “{{path}}”"
 
+publish_mode: editorial_workflow
 local_backend: true
 media_folder: static/img
 public_folder: /img
@@ -53,6 +54,19 @@ collections:
           - { label: Link, name: href, widget: string }
           - { label: Description, name: description, widget: string }
           - {
+              label: Mainpitch,
+              name: mainpitch,
+              widget: object,
+              fields:
+                [
+                  { label: Title, name: title, widget: string },
+                  { label: Description, name: description, widget: text },
+                  { label: Image, name: image, widget: image },
+                  { label: Button, name: button, widget: button },
+                  { label: Link, name: link, widget: link },
+                ],
+            }
+          - {
               label: Intro,
               name: intro,
               widget: object,
@@ -71,6 +85,27 @@ collections:
                         { label: Title, name: title, widget: title },
                         { label: Button, name: button, widget: button },
                         { label: Reverse, name: reverse, widget: reverse },
+                      ],
+                  },
+                ],
+            }
+          - {
+              label: Blocks,
+              name: blocks,
+              widget: object,
+              fields:
+                [
+                  { label: Heading, name: heading, widget: string },
+                  { label: Description, name: description, widget: text },
+                  {
+                    label: Grid,
+                    name: grid,
+                    widget: list,
+                    fields:
+                      [
+                        { label: Text, name: text, widget: text },
+                        { label: Title, name: title, widget: title },
+                        { label: Button, name: button, widget: button },
                       ],
                   },
                 ],
