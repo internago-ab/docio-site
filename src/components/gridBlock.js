@@ -9,7 +9,7 @@ import "./icongrid.css"
 function FeatureGrid ({ gridItems, title }) {
 
     const [limit, setLimit] = useState( 3 )
-    const [width, setWidth] = useState(window.innerWidth);
+    // const [width, setWidth] = useState(window.innerWidth);
 
   const content = gridItems
   
@@ -22,13 +22,13 @@ function FeatureGrid ({ gridItems, title }) {
       }
     };
   
-    useEffect(() => {
-      function handleResize() {
-        setWidth(window.innerWidth);
-      }
-      window.addEventListener("resize", handleResize);
-      return () => window.removeEventListener("resize", handleResize);
-    }, [width]);
+    // useEffect(() => {
+    //   function handleResize() {
+    //     setWidth(window.innerWidth);
+    //   }
+    //   window.addEventListener("resize", handleResize);
+    //   return () => window.removeEventListener("resize", handleResize);
+    // }, [width]);
     
   return(
    <section className="icon-wrapper">
@@ -41,7 +41,7 @@ function FeatureGrid ({ gridItems, title }) {
    </div>
    <ul className="icon-grid">
      
-    {width > 600 &&( gridItems.map((item, index) => (
+    {( gridItems.map((item, index) => (
        <li key={index} className="icon-item" data-aos="fade-zoom-in">
          <button onClick={() => window.location.href = item.link } className='ink'>
            <h3>{item.title}</h3>
@@ -50,7 +50,7 @@ function FeatureGrid ({ gridItems, title }) {
        </li>
    )))}
 
-       {width < 599 && (
+       {/* {width < 599 && (
          gridItems
          .slice(0, limit)
          .map((item, index) => (
@@ -59,7 +59,7 @@ function FeatureGrid ({ gridItems, title }) {
                <h3>{item.title}</h3>
                <p>{item.text}</p>
              </button>
-           </li>)))}
+           </li>)))} */}
            <div className="cta-btn show-more">
              <a className="show-more" onClick={showMoreDocuments}> {limit === 6 ? "Show less" : "Show more"}</a>
            </div>

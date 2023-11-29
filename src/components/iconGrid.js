@@ -7,7 +7,7 @@ import "./icongrid.css"
 
 function Icongrid(props) {
   const [limit, setLimit] = useState( 3 )
-  const [width, setWidth] = useState(window.innerWidth);
+  // const [width, setWidth] = useState(window.innerWidth);
 
 console.log(props, 'proos')
 const content = props.content
@@ -22,16 +22,16 @@ const content = props.content
     }
   };
 
-  useEffect(() => {
-    function handleResize() {
-      setWidth(window.innerWidth);
-    }
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, [width]);
+  // useEffect(() => {
+  //   function handleResize() {
+  //     setWidth(window.innerWidth);
+  //   }
+  //   window.addEventListener("resize", handleResize);
+  //   return () => window.removeEventListener("resize", handleResize);
+  // }, [width]);
   
 
-  if (typeof window !== 'undefined') {
+  // if (typeof window !== 'undefined') {
     //here `window` is available  
 
 
@@ -52,7 +52,7 @@ const content = props.content
         </div>
         <ul className="icon-grid">
           
-        {width > 600 && (content
+        { (content
           .map((item, index) => (
             <li key={index} className="icon-item" data-aos="fade-zoom-in">
               <button onClick={() => window.location.href = item.link } className='ink'>
@@ -61,7 +61,7 @@ const content = props.content
               </button>
             </li>
         )))}
-            {width < 599 && (
+            {/* {width < 599 && (
               content
         
               .slice(0, limit)
@@ -71,7 +71,7 @@ const content = props.content
                     <h3>{item.header}</h3>
                     <p>{item.text}</p>
                   </button>
-                </li>)))}
+                </li>)))} */}
                 <div className="cta-btn show-more">
                   <a className="show-more" onClick={showMoreDocuments}> {limit === 6 ? "Show less" : "Show more"}</a>
                 </div>
@@ -80,6 +80,6 @@ const content = props.content
     </section>
   )
 }
-}
+// }
 
 export default Icongrid
