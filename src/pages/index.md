@@ -4,14 +4,8 @@ title: Docio - your international <br>all-in-one payroll and HR portal.
 image: /img/meeting.jpg
 heading: For all your payroll needs
 href: "/payroll"
+button: "See all powerful features"
 subheading: Manage your payroll on multiple international markets with one online interface.
-mainpitch:
-  title: Payroll and HR Management
-  description: >
-    <strong> LLet's be honest, international payroll can be challenging, but it has to be done. We have the perfect tool for managing international payroll and HR related tasks for your international employees. </strong><br></br> We let you store and manage all important employee and payroll data in one place. In this way you will increase your control and efficiency by using one online interface for all your international employees. Your job is simply to check and approve in the portal.
-  button: Read more
-  link: /payroll
-  image: /img/crowd.jpg
 intro:
   blurbs:
     - image: /img/international.jpg
@@ -38,6 +32,13 @@ intro:
       bgColor: "bg-grey"
       text: >
         <strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit? </strong><br></br> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus.
+mainpitch:
+  image: /img/crowd.jpg
+  title: Payroll and HR Management
+  description: >
+    <strong> LLet's be honest, international payroll can be challenging, but it has to be done. We have the perfect tool for managing international payroll and HR related tasks for your international employees. </strong><br></br> We let you store and manage all important employee and payroll data in one place. In this way you will increase your control and efficiency by using one online interface for all your international employees. Your job is simply to check and approve in the portal.
+  button: Read more
+  link: /payroll
 blocks:
   grid:
     - title: Time and absence

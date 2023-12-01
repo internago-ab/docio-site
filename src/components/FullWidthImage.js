@@ -13,6 +13,7 @@ export default function FullWidthImage(props) {
     subheading,
     heading,
     href,
+    button,
     imgPosition = "top left",
   } = props;
 
@@ -73,7 +74,7 @@ export default function FullWidthImage(props) {
             <p className="paragraph" dangerouslySetInnerHTML={{ __html: subheading }}></p>
             )}
             <div className="link-arrow">
-                   <a href={href}>See all powerful features<img alt="arrow icon" src={arrow}/></a>
+                   <a href={href}>{button}<img alt="arrow icon" src={arrow}/></a>
                </div>
           </div>
         )}

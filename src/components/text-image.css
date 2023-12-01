@@ -41,6 +41,11 @@
     margin-right: 0 !important;
   }
 }
+@media only screen and (max-width: 600px) {
+  .imagetext-img .gatsby-image-wrapper div {
+    padding-top: 80% !important;
+  }
+}
 .imagetext-img-reverse {
   margin-bottom: 0;
   padding-right: var(--spacing-s);

@@ -24,6 +24,7 @@ export const IndexPageTemplate = ({
   heading,
   subheading,
   href,
+  button,
   intro,
   blocks,
   mainpitch
@@ -33,11 +34,11 @@ export const IndexPageTemplate = ({
   return (
     
     <main>
-    <FullWidthImage img={heroImage} title={title} subheading={subheading} heading={heading} href={href} />
+    <FullWidthImage img={heroImage} title={title} subheading={subheading} button={button} heading={heading} href={href} />
    
     <Features gridItems={intro.blurbs}  />
     <TextImage mainpitch={mainpitch}/>
-    <GridBlock gridItems={blocks.grid} title={title} />
+    <GridBlock gridItems={blocks.grid}  />
     <ListBlock
       intro="Payroll portal"
       header="Manage your payroll across multiple international markets with one online interface."
@@ -115,6 +116,7 @@ const IndexPage = ({ data }) => {
         title={frontmatter.title}
         heading={frontmatter.heading}
         subheading={frontmatter.subheading}
+        button={frontmatter.button}
         mainpitch={frontmatter.mainpitch}
         description={frontmatter.description}
         intro={frontmatter.intro}
@@ -149,6 +151,7 @@ export const pageQuery = graphql`
         subheading
         description
         href
+        button
         mainpitch {
           title
           description

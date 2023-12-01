@@ -68,6 +68,7 @@
     position: relative;
     top: var(--spacing-xs);
     width: 100%;
+    padding: var(--spacing-s);
   }
 }
 @media only screen and (max-width: 600px) {
@@ -98,6 +99,7 @@
     top: var(--spacing-xs);
     width: 100%;
     flex-direction: column-reverse;
+    padding: var(--spacing-s);
   }
 }
 @media only screen and (max-width: 600px) {
