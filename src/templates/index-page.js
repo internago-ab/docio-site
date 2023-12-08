@@ -27,6 +27,7 @@ export const IndexPageTemplate = ({
   button,
   intro,
   blocks,
+  lists,
   mainpitch
 }) => {
   const heroImage = getImage(image) || image;
@@ -38,37 +39,11 @@ export const IndexPageTemplate = ({
     <Features gridItems={intro.blurbs}  />
     <TextImage mainpitch={mainpitch}/>
     <GridBlock gridItems={blocks.grid} blocks={blocks} />
-    <ListBlock
-      intro="Payroll portal"
-      header="Manage your payroll across multiple international markets with one online interface."
+    <ListBlock gridItems={lists.list} lists={lists} />
+    {/* <ListBlock
       image={listImage}
       alt="People walking outside a building"
-      content={[
-        {
-          text: "Gross up calculations",
-        },
-        {
-          text: "Payments",
-        },
-        {
-          text: "Tax filing",
-        },
-        {
-          text: "Implementation and onboarding",
-        },
-        {
-          text: "Gross to net (GTN)",
-        },
-        {
-          text: "Shadow payroll",
-        },
-        {
-          text: "Leaver calculations",
-        },
-        {
-          text: "Bonus and RSU calculations",
-        },
-      ]}/>
+      ]}/> */}
   </main>
   );
 };
@@ -88,6 +63,12 @@ IndexPageTemplate.propTypes = {
     blocksDescription: PropTypes.string,
     grid: PropTypes.array,
   }),
+  lists: PropTypes.shape({
+    listsHeading: PropTypes.string,
+    listsDescription: PropTypes.string,
+    image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+    list: PropTypes.array,
+  }),
 };
 
 const IndexPage = ({ data }) => {
@@ -105,6 +86,7 @@ const IndexPage = ({ data }) => {
         description={frontmatter.description}
         intro={frontmatter.intro}
         blocks={frontmatter.blocks}
+        lists={frontmatter.lists}
         href={frontmatter.href}
       />
     </Layout>
@@ -170,6 +152,18 @@ export const pageQuery = graphql`
             link
             bgColor
             reverse
+          }
+        }
+        lists {
+          listsHeading
+          listsDescription
+          image {
+            childImageSharp {
+              gatsbyImageData(quality:100, layout: FULL_WIDTH)
+            }
+          }
+          list {
+            text
           }
         }
       }

@@ -41,7 +41,7 @@ mainpitch:
   link: /payroll
 blocks:
   blocksHeading: Six reasons to go with Docio
-  blocksDescription: "<strong> International payroll can be challenging, but it is important and has to be done.</strong><br></br> And we have the perfect tool to help you with payroll and a variety of other HR tasks. You can efficiently store and manage employee and payroll data in one place, controlled via one online interface. All you have to do is check and approve."
+  blocksDescription: <strong> International payroll can be challenging, but it is important and has to be done.</strong><br></br> And we have the perfect tool to help you with payroll and a variety of other HR tasks. You can efficiently store and manage employee and payroll data in one place, controlled via one online interface. All you have to do is check and approve.
   grid:
     - title: Time and absence
       link: /payroll
@@ -67,4 +67,17 @@ blocks:
       link: /payroll
       text: >
         Access your payroll data and employee data at any time and from anywhere thanks to our mobile device login and real time notifications.
+lists:
+  listsHeading: Manage your payroll across multiple international markets with one online interface.
+  listsDescription: Payroll portal
+  image: /img/businessPeople.jpg
+  list:
+    - text: Gross up calculations
+    - text: Payments
+    - text: Tax filing
+    - text: Implementation and onboarding
+    - text: Gross to net (GTN)
+    - text: Shadow payroll
+    - text: Leaver calculations
+    - text: Bonus and RSU calculations
 ---

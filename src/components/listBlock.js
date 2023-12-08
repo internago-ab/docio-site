@@ -1,16 +1,18 @@
 import React from "react"
+import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
+
 import "./list-block.css"
 
-function ListBlock(props) {
+function ListBlock({ gridItems, lists }) {
 
-  const content = props.content
+    const content = gridItems;
 
   return (
     <div className="section list-image">
         <div className="list-block">
             <div className="list-block-content">
-            <h3 >{props.intro}</h3>
-            <h2 >{props.header}</h2>
+            <h3 >{lists.listsDescription}</h3>
+            <h2>{lists.listsHeading}</h2>
             <div>
                 <ul className="">
                 {content.map((item, index) => (
@@ -23,7 +25,11 @@ function ListBlock(props) {
             </div>
         </div>
         <div className="list-block-img">
-            <img src={props.image} alt="" data-aos="fade-in-right"/>
+        <PreviewCompatibleImage
+            imageInfo={lists.image}
+            alt=""
+            className="img-imagetext"
+          />
         </div>
     </div>
   )

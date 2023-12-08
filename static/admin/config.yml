@@ -83,8 +83,8 @@ collections:
                   { label: Image, name: image, widget: image },
                   { label: Title, name: title, widget: string },
                   { label: Description, name: description, widget: text },
-                  { label: Button, name: button, widget: button },
-                  { label: Link, name: link, widget: link },
+                  { label: Button, name: button, widget: string },
+                  { label: Link, name: link, widget: string },
                 ],
             }
           - {
@@ -109,6 +109,31 @@ collections:
                         { label: Text, name: text, widget: text },
                         { label: Title, name: title, widget: string },
                         { label: Button, name: button, widget: string },
+                      ],
+                  },
+                ],
+            }
+            - {
+              label: Lists,
+              name: list,
+              widget: object,
+              fields:
+                [
+                  { label: listsHeading, name: listsHeading, widget: string },
+                  {
+                    label: listsDescription,
+                    name: listsDescription,
+                    widget: text,
+                  },
+                  { label: Image, name: image, widget: image },
+
+                  {
+                    label: List,
+                    name: List,
+                    widget: list,
+                    fields:
+                      [
+                        { label: Text, name: text, widget: text },
                       ],
                   },
                 ],
