@@ -93,8 +93,13 @@ collections:
               widget: object,
               fields:
                 [
-                  { label: blocksHeading, name: blocksHeading, widget: string }
-                  { label: blocksDescription, name: blocksDescription, widget: text },
+                  { label: blocksHeading, name: blocksHeading, widget: string },
+                  {
+                    label: blocksDescription,
+                    name: blocksDescription,
+                    widget: text,
+                  },
+
                   {
                     label: Grid,
                     name: grid,

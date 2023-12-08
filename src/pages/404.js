@@ -10,7 +10,7 @@ const NotFoundPage = ({ data, location }) => {
         <h1>404: Not Found</h1>
         <p>The page that you are looking does not exist.</p>
         <div className="cta-btn">
-          <a to="/" >Go to homepage</a>
+          <a href="/" >Go to homepage</a>
         </div>
       </section>
     </Layout>
