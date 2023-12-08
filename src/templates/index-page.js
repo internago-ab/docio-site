@@ -13,7 +13,6 @@ import GridBlock from "../components/gridBlock";
 import FullWidthImage from "../components/FullWidthImage";
 import Features from "../components/Features";
 
-import listImage from '../images/businessPeople.jpg'
 //style
 import "../../src/style.css";
 
@@ -32,18 +31,13 @@ export const IndexPageTemplate = ({
 }) => {
   const heroImage = getImage(image) || image;
 
-  return (
-    
+  return (  
     <main>
     <FullWidthImage img={heroImage} title={title} subheading={subheading} button={button} heading={heading} href={href} />
     <Features gridItems={intro.blurbs}  />
     <TextImage mainpitch={mainpitch}/>
     <GridBlock gridItems={blocks.grid} blocks={blocks} />
     <ListBlock gridItems={lists.list} lists={lists} />
-    {/* <ListBlock
-      image={listImage}
-      alt="People walking outside a building"
-      ]}/> */}
   </main>
   );
 };
