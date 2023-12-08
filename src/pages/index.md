@@ -36,10 +36,12 @@ mainpitch:
   image: /img/crowd.jpg
   title: Payroll and HR Management
   description: >
-    <strong> LLet's be honest, international payroll can be challenging, but it has to be done. We have the perfect tool for managing international payroll and HR related tasks for your international employees. </strong><br></br> We let you store and manage all important employee and payroll data in one place. In this way you will increase your control and efficiency by using one online interface for all your international employees. Your job is simply to check and approve in the portal.
+    <strong> Let's be honest, international payroll can be challenging, but it has to be done. We have the perfect tool for managing international payroll and HR related tasks for your international employees. </strong><br></br> We let you store and manage all important employee and payroll data in one place. In this way you will increase your control and efficiency by using one online interface for all your international employees. Your job is simply to check and approve in the portal.
   button: Read more
   link: /payroll
 blocks:
+  blocksHeading: Six reasons to go with Docio
+  blocksDescription: "<strong> International payroll can be challenging, but it is important and has to be done.</strong><br></br> And we have the perfect tool to help you with payroll and a variety of other HR tasks. You can efficiently store and manage employee and payroll data in one place, controlled via one online interface. All you have to do is check and approve."
   grid:
     - title: Time and absence
       link: /payroll

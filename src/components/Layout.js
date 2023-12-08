@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { graphql, Link } from "gatsby";
+import { Link } from "gatsby";
 import "./layout.css";
 import PropTypes from "prop-types";
 import useSiteMetadata from "./SiteMetadata";
@@ -10,7 +10,6 @@ import docioLogo from "../images/docio-logo.png";
 import linkedin from "../images/linkedin.svg";
 import twitter from "../images/twitter.svg";
 import docioLogoWhite from "../images/docio-logo-white.svg";
-// import Bio from "../components/bio"
 
 const Layout = ({ children }) => {
   const { title, description } = useSiteMetadata();

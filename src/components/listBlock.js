@@ -1,11 +1,9 @@
-import React,{ useEffect } from "react"
+import React from "react"
 import "./list-block.css"
-
-
 
 function ListBlock(props) {
 
-    const content = props.content
+  const content = props.content
 
   return (
     <div className="section list-image">
@@ -25,7 +23,7 @@ function ListBlock(props) {
             </div>
         </div>
         <div className="list-block-img">
-            <img src={props.image} data-aos="fade-in-right"/>
+            <img src={props.image} alt="" data-aos="fade-in-right"/>
         </div>
     </div>
   )

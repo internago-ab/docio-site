@@ -35,10 +35,9 @@ export const IndexPageTemplate = ({
     
     <main>
     <FullWidthImage img={heroImage} title={title} subheading={subheading} button={button} heading={heading} href={href} />
-   
     <Features gridItems={intro.blurbs}  />
     <TextImage mainpitch={mainpitch}/>
-    <GridBlock gridItems={blocks.grid}  />
+    <GridBlock gridItems={blocks.grid} blocks={blocks} />
     <ListBlock
       intro="Payroll portal"
       header="Manage your payroll across multiple international markets with one online interface."
@@ -70,23 +69,6 @@ export const IndexPageTemplate = ({
           text: "Bonus and RSU calculations",
         },
       ]}/>
-    {/* 
-    <div className="card-img-wrapper">
-      <div className="card-img">
-        <img src={workers} alt="Three men walking downstairs" />
-      </div>
-    </div>
-    <TextImage
-      reverse="rowreverse"
-      title="Share Doc"
-      text="<strong>The Share documents module greatly facilitates the sharing and management of payroll and accounting related files.</strong> <br></br> A perfect tool for payroll management and various declarations to individuals and companies."
-      image={computerMockup}
-      alt="Internagos dashborard on a computerscreen and a tablet"
-      button="Read more"
-      link="/"
-    />
-
-    {/* /> */}
   </main>
   );
 };
@@ -102,6 +84,8 @@ IndexPageTemplate.propTypes = {
     blurbs: PropTypes.array,
   }),
   blocks: PropTypes.shape({
+    blocksHeading: PropTypes.string,
+    blocksDescription: PropTypes.string,
     grid: PropTypes.array,
   }),
 };
@@ -153,17 +137,19 @@ export const pageQuery = graphql`
         href
         button
         mainpitch {
-          title
-          description
-          button
-          link
           image {
             childImageSharp {
               gatsbyImageData(quality: 100, layout: FULL_WIDTH)
             }
           }
+          title
+          description
+          button
+          link
         }
         blocks {
+          blocksHeading
+          blocksDescription
           grid {
             text
             title
@@ -171,6 +157,7 @@ export const pageQuery = graphql`
         }
       }
         intro {
+          description
           blurbs {
             image {
               childImageSharp {
@@ -184,8 +171,6 @@ export const pageQuery = graphql`
             bgColor
             reverse
           }
-          heading
-          description
         }
       }
     }

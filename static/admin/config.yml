@@ -59,8 +59,6 @@ collections:
               widget: object,
               fields:
                 [
-                  { label: Heading, name: heading, widget: string },
-                  { label: Description, name: description, widget: text },
                   {
                     label: Blurbs,
                     name: blurbs,
@@ -69,8 +67,8 @@ collections:
                       [
                         { label: Image, name: image, widget: image },
                         { label: Text, name: text, widget: text },
-                        { label: Title, name: title, widget: title },
-                        { label: Button, name: button, widget: button },
+                        { label: Title, name: title, widget: string },
+                        { label: Button, name: button, widget: string },
                         { label: Reverse, name: reverse, widget: reverse },
                       ],
                   },
@@ -82,9 +80,9 @@ collections:
               widget: object,
               fields:
                 [
+                  { label: Image, name: image, widget: image },
                   { label: Title, name: title, widget: string },
                   { label: Description, name: description, widget: text },
-                  { label: Image, name: image, widget: image },
                   { label: Button, name: button, widget: button },
                   { label: Link, name: link, widget: link },
                 ],
@@ -95,8 +93,8 @@ collections:
               widget: object,
               fields:
                 [
-                  { label: Heading, name: heading, widget: string },
-                  { label: Description, name: description, widget: text },
+                  { label: blocksHeading, name: blocksHeading, widget: string }
+                  { label: blocksDescription, name: blocksDescription, widget: text },
                   {
                     label: Grid,
                     name: grid,
@@ -104,8 +102,8 @@ collections:
                     fields:
                       [
                         { label: Text, name: text, widget: text },
-                        { label: Title, name: title, widget: title },
-                        { label: Button, name: button, widget: button },
+                        { label: Title, name: title, widget: string },
+                        { label: Button, name: button, widget: string },
                       ],
                   },
                 ],

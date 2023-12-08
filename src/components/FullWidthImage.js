@@ -2,8 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import { GatsbyImage } from "gatsby-plugin-image";
 
-import "./hero.css"
 import arrow from '../images/icons/arrow-svg.svg'
+import "./hero.css"
 
 export default function FullWidthImage(props) {
   const {
