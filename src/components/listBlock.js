@@ -1,6 +1,5 @@
 import React from "react"
-import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
-
+import image from '../images/meeting.jpg'
 import "./list-block.css"
 
 function ListBlock({ gridItems, lists }) {
@@ -25,11 +24,7 @@ function ListBlock({ gridItems, lists }) {
             </div>
         </div>
         <div className="list-block-img">
-        <PreviewCompatibleImage
-            imageInfo={lists.image}
-            alt=""
-            className="img-imagetext"
-          />
+                <img src={image}/>
         </div>
     </div>
   )

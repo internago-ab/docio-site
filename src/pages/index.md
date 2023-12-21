@@ -108,7 +108,6 @@ blocks:
 lists:
   listsHeading: Manage your payroll across multiple international markets with one online interface.
   listsDescription: Payroll portal
-  image: /img/businessPeople.jpg
   list:
     - text: Gross up calculations
     - text: Payments

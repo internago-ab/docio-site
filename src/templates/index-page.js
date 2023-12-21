@@ -60,7 +60,6 @@ IndexPageTemplate.propTypes = {
   lists: PropTypes.shape({
     listsHeading: PropTypes.string,
     listsDescription: PropTypes.string,
-    image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
     list: PropTypes.array,
   }),
 };
@@ -151,11 +150,6 @@ export const pageQuery = graphql`
         lists {
           listsHeading
           listsDescription
-          image {
-            childImageSharp {
-              gatsbyImageData(quality:100, layout: FULL_WIDTH)
-            }
-          }
           list {
             text
           }
