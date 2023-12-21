@@ -5,25 +5,27 @@ import { GatsbyImage } from "gatsby-plugin-image";
 const PreviewCompatibleImage = ({ imageInfo }) => {
   const imageStyle = {  };
 
-  const { alt = "", childImageSharp, image } = imageInfo;
+  const {  childImageSharp, image } = imageInfo;
+
+  let alt = ""
 
   if (!!image && !!image.childImageSharp) {
     return (
       <GatsbyImage
         image={image.childImageSharp.gatsbyImageData}
-         alt=''
+        alt={alt}
       />
     );
   } else if (!!childImageSharp) {
     return (
       <GatsbyImage
         image={childImageSharp.gatsbyImageData}
-         alt=''
+        alt={alt}
       />
     );
     // for Netlify CMS 
   } else if (image) {
-    return <img style={{imageStyle}} src={image} alt='' />;
+    return <img style={{imageStyle}} src={image}  alt={alt} />;
   } else {
     return null
   }
@@ -31,7 +33,6 @@ const PreviewCompatibleImage = ({ imageInfo }) => {
 
 PreviewCompatibleImage.propTypes = {
   imageInfo: PropTypes.shape({
-    alt: PropTypes.string,
     image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]).isRequired,
   }).isRequired,
 };
