@@ -37,7 +37,7 @@ export const IndexPageTemplate = ({
     <Features gridItems={intro.blurbs}  />
     <TextImage mainpitch={mainpitch}/>
     <GridBlock gridItems={blocks.grid} blocks={blocks} />
-    <ListBlock gridItems={lists.list} lists={lists} />
+    <ListBlock gridItems={lists.listItem} lists={lists} />
   </main>
   );
 };
@@ -60,7 +60,7 @@ IndexPageTemplate.propTypes = {
   lists: PropTypes.shape({
     listsHeading: PropTypes.string,
     listsDescription: PropTypes.string,
-    list: PropTypes.array,
+    listItem: PropTypes.array,
   }),
 };
 
@@ -150,7 +150,7 @@ export const pageQuery = graphql`
         lists {
           listsHeading
           listsDescription
-          list {
+          listItem {
             text
           }
         }

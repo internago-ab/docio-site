@@ -115,7 +115,7 @@ collections:
             }
           - {
               label: Lists,
-              name: list,
+              name: lists,
               widget: object,
               fields:
                 [
@@ -126,8 +126,8 @@ collections:
                     widget: text,
                   },
                   {
-                    label: List,
-                    name: List,
+                    label: ListItem,
+                    name: listItem,
                     widget: list,
                     fields: [{ label: Text, name: text, widget: text }],
                   },
