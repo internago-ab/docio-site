@@ -4,7 +4,6 @@ path: /about
 title: About our values
 
 mainpitch:
-  image: /img/crowd.jpg
   title: Payroll and HR Management
   description: >
     <strong> Let's be honest, international payroll can be challenging, but it
@@ -14,6 +13,9 @@ mainpitch:
     place. In this way you will increase your control and efficiency by using
     one online interface for all your international employees. Your job is
     simply to check and approve in the portal.
+  image: /img/international.jpg
+  button: Read more
+  link: /payroll
 ---
 
 ### Shade-grown coffee
