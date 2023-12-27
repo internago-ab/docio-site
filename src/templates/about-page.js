@@ -3,9 +3,10 @@ import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout";
 import Content, { HTMLContent } from "../components/Content";
+import TextImage from "../components/textImage";
 
 // eslint-disable-next-line
-export const AboutPageTemplate = ({ title, content, contentComponent }) => {
+  export const AboutPageTemplate = ({ title, content, contentComponent, mainpitch }) => {
   const PageContent = contentComponent || Content;
 
   return (
@@ -22,6 +23,7 @@ export const AboutPageTemplate = ({ title, content, contentComponent }) => {
           </div>
         </div>
       </div>
+    <TextImage mainpitch={mainpitch}/>
     </section>
   );
 };
@@ -30,6 +32,7 @@ AboutPageTemplate.propTypes = {
   title: PropTypes.string.isRequired,
   content: PropTypes.string,
   contentComponent: PropTypes.func,
+  mainpitch: PropTypes.object,
 };
 
 const AboutPage = ({ data }) => {
@@ -41,6 +44,7 @@ const AboutPage = ({ data }) => {
         contentComponent={HTMLContent}
         title={post.frontmatter.title}
         content={post.html}
+        mainpitch={post.frontmatter.mainpitch}
       />
     </Layout>
   );
@@ -58,6 +62,17 @@ export const aboutPageQuery = graphql`
       html
       frontmatter {
         title
+        mainpitch {
+          image {
+            childImageSharp {
+              gatsbyImageData(quality: 100, layout: FULL_WIDTH)
+            }
+          }
+          title
+          description
+          button
+          link
+        }
       }
     }
   }
