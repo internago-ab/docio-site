@@ -5,9 +5,7 @@ import { GatsbyImage } from "gatsby-plugin-image";
 const PreviewCompatibleImage = ({ imageInfo }) => {
   const imageStyle = {  };
 
-  const {  childImageSharp, image } = imageInfo;
-
-  let alt = ""
+  const { alt = "", childImageSharp, image } = imageInfo;
 
   if (!!image && !!image.childImageSharp) {
     return (
@@ -33,6 +31,7 @@ const PreviewCompatibleImage = ({ imageInfo }) => {
 
 PreviewCompatibleImage.propTypes = {
   imageInfo: PropTypes.shape({
+    alt: PropTypes.string,
     image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]).isRequired,
   }).isRequired,
 };
