@@ -4,20 +4,25 @@ path: /about
 title: About us
 
 mainpitch:
-  title: Payroll and HR Management
+  title: Lorem ipsum dolor sit amet
   description: >
-    <strong> Let's be honest, international payroll can be challenging, but it
-    has to be done. We have the perfect tool for managing international payroll
-    and HR related tasks for your international employees. </strong><br></br> We
-    let you store and manage all important employee and payroll data in one
-    place. In this way you will increase your control and efficiency by using
-    one online interface for all your international employees. Your job is
-    simply to check and approve in the portal.
+    <strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </strong><br></br> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
   button: Read more
   link: /payroll
   image: /img/international.jpg
+testimonials:
+  - author: Lorem ipsum
+    quote: >-
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  - author: dolor sit amet
+    quote: >-
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  - author: Lorem ipsum
+    quote: >-
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+full_image: /img/meeting.jpg
 ---
 
 ### Lorem Ipsum
 
-Coffee is a small tree or shrub that grows in the forest understory in its wild form, and traditionally was grown commercially under other trees that provided shade. The forest-like structure of shade coffee farms provides habitat for a great number of migratory and resident species.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.

@@ -33,7 +33,9 @@ export const IndexPageTemplate = ({
 
   return (  
     <main>
+      <div className="hero">
     <FullWidthImage img={heroImage} title={title} subheading={subheading} button={button} heading={heading} href={href} />
+      </div>
     <Features gridItems={intro.blurbs}  />
     <TextImage mainpitch={mainpitch}/>
     <GridBlock gridItems={blocks.grid} blocks={blocks} />

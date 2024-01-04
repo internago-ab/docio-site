@@ -8,19 +8,19 @@ import "./hero.css"
 
 export default function FullWidthImage(props) {
   const {
-    height = 800,
+    height = 900,
     img,
     title,
     subheading,
     heading,
     href,
     button,
-    imgPosition = "top left",
+    imgPosition = "center center",
   } = props;
 
   return (
     <React.Fragment>
-      <div className={`hero`}>
+      <div className={``}>
       <div
         className={`bg-img ${props.size}`}
         style={{

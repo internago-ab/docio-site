@@ -265,6 +265,29 @@ section.error-page > * {
   margin: 0 auto;
 }
 
+.section-bg {
+  align-items: center;
+  background-color: var(--lighter-green);
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing-m) var(--spacing-xl);
+  text-align: center;
+}
+
+.section-bg h1 {
+  margin-bottom: var(--spacing-xxs);
+}
+
+.section-bg h3,
+.section-bg h4,
+.section-bg h2 {
+  margin-bottom: var(--spacing-xxs);
+}
+
+.section-bg p {
+  max-width: 900px;
+}
+
 .section-top {
   margin-top: var(--spacing-m);
 }
@@ -292,6 +315,10 @@ section.error-page > * {
 @media screen and (max-width: 1200px) {
   .section > div:first-of-type {
     width: 85%;
+  }
+
+  .section-bg {
+    padding: var(--spacing-m);
   }
 }
 
@@ -331,6 +358,10 @@ section.error-page > * {
   .section-top {
     margin-top: var(--spacing-s);
   }
+
+  .section-bg {
+    padding: var(--spacing-s);
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -348,6 +379,10 @@ section.error-page > * {
 
   h2 {
     font-size: var(--fontSize-h2-responsive);
+  }
+
+  .section-bg {
+    padding: var(--spacing-s) var(--spacing-xs);
   }
 
   .show-more {

@@ -1,0 +1,123 @@
+#fullImage {
+  position: relative;
+}
+
+#fullImage .gatsby-image-wrapper div {
+  padding-top: 40% !important;
+}
+
+blockquote {
+  background-color: var(--white);
+  margin: 0;
+  border-radius: 5px;
+  box-shadow: 0 21px 40px rgba(0, 0, 0, 0.12);
+  padding: var(--spacing-xs);
+  box-sizing: border-box;
+  max-width: 800px;
+}
+
+#symbol {
+  font-family: "Libre Franklin", sans-serif;
+  font-size: calc(var(--fontSize-h1) * 3.5);
+  font-weight: 900;
+  display: block;
+  height: 60px;
+  line-height: 165px;
+  color: var(--dark-grey);
+}
+
+.quotes-wrapper {
+  gap: 5em;
+  /* display: flex; */
+  justify-content: center;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  z-index: 9;
+}
+
+.quotes {
+  color: var(--dark-grey);
+  padding: var(--spacing-xs) 0;
+  text-align: left;
+}
+
+hr {
+  border: 1px solid var(--light-grey);
+}
+
+#name {
+  vertical-align: middle;
+  margin-top: 10px;
+  display: inline-block;
+}
+
+#detail {
+  font-weight: 100;
+  font-size: 14px;
+}
+
+@media only screen and (max-width: 1700px) {
+  #fullImage .gatsby-image-wrapper div {
+    padding-top: 35% !important;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  #fullImage .gatsby-image-wrapper div {
+    padding-top: 80% !important;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  #fullImage .gatsby-image-wrapper div {
+    padding-top: 100% !important;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  #fullImage .gatsby-image-wrapper div {
+    padding-top: 130% !important;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  #fullImage .gatsby-image-wrapper div {
+    padding-top: 150% !important;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #fullImage .gatsby-image-wrapper div {
+    padding-top: 180% !important;
+  }
+
+  blockquote {
+    padding: var(--spacing-xxs);
+  }
+
+  #symbol {
+    font-size: calc(var(--fontSize-h1) * 3);
+    height: 50px;
+    line-height: 150px;
+  }
+
+  .quotes-wrapper {
+    gap: 2em;
+    grid-template-columns: 1fr;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  #fullImage .gatsby-image-wrapper div {
+    padding-top: 230% !important;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  #fullImage .gatsby-image-wrapper div {
+    padding-top: 250% !important;
+  }
+}
