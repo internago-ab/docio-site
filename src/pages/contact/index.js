@@ -1,6 +1,8 @@
 import * as React from "react";
 import { navigate } from "gatsby-link";
 import Layout from "../../components/Layout";
+import "../../components/contact.css";
+
 
 function encode(data) {
   return Object.keys(data)
@@ -36,10 +38,14 @@ export default class Index extends React.Component {
   render() {
     return (
       <Layout>
-        <section className="section">
-          <div className="container">
-            <div className="content">
-              <h1>Contact</h1>
+        <section className="section landing">
+          <div className="container landing-wrapper">
+            <div className="flex-left">
+              <h1 className="heading">Do you prefer that we get get back to you?</h1>
+              <p>We are happy to hear from you, and our team is ready to assist you with any question you might have. You can always get in touch with Internago with any type of question – just fill in this form and we will get back to you!</p>
+            </div>
+            <div className="content form-demo-header">
+              <h2 className="form-header heading">Let’s chat about your payroll needs</h2>
               <form
                 name="contact"
                 method="post"
@@ -56,11 +62,8 @@ export default class Index extends React.Component {
                     <input name="bot-field" onChange={this.handleChange} />
                   </label>
                 </div>
-                <div className="field">
-                  <label className="label" htmlFor={"name"}>
-                    Your name
-                  </label>
-                  <div className="control">
+                <div className="form-flex">
+                <div className="field input-field input-name">
                     <input
                       className="input"
                       type={"text"}
@@ -69,13 +72,11 @@ export default class Index extends React.Component {
                       id={"name"}
                       required={true}
                     />
-                  </div>
-                </div>
-                <div className="field">
-                  <label className="label" htmlFor={"email"}>
-                    Email
+                     <label className="label" htmlFor={"name"}>
+                    Your name
                   </label>
-                  <div className="control">
+                </div>
+                <div className="field input-field input-mail">
                     <input
                       className="input"
                       type={"email"}
@@ -84,13 +85,12 @@ export default class Index extends React.Component {
                       id={"email"}
                       required={true}
                     />
-                  </div>
-                </div>
-                <div className="field">
-                  <label className="label" htmlFor={"message"}>
-                    Message
+                    <label className="label" htmlFor={"email"}>
+                    Email
                   </label>
-                  <div className="control">
+                </div>
+                </div>
+                <div className="field input-field input-text">
                     <textarea
                       className="textarea"
                       name={"message"}
@@ -98,12 +98,18 @@ export default class Index extends React.Component {
                       id={"message"}
                       required={true}
                     />
-                  </div>
+                    <label className="label inputField messageField" htmlFor={"message"}>
+                    Message
+                  </label>
                 </div>
-                <div className="field">
-                  <button className="button is-link" type="submit">
+                <p className="form-privacy">We value your privacy and we’ll only send you relevant information. 
+For full details, check out our privacy policy</p>
+                <div className="field btn-form-main">
+                  {/* <button className="button is-link formButton" type="submit">
                     Send
-                  </button>
+                  </button> */}
+                  <input type="submit" value="Send message" className="formButton is-link" />
+
                 </div>
               </form>
             </div>

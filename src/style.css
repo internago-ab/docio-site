@@ -240,7 +240,7 @@ button {
 }
 
 main {
-  margin-top: 88px;
+  margin-top: 100px;
 }
 
 main > :first-child {
@@ -300,7 +300,7 @@ section.error-page > * {
 
 @media screen and (max-width: 1600px) {
   main {
-    margin-top: 80px;
+    margin-top: 100px;
   }
 }
 
@@ -324,7 +324,7 @@ section.error-page > * {
 
 @media screen and (max-width: 1780px) {
   main {
-    margin-top: 70px;
+    margin-top: 80px;
   }
 
   p {

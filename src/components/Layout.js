@@ -160,10 +160,10 @@ const Layout = ({ children }) => {
             </li>
             <li>
               <Link
-                to="/contacts"
+                to="/contact"
                 className={`${menuDisplayed ? "li-active" : ""}`}
               >
-                Contacts
+                Contact
               </Link>
             </li>
             <li>
@@ -228,7 +228,7 @@ const Layout = ({ children }) => {
             <Link to="/about">About us</Link>
           </li>
           <li>
-            <Link to="/contacts">Contacts</Link>
+            <Link to="/contact">Contact</Link>
           </li>
           <li className="cta-btn" id="inverted">
             <a href="mailto:info@internago.com">Contact us</a>
