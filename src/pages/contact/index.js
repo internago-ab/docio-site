@@ -103,13 +103,9 @@ export default class Index extends React.Component {
                   </label>
                 </div>
                 <p className="form-privacy">We value your privacy and we’ll only send you relevant information. 
-For full details, check out our privacy policy</p>
+                  For full details, check out our privacy policy</p>
                 <div className="field btn-form-main">
-                  {/* <button className="button is-link formButton" type="submit">
-                    Send
-                  </button> */}
                   <input type="submit" value="Send message" className="formButton is-link" />
-
                 </div>
               </form>
             </div>
