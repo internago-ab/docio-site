@@ -59,11 +59,12 @@
 
 .form-flex input,
 .landing .textarea {
+  font-family: var(--font);
   padding: 15px 15px;
 }
 
 .form-flex label {
-  top: 3px;
+  top: 8px;
   left: 15px;
 }
 
@@ -135,6 +136,10 @@
 
 .landing .input-name {
   margin: 0 calc(var(--spacing-xxs) + 10px) 0 0;
+}
+
+.landing .input-name #name {
+  margin-top: 0;
 }
 
 .landing h1 {
