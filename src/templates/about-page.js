@@ -10,30 +10,33 @@ import { getImage } from "gatsby-plugin-image";
 
 import "../components/testimonials.css";
 
-
 // eslint-disable-next-line
-  export const AboutPageTemplate = ({ title, content, contentComponent, mainpitch, testimonials, fullImage, }) => {
+export const AboutPageTemplate = ({
+  title,
+  content,
+  contentComponent,
+  mainpitch,
+  testimonials,
+  fullImage,
+}) => {
   const PageContent = contentComponent || Content;
   const fullWidthImage = getImage(fullImage) || fullImage;
 
-
   return (
-   <>
+    <>
       <div className="section-bg">
         <div className="">
-              <h1>
-                {title}
-              </h1>
-              <PageContent className="" content={content} />
-          </div>
+          <h1>{title}</h1>
+          <PageContent className="" content={content} />
+        </div>
       </div>
-    <TextImage mainpitch={mainpitch}/>
-    <section id="fullImage">
-      <section className="section">
-    <Testimonials testimonials={testimonials} />
+      <TextImage mainpitch={mainpitch} />
+      <section id="fullImage">
+        <section className="section">
+          <Testimonials testimonials={testimonials} />
+        </section>
+        <FullWidthImage img={fullWidthImage} imgPosition={"bottom"} />
       </section>
-    <FullWidthImage img={fullWidthImage} imgPosition={"bottom"} />
-    </section>
     </>
   );
 };

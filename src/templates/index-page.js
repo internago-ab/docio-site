@@ -15,6 +15,7 @@ import Features from "../components/Features";
 
 //style
 import "../../src/style.css";
+import "./../components/payroll-block.css";
 
 // eslint-disable-next-line
 export const IndexPageTemplate = ({
@@ -27,20 +28,27 @@ export const IndexPageTemplate = ({
   intro,
   blocks,
   lists,
-  mainpitch
+  mainpitch,
 }) => {
   const heroImage = getImage(image) || image;
 
-  return (  
+  return (
     <main>
       <div className="hero">
-    <FullWidthImage img={heroImage} title={title} subheading={subheading} button={button} heading={heading} href={href} />
+        <FullWidthImage
+          img={heroImage}
+          title={title}
+          subheading={subheading}
+          button={button}
+          heading={heading}
+          href={href}
+        />
       </div>
-    <Features gridItems={intro.blurbs}  />
-    <TextImage mainpitch={mainpitch}/>
-    <GridBlock gridItems={blocks.grid} blocks={blocks} />
-    <ListBlock gridItems={lists.listItem} lists={lists} />
-  </main>
+      <Features gridItems={intro.blurbs} />
+      <TextImage mainpitch={mainpitch} />
+      <GridBlock gridItems={blocks.grid} blocks={blocks} />
+      <ListBlock gridItems={lists.listItem} lists={lists} />
+    </main>
   );
 };
 
@@ -131,14 +139,14 @@ export const pageQuery = graphql`
             text
             title
             link
+          }
         }
-      }
         intro {
           description
           blurbs {
             image {
               childImageSharp {
-                gatsbyImageData(quality:100, layout: CONSTRAINED)
+                gatsbyImageData(quality: 100, layout: CONSTRAINED)
               }
             }
             text

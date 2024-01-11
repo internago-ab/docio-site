@@ -22,7 +22,6 @@ const Testimonials = ({ testimonials, maxTestimonials }) => {
     ],
   };
 
-
   const limitedTestimonials = testimonials.slice(0, maxTestimonials);
 
   return (

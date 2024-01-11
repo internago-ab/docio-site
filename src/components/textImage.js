@@ -29,7 +29,6 @@ const TextImage = (mainpitch) => {
         <div className="imagetext-img">
           <PreviewCompatibleImage
             imageInfo={mainpitch.mainpitch.image}
-            alt=""
             className="img-imagetext"
           />
         </div>

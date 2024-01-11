@@ -17,7 +17,6 @@ const Layout = ({ children }) => {
 
   const [visible] = useState(true);
 
-
   function toggleMenu() {
     setMenuDisplayed(!menuDisplayed);
     animateHamburger();
@@ -38,7 +37,7 @@ const Layout = ({ children }) => {
       <Helmet>
         <html lang="en" />
         <title>{title}</title>
-        <meta name="description" content={description} /> 
+        <meta name="description" content={description} />
         <link
           rel="icon"
           type="image/png"
@@ -216,7 +215,9 @@ const Layout = ({ children }) => {
                   <Link to="/blog">Blog</Link>
                 </li>
                 <li>
-                  <Link to="/partner">Partner <br></br>Integrations</Link>
+                  <Link to="/partner">
+                    Partner <br></br>Integrations
+                  </Link>
                 </li>
               </ul>
             </li>
@@ -239,9 +240,7 @@ const Layout = ({ children }) => {
         </ul>
       </nav>
 
-    
-        <main>{children}</main>
-
+      <main>{children}</main>
 
       <footer>
         <img
@@ -258,7 +257,7 @@ const Layout = ({ children }) => {
               international payroll and HR related tasks for your international
               employees. We let you store and manage all important employee and
               payroll data in one place. Your job is simply to check and approve
-              in the portal. 
+              in the portal.
             </p>
           </div>
 
@@ -293,9 +292,7 @@ const Layout = ({ children }) => {
             <h3>Contact us</h3>
             <a href="mailto:support@internago.com">info@internago.com</a>
             <div className="socials">
-              <a
-                href={`https://www.linkedin.com/company/internago-ab}`}
-              >
+              <a href={`https://www.linkedin.com/company/internago-ab}`}>
                 <img src={linkedin} alt="linkedin"></img>
                 linkedin/internago
               </a>

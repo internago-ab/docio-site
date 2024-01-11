@@ -13,7 +13,6 @@ function FeatureGrid({ gridItems, blocks }) {
 
   const showMoreDocuments = () => {
     setLimit(limit ? content.length : 3);
-    console.log(limit);
 
     if (limit === 6) {
       setLimit(limit ? 3 : 3);

@@ -3,13 +3,11 @@ import PropTypes from "prop-types";
 import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 import arrow from "../images/icons/arrow-black.svg";
 
-import "./payroll-block.css";
 function FeatureGrid({ gridItems }) {
-  console.log(gridItems, "gridItems");
   return (
     <div>
-      {gridItems.map((item) => (
-        <section className={`section ${item.bgColor}`}>
+      {gridItems.map((item, index) => (
+        <section className={`section ${item.bgColor}`} key={index}>
           <div className={`bg-text-image ${item.reverse}`}>
             <div className="text-container bg-text-white">
               <h2>{item.title}</h2>
@@ -51,7 +49,7 @@ FeatureGrid.propTypes = {
       text: PropTypes.string,
       title: PropTypes.string,
       button: PropTypes.string,
-      reverse: PropTypes.reverse,
+
     }),
   ),
 };
