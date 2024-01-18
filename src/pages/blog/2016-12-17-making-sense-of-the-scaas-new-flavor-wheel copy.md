@@ -1,34 +1,34 @@
 ---
 templateKey: blog-post
-title: Making sense of the SCAA’s new Flavor Wheel
-date: 2016-12-17T15:04:10.000Z
+title: Lorem ipsum
+date: 2024-01-15T15:04:10.000Z
 featuredpost: false
 featuredimage: /img/meeting.jpg
-description: The Coffee Taster’s Flavor Wheel, the official resource used by coffee tasters, has been revised for the first time this year.
+description: Lorem ipsum dolor sit amet, consectetur adipiscing elit?
+  Ut enim ad minim veniam, quis nostrud exercitation
+  ullamco laboris nisi ut aliquip ex ea commodo consequat.
 tags:
-  - flavor
+  - payroll
   - tasting
 ---
 
 ![flavor wheel](/img/meeting.jpg)
 
-The SCAA updated the wheel to reflect the finer nuances needed to describe flavors more precisely. The new descriptions are more detailed and hence allow cuppers to distinguish between more flavors.
+Lorem ipsum dolor sit amet. Aut voluptate deserunt ex officiis eligendi non perferendis quis sed quia autem quo dolorem odit. 33 odit asperiores non quis omnis sit eaque quod. Non neque tempore vel velit iusto non dolorem eveniet. Et blanditiis nulla ex error pariatur aut ratione consequatur id cupiditate quas.
 
-While this is going to be a big change for professional coffee tasters, it means a lot to you as a consumer as well. We’ll explain how the wheel came to be, how pros use it and what the flavors actually mean.
+Vel soluta exercitationem non voluptatum rerum qui ducimus omnis quo optio dicta. Est molestiae magnam aut vero sint aut modi deserunt. Nam iusto voluptates ea eligendi adipisci id dolor suscipit aut voluptate galisum qui dolore voluptatum.
 
-## What the updates mean to you
+## Lorem ipsum dolor sit amet.
 
-The Specialty Coffee Association of America (SCAA), founded in 1982, is a non-profit trade organization for the specialty coffee industry. With members located in more than 40 countries, SCAA represents every segment of the specialty coffee industry, including:
+Et autem labore et dolorum iusto non maiores nostrum. Et vero placeat sit vitae sequi qui enim adipisci et laboriosam sunt et quod consequatur aut voluptatem recusandae. Cum officia dignissimos eum dolorem laborum vel suscipit galisum qui eveniet provident sit rerum error est mollitia architecto ut commodi modi. Aut omnis libero ex totam commodi ut ipsa aspernatur.
 
-- producers
-- roasters
-- importers/exporters
-- retailers
-- manufacturers
-- baristas
+- Lorem
+- ipsum
+- dolor
+- voluptate
+- consequatur
+- recusandae
 
-For over 30 years, SCAA has been dedicated to creating a vibrant specialty coffee community by recognizing, developing and promoting specialty coffee. SCAA sets and maintains quality standards for the industry, conducts market research, and provides education, training, resources, and business services for its members.
+Lorem ipsum dolor sit amet. Aut voluptate deserunt ex officiis eligendi non perferendis quis sed quia autem quo dolorem odit. 33 odit asperiores non quis omnis sit eaque quod. Non neque tempore vel velit iusto non dolorem eveniet. Et blanditiis nulla ex error pariatur aut ratione consequatur id cupiditate quas.
 
-Coffee cupping, or coffee tasting, is the practice of observing the tastes and aromas of brewed coffee. It is a professional practice but can be done informally by anyone or by professionals known as "Q Graders". A standard coffee cupping procedure involves deeply sniffing the coffee, then loudly slurping the coffee so it spreads to the back of the tongue.
-
-The coffee taster attempts to measure aspects of the coffee's taste, specifically the body (the texture or mouthfeel, such as oiliness), sweetness, acidity (a sharp and tangy feeling, like when biting into an orange), flavour (the characters in the cup), and aftertaste. Since coffee beans embody telltale flavours from the region where they were grown, cuppers may attempt to identify the coffee's origin.
+Vel soluta exercitationem non voluptatum rerum qui ducimus omnis quo optio dicta. Est molestiae magnam aut vero sint aut modi deserunt. Nam iusto voluptates ea eligendi adipisci id dolor suscipit aut voluptate galisum qui dolore voluptatum.

@@ -6,6 +6,7 @@ import { graphql, Link } from "gatsby";
 import Layout from "../components/Layout";
 import Content, { HTMLContent } from "../components/Content";
 
+import './blog-post.css'
 // eslint-disable-next-line
 export const BlogPostTemplate = ({
   content,
@@ -20,8 +21,8 @@ export const BlogPostTemplate = ({
   return (
     <section className="section">
       {helmet || ""}
-      <div className="container content">
-        <div className="columns">
+      <div className="container content blog-post">
+        <div className="">
           <div className="column is-10 is-offset-1">
             <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
               {title}

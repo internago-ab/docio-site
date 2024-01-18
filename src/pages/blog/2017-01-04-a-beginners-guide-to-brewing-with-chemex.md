@@ -1,30 +1,31 @@
 ---
 templateKey: blog-post
-title: A beginners’ guide to brewing with Chemex
+title: Lorem ipsum dolor sit amet
 date: 2017-01-04T15:04:10.000Z
 featuredpost: false
 featuredimage: /img/meeting.jpg
-description: Brewing with a Chemex probably seems like a complicated, time-consuming ordeal, but once you get used to the process, it becomes a soothing ritual that's worth the effort every time.
+description: Lorem ipsum dolor sit amet, consectetur adipiscing elit?
+  Ut enim ad minim veniam, quis nostrud exercitation
+  ullamco laboris nisi ut aliquip ex ea commodo consequat.
 tags:
-  - brewing
-  - chemex
+  - Lorem
+  - ipsum
 ---
 
 ![chemex](/img/meeting.jpg)
 
-This week we’ll **take** a look at all the steps required to make astonishing coffee with a Chemex at home. The Chemex Coffeemaker is a manual, pour-over style glass-container coffeemaker that Peter Schlumbohm invented in 1941, and which continues to be manufactured by the Chemex Corporation in Chicopee, Massachusetts.
+Lorem ipsum dolor sit amet. Aut voluptate deserunt ex officiis eligendi non perferendis quis sed quia autem quo dolorem odit. 33 odit asperiores non quis omnis sit eaque quod. Non neque tempore vel velit iusto non dolorem eveniet. Et blanditiis nulla ex error pariatur aut ratione consequatur id cupiditate quas.
 
-In 1958, designers at the [Illinois Institute of Technology](https://www.spacefarm.digital) said that the Chemex Coffeemaker is _"one of the best-designed products of modern times"_, and so is included in the collection of the Museum of Modern Art in New York City.
+Vel soluta exercitationem non voluptatum rerum qui ducimus omnis quo optio dicta. Est molestiae magnam aut vero sint aut modi deserunt. Nam iusto voluptates ea eligendi adipisci id dolor suscipit aut voluptate galisum qui dolore voluptatum.
 
-## The little secrets of Chemex brewing
+## Lorem ipsum dolor sit amet.
 
-The Chemex Coffeemaker consists of an hourglass-shaped glass flask with a conical funnel-like neck (rather than the cylindrical neck of an Erlenmeyer flask) and uses proprietary filters, made of bonded paper (thicker-gauge paper than the standard paper filters for a drip-method coffeemaker) that removes most of the coffee oils, brewing coffee with a taste that is different than coffee brewed in other coffee-making systems; also, the thicker paper of the Chemex coffee filters may assist in removing cafestol, a cholesterol-containing compound found in coffee oils. Here’s three important tips newbies forget about:
+Et autem labore et dolorum iusto non maiores nostrum. Et vero placeat sit vitae sequi qui enim adipisci et laboriosam sunt et quod consequatur aut voluptatem recusandae. Cum officia dignissimos eum dolorem laborum vel suscipit galisum qui eveniet provident sit rerum error est mollitia architecto ut commodi modi. Aut omnis libero ex totam commodi ut ipsa aspernatur.
 
-1. Always buy dedicated Chemex filters.
-2. Use a scale, don’t try to eyeball it.
-3. Never skip preheating the glass.
-4. Timing is key, don’t forget the clock.
+1. Lorem
+2. ipsum
+3. dolor
 
-The most visually distinctive feature of the Chemex is the heatproof wooden collar around the neck, allowing it to be handled and poured when full of hot water. This is turned, then split in two to allow it to fit around the glass neck. The two pieces are held loosely in place by a tied leather thong. The pieces are not tied tightly and can still move slightly, retained by the shape of the conical glass.
+Lorem ipsum dolor sit amet. Aut voluptate deserunt ex officiis eligendi non perferendis quis sed quia autem quo dolorem odit. 33 odit asperiores non quis omnis sit eaque quod. Non neque tempore vel velit iusto non dolorem eveniet. Et blanditiis nulla ex error pariatur aut ratione consequatur id cupiditate quas.
 
-For a design piece that became popular post-war at a time of Modernism and precision manufacture, this juxtaposition of natural wood and the organic nature of a hand-tied knot with the laboratory nature of glassware was a distinctive feature of its appearance.
+Vel soluta exercitationem non voluptatum rerum qui ducimus omnis quo optio dicta. Est molestiae magnam aut vero sint aut modi deserunt. Nam iusto voluptates ea eligendi adipisci id dolor suscipit aut voluptate galisum qui dolore voluptatum.

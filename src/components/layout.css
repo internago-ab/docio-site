@@ -257,7 +257,7 @@ footer .disclaimer p {
 
 /* -------------------------------------------------------- MOBILE */
 
-@media only screen and (max-width: 1124px) {
+@media only screen and (max-width: 1300px) {
   nav {
     padding: var(--spacing-xxs) var(--spacing-xs);
   }

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect,useMemo } from "react";
 import PropTypes from "prop-types";
 import { Link, graphql, StaticQuery } from "gatsby";
 import PreviewCompatibleImage from "./PreviewCompatibleImage";
@@ -12,6 +12,7 @@ const BlogRollTemplate = (props) => {
   const [selectedTag, setSelectedTag] = useState(""); // Initially, no tag is selected
   const [searchTerm, setSearchTerm] = useState(""); // State for the search term
   const [showAllTags, setShowAllTags] = useState(false);
+  const [clickCounts, setClickCounts] = useState({});
 
   // Create a Set to store unique tags
   const uniqueTags = new Set();
@@ -48,7 +49,22 @@ const BlogRollTemplate = (props) => {
 
     return hasSelectedTag && hasSearchTerm;
   });
+  const handlePostClick = (postId) => {
+    setClickCounts((prevCounts) => ({
+      ...prevCounts,
+      [postId]: (prevCounts[postId] || 0) + 1,
+    }));
+  };
+  const topPosts = useMemo(() => {
+    const sortedPosts = [...allPosts].sort((a, b) => {
+      const clicksA = clickCounts[a.node.id] || 0;
+      const clicksB = clickCounts[b.node.id] || 0;
+      return clicksB - clicksA;
+    });
+    return sortedPosts.slice(0, 5);
+  }, [allPosts, clickCounts]);
 
+  
   // Calculate the index range for the current page
   const startIndex = (currentPage - 1) * postsPerPage;
   const endIndex = startIndex + postsPerPage;
@@ -105,11 +121,26 @@ const BlogRollTemplate = (props) => {
             ))}
           </div>
           {allUniqueTags.length > 3 && (
-            <button onClick={handleShowAllTags}>
+            <button onClick={handleShowAllTags} className="show-more-btn">
               {showAllTags ? "Show Less" : "Show More"}
             </button>
           )}
-        </div>
+  
+    </div>
+    <div className="filter filter-top-posts">
+    <h3>Top Posts</h3>
+      <div className="top-posts">
+        {topPosts.map(({ node: post }, index) => (
+          <div className="top-post" key={post.id}>
+            <h3>{index + 1}</h3>
+            <div>
+            <h4>{post.frontmatter.title}</h4>
+            <p>{post.frontmatter.date}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      </div>
       </div>
       <div>
         <div className="blog-grid is-multiline">
@@ -150,6 +181,7 @@ const BlogRollTemplate = (props) => {
                           <Link
                             className="title has-text-primary is-size-4"
                             to={post.fields.slug}
+                            onClick={() => handlePostClick(post.id)}
                           >
                             {post.frontmatter.title}
                           </Link>
@@ -176,8 +208,8 @@ const BlogRollTemplate = (props) => {
                       <p className="description">{post.excerpt}</p>
                     </div>
 
-                    <div className="link-arrow-black">
-                      <Link className="read-more" to={post.fields.slug}>
+                    <div className="link-arrow-black" >
+                      <Link className="read-more" to={post.fields.slug} onClick={() => handlePostClick(post.id)}>
                         Keep Reading <img alt="arrow icon" src={arrow} />
                       </Link>
                     </div>

@@ -31,12 +31,17 @@ main .blog {
 .blog .filter {
   text-align: left;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.08);
-  padding: var(--spacing-xxs) var(--spacing-xs);
+  padding: var(--spacing-xs) var(--spacing-xs);
   width: 350px;
   justify-content: space-between;
   align-items: center;
   position: relative;
   margin-top: var(--spacing-xs);
+}
+
+.blog .filter-top-posts {
+  padding: var(--spacing-xs) var(--spacing-xs) var(--spacing-xxs)
+    var(--spacing-xs);
 }
 
 .blog .link-arrow-black a {
@@ -71,7 +76,7 @@ main .blog {
 
 .blog-card img {
   width: 100%;
-  height: 17.75rem;
+  height: -webkit-fill-available;
   object-fit: cover;
 }
 
@@ -85,6 +90,11 @@ main .blog {
 }
 
 .blog-card .post-meta .blog-date {
+  margin-top: 0;
+}
+
+.blog-card .text .post-meta p {
+  margin-bottom: 0;
   margin-top: 0;
 }
 
@@ -123,10 +133,33 @@ main .blog {
 
 .blog-card .text h2 {
   font-size: var(--fontSize-h3);
+  line-height: 1;
+  margin: 10px 0;
+}
+
+.blog-card .text h2 a {
+  line-height: 1.2;
+  font-size: var(--fontSize-p-l);
+}
+
+.top-post {
+  align-items: center;
+  display: flex;
+  padding: var(--spacing-xxs) 0;
+}
+
+.top-post h3 {
+  color: var(--green);
+  font-size: calc(var(--fontSize-h3) * 1.5);
+  margin-right: var(--spacing-xxs);
+}
+
+.top-post p {
+  font-size: var(--fontSize-p-xs);
 }
 
 .blog-card .text p {
-  font-size: var(--fontSize-p-s);
+  font-size: var(--fontSize-p-xs);
   margin: var(--spacing-xxs) 0;
 }
 
@@ -154,9 +187,50 @@ main .blog {
   padding: 10px 20px;
 }
 
+.show-more-btn {
+  background-color: transparent;
+  border: none;
+  border-radius: 5px;
+  box-sizing: border-box;
+  color: var(--black);
+  font-size: var(--fontSize-p-xs);
+  margin-right: var(--spacing-xs);
+  margin-top: 8px;
+  text-align: left;
+  font-weight: var(--fontWeight-bold);
+  text-decoration: underline;
+  font-family: var(--font);
+}
+
+.filter-tags label {
+  color: var(--black);
+  font-size: var(--fontSize-p-m);
+  font-weight: var(--fontWeight-bold);
+}
+
 .tag-list {
+  margin-top: var(--spacing-xxs);
+
   display: flex;
   flex-direction: column;
+}
+
+.tag-list .tag {
+  padding-bottom: calc(var(--spacing-xxs) * 0.8);
+  border-bottom: 1.5px solid var(--light-grey);
+  text-align: left;
+  background-color: var(--white);
+  color: var(--dark-grey);
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  margin-right: 3px;
+  font-size: var(--fontSize-p-s);
+  margin-bottom: calc(var(--spacing-xxs) * 0.8);
+}
+
+.tag-list .active {
+  color: var(--black);
 }
 
 select {
