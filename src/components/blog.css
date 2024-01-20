@@ -279,12 +279,19 @@ select:focus {
 }
 
 @media only screen and (max-width: 768px) {
+  main .blog {
+    flex-direction: column;
+    align-items: center;
+  }
   .blog-grid {
-    padding: 0 var(--spacing-s);
+    margin-top: var(--spacing-xs);
+    padding: 0;
+    grid-gap: var(--spacing-xs);
   }
 
   .blog .blog-filter {
     display: block;
+    padding: 0;
   }
 
   .blog .input {
@@ -297,19 +304,20 @@ select:focus {
     margin-right: auto;
     margin-top: var(--spacing-xs);
   }
-
-  .blog-card img {
-    height: 16.65rem;
-  }
 }
 
 @media only screen and (max-width: 600px) {
   .blog-grid {
-    padding: 0 var(--spacing-xs);
+    padding: 0;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+
+  .blog-card img {
+    height: auto;
   }
 
   .blog .blog-filter {
-    padding: var(--spacing-xxs) var(--spacing-xs);
+    padding: 0;
     width: auto;
   }
 

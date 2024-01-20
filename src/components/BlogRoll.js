@@ -272,16 +272,36 @@ export default function BlogRoll() {
               }
             }
           }
+          recentPosts: allMarkdownRemark(
+            sort: { order: DESC, fields: [frontmatter___date] }
+            limit: 5
+            filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
+          ) {
+            edges {
+              node {
+                id
+                frontmatter {
+                  title
+                  date(formatString: "MMMM DD, YYYY")
+                }
+              }
+            }
+          }
         }
       `}
       render={(data, count) => {
+        const recentPosts = data.recentPosts.edges.map(edge => edge.node);
+
         const tags = data.allMarkdownRemark.edges
           .map(({ node }) => node.frontmatter.tags)
           .flat()
           .filter((tag) => tag != null);
 
-        return <BlogRollTemplate data={data} count={count} tags={tags} />;
+        return <BlogRollTemplate data={data} count={count} tags={tags} recentPosts={recentPosts}/>;
       }}
     />
   );
 }
+
+
+

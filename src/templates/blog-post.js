@@ -15,21 +15,34 @@ export const BlogPostTemplate = ({
   tags,
   title,
   helmet,
+  recentPosts // Make sure to receive recentPosts as a prop
 }) => {
   const PostContent = contentComponent || Content;
 
   return (
-    <section className="section">
+    <section className="section ">
+      <div className="blog-post-main">
       {helmet || ""}
+          {/* Recent Posts Section */}
+          <aside className="column is-3 blog-post-sidebar">
+          <h2>Recent posts</h2>
+          {recentPosts.map((post) => (
+            <div key={post.id}>
+              <h3>
+                <Link to={post.frontmatter.path}>{post.frontmatter.title}</Link>
+              </h3>
+              <p>{post.frontmatter.date}</p>
+            </div>
+          ))}
+        </aside>
       <div className="container content blog-post">
-        <div className="">
+      
+        <div className="columns">
           <div className="column is-10 is-offset-1">
-            <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
+            <h2 className="title is-size-2 has-text-weight-bold is-bold-light">
               {title}
-            </h1>
-            <p>{description}</p>
-            <PostContent content={content} />
-            {tags && tags.length ? (
+            </h2>
+             {tags && tags.length ? (
               <div style={{ marginTop: `4rem` }}>
                 <h4>Tags</h4>
                 <ul className="taglist">
@@ -41,8 +54,11 @@ export const BlogPostTemplate = ({
                 </ul>
               </div>
             ) : null}
+            <p>{description}</p>
+            <PostContent content={content} />
           </div>
         </div>
+      </div>
       </div>
     </section>
   );
@@ -52,12 +68,16 @@ BlogPostTemplate.propTypes = {
   content: PropTypes.node.isRequired,
   contentComponent: PropTypes.func,
   description: PropTypes.string,
+  tags: PropTypes.array,
   title: PropTypes.string,
   helmet: PropTypes.object,
+  recentPosts: PropTypes.array // Add this to validate recentPosts prop
 };
 
+
+
 const BlogPost = ({ data }) => {
-  const { markdownRemark: post } = data;
+  const { markdownRemark: post, recentPosts } = data;
 
   return (
     <Layout>
@@ -76,10 +96,12 @@ const BlogPost = ({ data }) => {
         }
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
+        recentPosts={recentPosts.edges.map(edge => edge.node)} // Pass recent posts
       />
     </Layout>
   );
 };
+
 
 BlogPost.propTypes = {
   data: PropTypes.shape({
@@ -99,6 +121,22 @@ export const pageQuery = graphql`
         title
         description
         tags
+      }
+    }
+    recentPosts: allMarkdownRemark(
+      sort: { order: DESC, fields: [frontmatter___date] }
+      limit: 5
+      filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
+    ) {
+      edges {
+        node {
+          id
+          frontmatter {
+            title
+            path
+            date(formatString: "MMMM DD, YYYY")
+          }
+        }
       }
     }
   }

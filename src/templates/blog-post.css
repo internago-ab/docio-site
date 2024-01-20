@@ -1,14 +1,15 @@
 .blog-post-main {
   display: flex;
   width: 100%;
+  flex-direction: row-reverse;
 }
 
 .blog-post {
-  padding: var(--spacing-m) var(--spacing-m);
+  padding: var(--spacing-s) var(--spacing-m);
   width: 80%;
 }
 
-.blog-post h1 {
+.blog-post h2 {
   margin-bottom: var(--spacing-xxs);
 }
 
@@ -16,11 +17,11 @@
   margin-right: 8px;
 }
 
-.blog-post img {
+.blog-post .gatsby-resp-image-link {
   max-height: 1000px;
   object-fit: cover;
   width: 100%;
-  margin-top: var(--spacing-xs);
+  margin: var(--spacing-xs) 0;
 }
 
 .blog-post .article-body {
@@ -42,7 +43,7 @@
 .blog-post-sidebar {
   padding: var(--spacing-m) var(--spacing-xs);
   width: 20%;
-  border-left: 3px solid #b1b1b1;
+  border-left: 2px solid var(--green);
 }
 
 .blog-post-sidebar ul {
