@@ -5,6 +5,7 @@ import { Helmet } from "react-helmet";
 import { graphql, Link } from "gatsby";
 import Layout from "../components/Layout";
 import Content, { HTMLContent } from "../components/Content";
+import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 
 import './blog-post.css'
 // eslint-disable-next-line
@@ -21,7 +22,7 @@ export const BlogPostTemplate = ({
 }) => {
   const PostContent = contentComponent || Content;
   {recentPosts.map((post) => (
-    console.log(post.fields)
+    console.log(post)
   ))}
   return (
     <section className="section ">
@@ -30,14 +31,16 @@ export const BlogPostTemplate = ({
           {/* Recent Posts Section */}
           <aside className="blog-post-sidebar">
           <h2>Recent posts</h2>
-          {recentPosts.map((post) => (
-            <div key={post.id}>
-              <h3>
-                <Link to={post.fields.slug}>{post.frontmatter.title}</Link>
-              </h3>
-              <p>{post.frontmatter.date}</p>
-            </div>
-          ))}
+          {recentPosts && Array.isArray(recentPosts) && recentPosts.map((post) => (
+  <div key={post.id || 'fallback-id'}>
+    <h3>
+      <Link to={post.fields.slug || '/'}>{post.frontmatter?.title || 'Untitled'}</Link>
+    </h3>
+    <p>{post.frontmatter?.date || 'No date'}</p>
+  </div>
+))}
+         
+          
            {tags && tags.length ? (
               <div style={{ marginTop: `4rem` }}>
                 <h2>Tags</h2>
@@ -130,50 +133,55 @@ BlogPost.propTypes = {
 export default BlogPost;
 
 export const pageQuery = graphql`
-  query BlogPostByID($id: String!, $previousPostId: String, $nextPostId: String) {
-    markdownRemark(id: { eq: $id }) {
-      id
-      html
-      frontmatter {
-        date(formatString: "MMMM DD, YYYY")
-        title
-        description
-        tags
-      }
+query BlogPostByID($id: String, $previousPostId: String, $nextPostId: String) {
+  markdownRemark(id: {eq: $id}) {
+    id
+    html
+    frontmatter {
+      date(formatString: "MMMM DD, YYYY")
+      title
+      description
+      tags
     }
-    recentPosts: allMarkdownRemark(
-      sort: { order: DESC, fields: [frontmatter___date] }
-      limit: 3
-      filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
-    ) {
-      edges {
-        node {
-          id
-          fields {
-            slug
-          }
-          frontmatter {
-            title
-            date(formatString: "MMMM DD, YYYY")
+  }
+  recentPosts: allMarkdownRemark(
+    sort: {order: DESC, fields: [frontmatter___date]}
+    limit: 3
+    filter: {frontmatter: {templateKey: {eq: "blog-post"}}}
+  ) {
+    edges {
+      node {
+        id
+        fields {
+          slug
+        }
+        frontmatter {
+          title
+          date(formatString: "MMMM DD, YYYY")
+          featuredimage {
+            childrenImageSharp {
+              gatsbyImageData(quality: 100, layout: CONSTRAINED)
+            }
           }
         }
       }
     }
-    previousPost: markdownRemark(id: { eq: $previousPostId }) {
-      fields {
-        slug
-      }
-      frontmatter {
-        title
-      }
+  }
+  previousPost: markdownRemark(id: {eq: $previousPostId}) {
+    fields {
+      slug
     }
-    nextPost: markdownRemark(id: { eq: $nextPostId }) {
-      fields {
-        slug
-      }
-      frontmatter {
-        title
-      }
+    frontmatter {
+      title
     }
   }
+  nextPost: markdownRemark(id: {eq: $nextPostId}) {
+    fields {
+      slug
+    }
+    frontmatter {
+      title
+    }
+  }
+}
 `;
