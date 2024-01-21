@@ -3,7 +3,7 @@ const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
 
 exports.createPages = ({ actions, graphql }) => {
-  const { createPage } = actions
+  const { createPage } = actions;
 
   return graphql(`
     {
@@ -24,19 +24,25 @@ exports.createPages = ({ actions, graphql }) => {
     }
   `).then((result) => {
     if (result.errors) {
-      result.errors.forEach((e) => console.error(e.toString()))
-      return Promise.reject(result.errors)
+      result.errors.forEach((e) => console.error(e.toString()));
+      return Promise.reject(result.errors);
     }
 
-    const posts = result.data.allMarkdownRemark.edges
+    const allPosts = result.data.allMarkdownRemark.edges;
 
-    posts.forEach((edge, index) => {
+    // Separate blog posts for navigation
+    const blogPosts = allPosts.filter(edge => edge.node.frontmatter.templateKey === 'blog-post');
+
+    allPosts.forEach((edge, index) => {
       const id = edge.node.id;
-      // Get the next post (if current post is not the first one)
-      const next = index === 0 ? null : posts[index - 1].node;
-      // Get the previous post (if current post is not the last one)
-      const previous = index === posts.length - 1 ? null : posts[index + 1].node;
-    
+
+      // Filter the previous and next posts to be only from blog posts
+      const nextIndex = blogPosts.findIndex(e => e.node.id === id) - 1;
+      const prevIndex = nextIndex + 2;
+
+      const next = nextIndex >= 0 ? blogPosts[nextIndex].node : null;
+      const previous = prevIndex < blogPosts.length ? blogPosts[prevIndex].node : null;
+
       createPage({
         path: edge.node.fields.slug,
         component: path.resolve(`src/templates/${String(edge.node.frontmatter.templateKey)}.js`),
@@ -52,7 +58,7 @@ exports.createPages = ({ actions, graphql }) => {
     // Tag pages:
     let tags = []
     // Iterate through each post, putting all found tags into `tags`
-    posts.forEach((edge) => {
+    allPosts.forEach((edge) => {
       if (_.get(edge, `node.frontmatter.tags`)) {
         tags = tags.concat(edge.node.frontmatter.tags)
       }

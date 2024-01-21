@@ -8,15 +8,8 @@ export default class BlogIndexPage extends React.Component {
   render() {
     return (
       <Layout>
- 
-          <h1
-            className="has-text-weight-bold is-size-1"
-          >
-            Latest Stories
-          </h1>
-
         <section className="section">
-          <div className="container">
+          <div className="container blog-page">
             <div className="content">
               <BlogRoll />
             </div>

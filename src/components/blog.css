@@ -11,6 +11,10 @@ main .blog {
   margin-bottom: var(--spacing-s);
 }
 
+section .blog-page {
+  margin-top: var(--spacing-l) !important;
+}
+
 .blog .blog-filter {
   justify-content: center;
   display: flex;

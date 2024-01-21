@@ -31,7 +31,7 @@
   --lineHeight-large: 2;
   --lineHeight: 1.6;
   --fontSize-root: 19px;
-  --fontSize-h1: 3rem;
+  --fontSize-h1: 3.3rem;
   --fontSize-h1-responsive: 2.5rem;
   --fontSize-h2: 2.3rem;
   --fontSize-h2-responsive: 1.85rem;
@@ -270,8 +270,8 @@ section.error-page > * {
   background-color: var(--lighter-green);
   display: flex;
   flex-direction: column;
-  padding: var(--spacing-m) var(--spacing-xl);
-  text-align: center;
+  padding: var(--spacing-m) var(--spacing-l);
+  text-align: left;
 }
 
 .section-bg h1 {
@@ -285,7 +285,7 @@ section.error-page > * {
 }
 
 .section-bg p {
-  max-width: 900px;
+  max-width: 60%;
 }
 
 .section-top {

@@ -83,12 +83,12 @@ export const BlogPostTemplate = ({
           <div className="blog-links">
             {previousPost && (
               <Link to={previousPost.fields.slug}>
-                ← {previousPost.frontmatter.title}
+                ← Previous post
               </Link>
             )}
             {nextPost && (
               <Link to={nextPost.fields.slug}>
-                {nextPost.frontmatter.title} →
+                Next post →
               </Link>
             )}
           </div>
