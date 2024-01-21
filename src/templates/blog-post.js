@@ -26,14 +26,15 @@ export const BlogPostTemplate = ({
           {/* Recent Posts Section */}
           <aside className="column is-3 blog-post-sidebar">
           <h2>Recent posts</h2>
-          {/* {recentPosts.map((post) => (
-            <div key={post.id}>
-              <h3>
-                <Link to={post.frontmatter.path}>{post.frontmatter.title}</Link>
-              </h3>
-              <p>{post.frontmatter.date}</p>
-            </div>
-          ))} */}
+          {recentPosts && Array.isArray(recentPosts) && recentPosts.map((post) => (
+  <div key={post.id || 'fallback-id'}>
+    <h3>
+      <Link to={post.frontmatter?.path || '/'}>{post.frontmatter?.title || 'Untitled'}</Link>
+    </h3>
+    <p>{post.frontmatter?.date || 'No date'}</p>
+  </div>
+))}
+
         </aside>
       <div className="container content blog-post">
       
@@ -125,7 +126,7 @@ export const pageQuery = graphql`
     }
     recentPosts: allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date] }
-      limit: 5
+      limit: 4
       filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
     ) {
       edges {

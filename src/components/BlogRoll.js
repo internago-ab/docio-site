@@ -274,7 +274,7 @@ export default function BlogRoll() {
           }
           recentPosts: allMarkdownRemark(
             sort: { order: DESC, fields: [frontmatter___date] }
-            limit: 5
+            limit: 4
             filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
           ) {
             edges {
