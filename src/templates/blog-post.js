@@ -26,14 +26,14 @@ export const BlogPostTemplate = ({
           {/* Recent Posts Section */}
           <aside className="column is-3 blog-post-sidebar">
           <h2>Recent posts</h2>
-          {recentPosts.map((post) => (
+          {/* {recentPosts.map((post) => (
             <div key={post.id}>
               <h3>
                 <Link to={post.frontmatter.path}>{post.frontmatter.title}</Link>
               </h3>
               <p>{post.frontmatter.date}</p>
             </div>
-          ))}
+          ))} */}
         </aside>
       <div className="container content blog-post">
       
