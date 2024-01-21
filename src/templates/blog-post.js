@@ -15,37 +15,32 @@ export const BlogPostTemplate = ({
   tags,
   title,
   helmet,
-  recentPosts // Make sure to receive recentPosts as a prop
+  recentPosts, // Make sure to receive recentPosts as a prop
+  previousPost,  // Add this
+  nextPost
 }) => {
   const PostContent = contentComponent || Content;
-
+  {recentPosts.map((post) => (
+    console.log(post.fields)
+  ))}
   return (
     <section className="section ">
       <div className="blog-post-main">
       {helmet || ""}
           {/* Recent Posts Section */}
-          <aside className="column is-3 blog-post-sidebar">
+          <aside className="blog-post-sidebar">
           <h2>Recent posts</h2>
-          {recentPosts && Array.isArray(recentPosts) && recentPosts.map((post) => (
-  <div key={post.id || 'fallback-id'}>
-    <h3>
-      <Link to={post.frontmatter?.path || '/'}>{post.frontmatter?.title || 'Untitled'}</Link>
-    </h3>
-    <p>{post.frontmatter?.date || 'No date'}</p>
-  </div>
-))}
-
-        </aside>
-      <div className="container content blog-post">
-      
-        <div className="columns">
-          <div className="column is-10 is-offset-1">
-            <h2 className="title is-size-2 has-text-weight-bold is-bold-light">
-              {title}
-            </h2>
-             {tags && tags.length ? (
+          {recentPosts.map((post) => (
+            <div key={post.id}>
+              <h3>
+                <Link to={post.fields.slug}>{post.frontmatter.title}</Link>
+              </h3>
+              <p>{post.frontmatter.date}</p>
+            </div>
+          ))}
+           {tags && tags.length ? (
               <div style={{ marginTop: `4rem` }}>
-                <h4>Tags</h4>
+                <h2>Tags</h2>
                 <ul className="taglist">
                   {tags.map((tag) => (
                     <li key={tag + `tag`}>
@@ -55,10 +50,30 @@ export const BlogPostTemplate = ({
                 </ul>
               </div>
             ) : null}
+        </aside>
+      <div className="container content blog-post">
+      
+        <div className="columns">
+          <div className="column">
+            <h2 className="title">
+              {title}
+            </h2>
             <p>{description}</p>
             <PostContent content={content} />
           </div>
         </div>
+      <div className="blog-links">
+        {previousPost && (
+          <Link to={previousPost.fields.slug}>
+            ← {previousPost.frontmatter.title}
+          </Link>
+        )}
+        {nextPost && (
+          <Link to={nextPost.fields.slug}>
+            {nextPost.frontmatter.title} →
+          </Link>
+        )}
+      </div>
       </div>
       </div>
     </section>
@@ -72,13 +87,13 @@ BlogPostTemplate.propTypes = {
   tags: PropTypes.array,
   title: PropTypes.string,
   helmet: PropTypes.object,
-  recentPosts: PropTypes.array // Add this to validate recentPosts prop
+  recentPosts: PropTypes.array, 
 };
 
 
 
 const BlogPost = ({ data }) => {
-  const { markdownRemark: post, recentPosts } = data;
+  const { markdownRemark: post, recentPosts, previousPost, nextPost } = data;
 
   return (
     <Layout>
@@ -98,6 +113,8 @@ const BlogPost = ({ data }) => {
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
         recentPosts={recentPosts.edges.map(edge => edge.node)} // Pass recent posts
+        previousPost={previousPost} 
+        nextPost={nextPost} 
       />
     </Layout>
   );
@@ -113,7 +130,7 @@ BlogPost.propTypes = {
 export default BlogPost;
 
 export const pageQuery = graphql`
-  query BlogPostByID($id: String!) {
+  query BlogPostByID($id: String!, $previousPostId: String, $nextPostId: String) {
     markdownRemark(id: { eq: $id }) {
       id
       html
@@ -126,18 +143,36 @@ export const pageQuery = graphql`
     }
     recentPosts: allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date] }
-      limit: 4
+      limit: 3
       filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
     ) {
       edges {
         node {
           id
+          fields {
+            slug
+          }
           frontmatter {
             title
-            path
             date(formatString: "MMMM DD, YYYY")
           }
         }
+      }
+    }
+    previousPost: markdownRemark(id: { eq: $previousPostId }) {
+      fields {
+        slug
+      }
+      frontmatter {
+        title
+      }
+    }
+    nextPost: markdownRemark(id: { eq: $nextPostId }) {
+      fields {
+        slug
+      }
+      frontmatter {
+        title
       }
     }
   }

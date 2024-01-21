@@ -7,7 +7,7 @@ exports.createPages = ({ actions, graphql }) => {
 
   return graphql(`
     {
-      allMarkdownRemark(limit: 1000) {
+      allMarkdownRemark(limit: 1000, sort: { fields: [frontmatter___date], order: DESC }) {
         edges {
           node {
             id
@@ -30,20 +30,24 @@ exports.createPages = ({ actions, graphql }) => {
 
     const posts = result.data.allMarkdownRemark.edges
 
-    posts.forEach((edge) => {
-      const id = edge.node.id
+    posts.forEach((edge, index) => {
+      const id = edge.node.id;
+      // Get the next post (if current post is not the first one)
+      const next = index === 0 ? null : posts[index - 1].node;
+      // Get the previous post (if current post is not the last one)
+      const previous = index === posts.length - 1 ? null : posts[index + 1].node;
+    
       createPage({
         path: edge.node.fields.slug,
-        tags: edge.node.frontmatter.tags,
-        component: path.resolve(
-          `src/templates/${String(edge.node.frontmatter.templateKey)}.js`
-        ),
-        // additional data can be passed via context
+        component: path.resolve(`src/templates/${String(edge.node.frontmatter.templateKey)}.js`),
         context: {
           id,
+          previousPostId: previous ? previous.id : null,
+          nextPostId: next ? next.id : null,
         },
-      })
-    })
+      });
+    });
+       
 
     // Tag pages:
     let tags = []
