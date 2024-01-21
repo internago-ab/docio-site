@@ -291,7 +291,6 @@ export default function BlogRoll() {
       `}
       render={(data, count) => {
         const recentPosts = data.recentPosts.edges.map(edge => edge.node);
-
         const tags = data.allMarkdownRemark.edges
           .map(({ node }) => node.frontmatter.tags)
           .flat()

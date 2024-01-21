@@ -21,15 +21,13 @@ export const BlogPostTemplate = ({
   nextPost
 }) => {
   const PostContent = contentComponent || Content;
-  {recentPosts.map((post) => (
-    console.log(post)
-  ))}
+
   return (
     <section className="section ">
       <div className="blog-post-main">
       {helmet || ""}
           {/* Recent Posts Section */}
-          <aside className="blog-post-sidebar">
+          {/* <aside className="blog-post-sidebar">
           <h2>Recent posts</h2>
           {recentPosts && Array.isArray(recentPosts) && recentPosts.map((post) => (
   <div key={post.id || 'fallback-id'}>
@@ -37,6 +35,22 @@ export const BlogPostTemplate = ({
       <Link to={post.fields.slug || '/'}>{post.frontmatter?.title || 'Untitled'}</Link>
     </h3>
     <p>{post.frontmatter?.date || 'No date'}</p>
+    {post?.frontmatter?.featuredimage && (
+                        <div className="featured-thumbnail">
+                          <PreviewCompatibleImage
+                            imageInfo={{
+                              image: post.frontmatter.featuredimage,
+                              alt: `featured image thumbnail for post ${post.frontmatter.title}`,
+                              width:
+                                post.frontmatter.featuredimage.childImageSharp
+                                  .gatsbyImageData.width,
+                              height:
+                                post.frontmatter.featuredimage.childImageSharp
+                                  .gatsbyImageData.height,
+                            }}
+                          />
+                        </div>
+                      )}
   </div>
 ))}
          
@@ -53,7 +67,7 @@ export const BlogPostTemplate = ({
                 </ul>
               </div>
             ) : null}
-        </aside>
+        </aside> */}
       <div className="container content blog-post">
       
         <div className="columns">
@@ -159,7 +173,7 @@ query BlogPostByID($id: String, $previousPostId: String, $nextPostId: String) {
           title
           date(formatString: "MMMM DD, YYYY")
           featuredimage {
-            childrenImageSharp {
+            childImageSharp {
               gatsbyImageData(quality: 100, layout: CONSTRAINED)
             }
           }

@@ -70,6 +70,10 @@
   margin-bottom: var(--spacing-xxs);
 }
 
+.blog-post-sidebar div .gatsby-image-wrapper {
+  height: 9em;
+}
+
 .blog-post-sidebar ul {
   list-style-type: none;
 }
