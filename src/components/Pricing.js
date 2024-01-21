@@ -1,21 +1,31 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 
 const Pricing = ({ categories }) => {
-  const [selectedCategory, setSelectedCategory] = useState(categories[0].categoryName);
+  // Initialize selectedCategory with a default value
+  const [selectedCategory, setSelectedCategory] = useState("");
+
+  useEffect(() => {
+    // Set the initial selected category once categories are loaded
+    if (categories && categories.length > 0) {
+      setSelectedCategory(categories[0].categoryName);
+    }
+  }, [categories]);
 
   const filterPlans = (categoryName) => {
     setSelectedCategory(categoryName);
   };
 
-  const displayedPlans = categories.find(
-    (category) => category.categoryName === selectedCategory
-  ).plans;
+  const displayedPlans = categories && selectedCategory
+    ? categories.find(
+        (category) => category.categoryName === selectedCategory
+      )?.plans || []
+    : [];
 
   return (
     <div>
       <div className="prices-buttons">
-      {categories.map((category, index) => (
+        {categories && categories.map((category, index) => (
           <button
             key={category.categoryName}
             onClick={() => filterPlans(category.categoryName)}
@@ -33,8 +43,8 @@ const Pricing = ({ categories }) => {
               <h3 className="">{plan.plan}</h3>
               <p className="prices-paragraph">{plan.description}</p>
               <div className="price-plan">
-              <p>{plan.priceDescription}</p>
-              <h2 className="price-main">{plan.price}</h2>
+                <p>{plan.priceDescription}</p>
+                <h2 className="price-main">{plan.price}</h2>
               </div>
             </section>
           </div>
