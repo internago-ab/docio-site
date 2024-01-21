@@ -3,7 +3,11 @@ templateKey: "product-page"
 path: /products
 title: Our Coffee
 image: /img/meeting.jpg
-heading: Great coffee with a conscience
+heading: For all your payroll needs
+subheading: Manage your payroll on multiple international markets with one
+  online interface.
+href: /payroll
+button: See all powerful features
 description: >-
   Kaldi is the ultimate spot for coffee lovers who want to learn about their
   java’s origin and support the farmers that grew it. We take coffee production,
@@ -71,31 +75,34 @@ testimonials:
       stance on empowering farmers and transparency.
 full_image: /img/meeting.jpg
 pricing:
-  heading: Monthly subscriptions
+  heading: Lorem ipsum dolor sit amet
   description: >-
-    We make it easy to make great coffee a part of your life. Choose one of our
-    monthly subscription plans to receive great coffee at your doorstep each
-    month. Contact us about more details and payment info.
-  plans:
-    - description: Perfect for the drinker who likes to enjoy 1-2 cups per day.
-      items:
-        - 3 lbs of coffee per month
-        - Green or roasted beans"
-        - One or two varieties of beans"
-      plan: Small
-      price: "50"
-    - description: "Great for avid drinkers, java-loving couples and bigger crowds"
-      items:
-        - 6 lbs of coffee per month
-        - Green or roasted beans
-        - Up to 4 different varieties of beans
-      plan: Big
-      price: "80"
-    - description: Want a few tiny batches from different varieties? Try our custom plan
-      items:
-        - Whatever you need
-        - Green or roasted beans
-        - Unlimited varieties
-      plan: Custom
-      price: "??"
+    Lorem ipsum dolor sit amet. Aut voluptate deserunt ex officiis eligendi non perferendis quis sed quia autem quo dolorem odit. 33 odit asperiores non quis omnis sit eaque quod
+  categories:
+    - categoryName: "Micro business"
+      plans:
+        - description: Aut voluptate deserunt ex officiis eligendi
+          priceDescription: Price per employee and per month
+          plan: Lorem ipsum
+          price: "$50"
+        - description: Another plan description
+          priceDescription: Price per employee and per month
+          plan: Another Plan
+          price: "$70"
+        - description: 33 odit asperiores non quis omnis sit eaque quod
+          priceDescription: Price per employee and per month
+          plan: Lorem ipsum
+          price: "$50"
+    - categoryName: "SME"
+      plans:
+        - description: Ut enim ad minim veniam
+          priceDescription: Price per employee and per month
+          plan: Aut voluptate deserunt
+          price: "$100"
+    - categoryName: "Large corporation"
+      plans:
+        - description: ex ea commodo consequat
+          priceDescription: Price per employee and per month
+          plan: Custom
+          price: "$200"
 ---
