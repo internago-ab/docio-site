@@ -6,6 +6,10 @@
   height: 60vh;
 }
 
+.hero.hero-product .heading {
+  padding: 0;
+}
+
 .prices-description {
   max-width: 55%;
   margin-top: var(--spacing-xxs);

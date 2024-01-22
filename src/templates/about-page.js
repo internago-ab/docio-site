@@ -21,7 +21,9 @@ export const AboutPageTemplate = ({
 }) => {
   const PageContent = contentComponent || Content;
   const fullWidthImage = getImage(fullImage) || fullImage;
-
+  const imageSrc = fullImage && fullImage.childImageSharp 
+  ? fullImage.childImageSharp.gatsbyImageData 
+  : fullImage;
   return (
     <>
       <div className="section-bg">
@@ -35,7 +37,7 @@ export const AboutPageTemplate = ({
         <section className="section">
           <Testimonials testimonials={testimonials} />
         </section>
-        <FullWidthImage img={fullWidthImage} imgPosition={"bottom"} />
+        <FullWidthImage img={imageSrc} imgPosition={"bottom"} />
       </section>
     </>
   );
