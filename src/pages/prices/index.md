@@ -1,11 +1,10 @@
 ---
 templateKey: "product-page"
-path: /products
-title: Our Coffee
+path: /prices
+title: Lorem ipsum dolor
 image: /img/meeting.jpg
-heading: For all your payroll needs
-subheading: Manage your payroll on multiple international markets with one
-  online interface.
+heading: Aut voluptate deserunt ex officiis
+subheading: Lorem ipsum dolor sit amet. Aut voluptate deserunt ex officiis eligendi non perferendis quis sed quia autem quo dolorem odit.
 href: /payroll
 button: See all powerful features
 description: >-
