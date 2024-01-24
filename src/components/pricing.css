@@ -42,7 +42,7 @@
 .prices-buttons button.is-primary::after {
   content: "";
   position: absolute;
-  top: 100%;
+  top: 99%;
   left: 50%;
   border: solid transparent;
   border-top-color: var(--green);
@@ -111,4 +111,52 @@
   background: var(--lighter-green);
   color: var(--dark-grey);
   padding: 8px;
+}
+
+@media only screen and (max-width: 1200px) {
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xs);
+  }
+
+  .pricing-card {
+    width: auto;
+    margin-right: 0;
+    gap: var(--spacing-xs);
+  }
+
+  .prices-description {
+    max-width: 75%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .price-plan p {
+    width: 60%;
+  }
+
+  .pricing-card {
+    height: auto;
+  }
+  .prices-description {
+    max-width: 100%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .prices-buttons {
+    padding: var(--spacing-xxs) var(--spacing-s) 0 var(--spacing-s);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .prices-buttons button {
+    margin-top: 0;
+    margin-bottom: var(--spacing-xxs);
+  }
 }

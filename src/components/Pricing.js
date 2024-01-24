@@ -39,14 +39,14 @@ const Pricing = ({ categories }) => {
       <div className="pricing-grid">
         {displayedPlans.map((plan, index) => (
           <div key={index} className="pricing-card">
-            <section className="section">
+            <div>
               <h3 className="">{plan.plan}</h3>
               <p className="prices-paragraph">{plan.description}</p>
               <div className="price-plan">
                 <p>{plan.priceDescription}</p>
                 <h2 className="price-main">{plan.price}</h2>
               </div>
-            </section>
+            </div>
           </div>
         ))}
       </div>

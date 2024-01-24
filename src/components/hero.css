@@ -138,3 +138,9 @@ main .small .small .bg-img .small img {
     max-width: 500px;
   }
 }
+
+@media only screen and (max-width: 600px) {
+  .hero .hero-content .paragraph {
+    font-size: var(--fontSize-p-m);
+  }
+}

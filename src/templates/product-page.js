@@ -36,7 +36,7 @@ export const ProductPageTemplate = ({
       </div>
       <section className="section section--gradient">
         <div className="container">
-          <div className="section">
+          <div className="">
             <div className="columns">
               <div className="prices">
                 <h2 className="has-text-weight-semibold is-size-2">
