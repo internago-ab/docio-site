@@ -185,8 +185,9 @@ collections:
           - { label: Title, name: title, widget: string }
           - { label: Image, name: image, widget: image }
           - { label: Heading, name: heading, widget: string }
-          - { label: Description, name: description, widget: string }
+          - { label: Subheading, name: subheading, widget: string }
           - { label: Button, name: button, widget: string }
+          - { label: Link, name: link, widget: string }
           - {
               label: Pricing,
               name: pricing,

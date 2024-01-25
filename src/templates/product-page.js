@@ -101,7 +101,6 @@ export const productPageQuery = graphql`
         heading
         title
         subheading
-        description
         href
         button
         image {

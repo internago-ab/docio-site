@@ -7,11 +7,6 @@ heading: Aut voluptate deserunt ex officiis
 subheading: Lorem ipsum dolor sit amet. Aut voluptate deserunt ex officiis eligendi non perferendis quis sed quia autem quo dolorem odit.
 href: /payroll
 button: See all powerful features
-description: >-
-  Kaldi is the ultimate spot for coffee lovers who want to learn about their
-  java’s origin and support the farmers that grew it. We take coffee production,
-  roasting and brewing seriously and we’re glad to pass that knowledge to
-  anyone.
 intro:
   heading: What we offer
   description: >
