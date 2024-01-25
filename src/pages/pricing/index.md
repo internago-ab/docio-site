@@ -1,6 +1,6 @@
 ---
 templateKey: "product-page"
-path: /prices
+path: /pricing
 title: Lorem ipsum dolor
 image: /img/meeting.jpg
 heading: Aut voluptate deserunt ex officiis

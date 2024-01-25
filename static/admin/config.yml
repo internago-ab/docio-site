@@ -172,9 +172,9 @@ collections:
             }
           - { label: Full_image, name: full_image, widget: image }
 
-      - file: "src/pages/prices/index.md"
-        label: "Prices Page"
-        name: "prices"
+      - file: "src/pages/pricing/index.md"
+        label: "Pricing Page"
+        name: "pricing"
         fields:
           - {
               label: "Template Key",
