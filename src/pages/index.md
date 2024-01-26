@@ -1,6 +1,6 @@
 ---
 templateKey: index-page
-title: Docio - your international <br>all-in-one payroll and HR portal.
+title: Docio - your international <br>all-in-one payroll and HR portal
 image: /img/meeting.jpg
 heading: For all your payroll needs
 subheading: Manage your payroll on multiple international markets with one
@@ -66,8 +66,7 @@ mainpitch:
   link: /payroll
 blocks:
   blocksHeading: Six reasons to go with Docio
-  blocksDescription:
-    <strong> International payroll can be challenging, but it is
+  blocksDescription: <strong> International payroll can be challenging, but it is
     important and has to be done.</strong><br></br> And we have the perfect tool
     to help you with payroll and a variety of other HR tasks. You can
     efficiently store and manage employee and payroll data in one place,
@@ -104,9 +103,11 @@ blocks:
     - title: Access 24/7
       link: /payroll
       text: >
-        Access your payroll data and employee data at any time and from anywhere thanks to our mobile device login and real time notifications.
+        Access your payroll data and employee data at any time and from anywhere
+        thanks to our mobile device login and real time notifications.
 lists:
-  listsHeading: Manage your payroll across multiple international markets with one online interface.
+  listsHeading: Manage your payroll across multiple international markets with one
+    online interface.
   listsDescription: Payroll portal
   listItem:
     - text: Gross up calculations
