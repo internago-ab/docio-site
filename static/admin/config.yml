@@ -266,7 +266,7 @@ collections:
                           name: categoryName,
                           widget: string,
                         },
-                        { label: Country Name, name: countryName, widget: string }
+                        { label: Country Name, name: countryName, widget: string },
                         {
                           label: Questions,
                           name: questions,
