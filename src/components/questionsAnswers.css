@@ -1,0 +1,153 @@
+.questions_answers-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: var(--spacing-s);
+  }  
+
+  .questions_answers-content .filter-tags {
+    display: flex;
+    flex-direction: column;
+}
+
+.questions_answers-content .filter-tags button {
+    margin-right: var(--spacing-xs);
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-top: 8px;
+    background-color: transparent;
+    border: none;
+    color: var(--black);
+    text-align: left;
+    font-size: var(--fontSize-p-s);
+    width: max-content;
+    text-decoration: underline;
+    white-space: pre;
+    margin-top: var(--spacing-xxs);
+  }
+
+  .questions_answers-card .qa-btn{
+    background-color: var(--white);
+    border: none;
+    font-size: var(--fontSize-p);
+    margin-right: 5px;
+    font-weight: var(--fontWeight-bold);
+    padding: var(--spacing-xxs) 0;
+    width: -webkit-fill-available;
+    text-align: left;
+    font-family: var(--font);
+}
+
+.qa-btn span {
+    color: var(--green);
+    font-size: var(--fontSize-h3);
+    margin-right: var(--spacing-xxs);
+    font-weight: 500;
+
+}
+
+.questions_answers_tab{
+    padding:0 var(--spacing-xs) var(--spacing-xs) ;
+}
+
+.questions_answers-grid{
+    width: -webkit-fill-available;  
+}
+.questions_answers-grid .text{
+    box-shadow: 2px 2px 10px rgba(0,0,0,.08);
+    padding: var(--spacing-xxs) var(--spacing-xs);
+}
+
+.pricing-grid {
+  display: flex;
+  align-items: flex-start;
+}
+
+.pricing-card.collapsed {
+    height: auto;
+    overflow: hidden;
+  }
+  
+  .pricing-card.expanded {
+    height: auto; /* Adjust as needed */
+  }
+
+.questions_answers-card {
+    padding: 0;
+  box-sizing: content-box;
+  border-top: 1.5px solid var(--light-grey);
+  position: relative;
+  gap: var(--spacing-xxs);
+}
+
+.text :first-child {
+    border-top: 0 !important;
+  }
+
+
+.filter-tags button.is-selected{
+    color: var(--green);
+}
+
+.country-buttons-header{
+    margin-top: var(--spacing-xs);
+}
+
+.price-plan {
+  display: flex;
+  padding-top: var(--spacing-xxs);
+  justify-content: space-between;
+}
+
+.price-plan p {
+  font-size: var(--fontSize-p-xs);
+  width: 50%;
+}
+
+@media only screen and (max-width: 1200px) {
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xs);
+  }
+
+  .pricing-card {
+    width: auto;
+    margin-right: 0;
+    gap: var(--spacing-xs);
+  }
+
+  .prices-description {
+    max-width: 75%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .price-plan p {
+    width: 60%;
+  }
+
+  .pricing-card {
+    height: auto;
+  }
+  .prices-description {
+    max-width: 100%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .prices-buttons {
+    padding: var(--spacing-xxs) var(--spacing-s) 0 var(--spacing-s);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .prices-buttons button {
+    margin-top: 0;
+    margin-bottom: var(--spacing-xxs);
+  }
+}

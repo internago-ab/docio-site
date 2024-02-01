@@ -264,9 +264,9 @@ collections:
                         {
                           label: Category Name,
                           name: categoryName,
-                          widget: string,
+                          widget: list,
                         },
-                        { label: Country Name, name: countryName, widget: string },
+                        { label: Country Name, name: countryName, widget: list },
                         {
                           label: Questions,
                           name: questions,
@@ -275,8 +275,8 @@ collections:
                             [
                               { label: Answer, name: answer, widget: string },
                               {
-                                label: priceDescription,
-                                name: priceDescription,
+                                label: sub header,
+                                name: subHeader,
                                 widget: string,
                               },
                               {

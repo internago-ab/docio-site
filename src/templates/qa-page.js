@@ -6,7 +6,7 @@ import Layout from "../components/Layout";
 import QuestionsAnswers from "../components/QuestionsAnswers";
 import FullWidthImage from "../components/FullWidthImage";
 
-import "../../src/components/pricing.css";
+import "../../src/components/questionsAnswers.css";
 
 // eslint-disable-next-line
 export const QaPageTemplate = ({
@@ -112,10 +112,10 @@ export const productPageQuery = graphql`
           heading
           description
           categories {
-            categoryName
-            countryName
+            categoryNames
+            countryNames
             questions {
-              priceDescription
+              subHeader
               description
               answer
             }

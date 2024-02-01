@@ -19,28 +19,28 @@ qa:
   description: >-
     Lorem ipsum dolor sit amet. Aut voluptate deserunt ex officiis eligendi non perferendis quis sed quia autem quo dolorem odit. 33 odit asperiores non quis omnis sit eaque quod
   categories:
-    - categoryName: "Micro business"
-      countryName: "Country A"
+    - categoryNames: ["Micro business", "test"]
+      countryNames: ["Country A"]
       questions:
-        - description: Aut voluptate deserunt ex officiis eligendi
-          priceDescription: Price per employee and per month
-          answer: Lorem ipsum
-        - description: Another answer description
-          priceDescription: Price per employee and per month
-          answer: Another answer
-        - description: 33 odit asperiores non quis omnis sit eaque quod
-          priceDescription: Price per employee and per month
-          answer: Lorem ipsum
-    - categoryName: "SME"
-      countryName: "Country B"
+        - description: "Aut voluptate deserunt ex officiis eligendi"
+          subHeader: "Price per employee and per month"
+          answer: "Lorem ipsum"
+        - description: "Another answer description"
+          subHeader: "Price per employee and per month"
+          answer: "Another answer"
+        - description: "33 odit asperiores non quis omnis sit eaque quod"
+          subHeader: "Price per employee and per month"
+          answer: "Lorem ipsum"
+    - categoryNames: ["SME"]
+      countryNames: ["Country B"]
       questions:
-        - description: Ut enim ad minim veniam
-          priceDescription: Price per employee and per month
-          answer: Aut voluptate deserunt
-    - categoryName: "Large corporation"
-      countryName: "Country C"
+        - description: "Ut enim ad minim veniam"
+          subHeader: "Price per employee and per month"
+          answer: "Aut voluptate deserunt"
+    - categoryNames: ["Large corporation"]
+      countryNames: ["Country C"]
       questions:
-        - description: ex ea commodo consequat
-          priceDescription: Price per employee and per month
-          answer: Custom
+        - description: "ex ea commodo consequat"
+          subHeader: "Price per employee and per month"
+          answer: "Custom"
 ---

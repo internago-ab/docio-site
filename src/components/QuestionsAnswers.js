@@ -6,38 +6,41 @@ const QuestionsAnswers = ({ categories }) => {
   const [selectedCountry, setSelectedCountry] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
   const [displayedPlans, setDisplayedPlans] = useState([]);
+  const [activeIndex, setActiveIndex] = useState(null);
 
+  const toggleVisibility = (index) => {
+    setActiveIndex(activeIndex === index ? null : index);
+  };
   useEffect(() => {
     // Initialize displayedPlans with all questions
     const allQuestions = categories.flatMap(category =>
       category.questions.map(question => ({
         ...question,
-        categoryName: category.categoryName,
-        countryName: category.countryName
+        categoryNames: category.categoryNames, // Assuming these are arrays
+        countryNames: category.countryNames   // Assuming these are arrays
       }))
     );
     setDisplayedPlans(allQuestions);
   }, [categories]);
 
   useEffect(() => {
-    // Apply filters
-    let filtered = [...categories.flatMap(category =>
+    // Filter displayedPlans based on selectedCategory and selectedCountry
+    let filtered = categories.flatMap(category =>
       category.questions.map(question => ({
         ...question,
-        categoryName: category.categoryName,
-        countryName: category.countryName
+        categoryNames: category.categoryNames,
+        countryNames: category.countryNames
       }))
-    )];
+    );
 
     if (selectedCategory) {
-      filtered = filtered.filter(question => question.categoryName === selectedCategory);
+      filtered = filtered.filter(question => question.categoryNames.includes(selectedCategory));
     }
 
     if (selectedCountry) {
-      filtered = filtered.filter(question => question.countryName === selectedCountry);
+      filtered = filtered.filter(question => question.countryNames.includes(selectedCountry));
     }
 
-    // Apply search query filter
     if (searchQuery) {
       filtered = filtered.filter(question =>
         question.answer.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -46,8 +49,12 @@ const QuestionsAnswers = ({ categories }) => {
     }
 
     setDisplayedPlans(filtered);
-  }, [selectedCategory, selectedCountry, categories, searchQuery]);
+  }, [selectedCategory, selectedCountry, searchQuery, categories]); // Removed displayedPlans from dependencies
 
+  const uniqueCategoryNames = Array.from(new Set(categories.flatMap(category => category.categoryNames).filter(Boolean)));
+  const uniqueCountryNames = Array.from(new Set(categories.flatMap(category => category.countryNames).filter(Boolean)));
+
+  
   const handleCategoryChange = (categoryName) => {
     setSelectedCategory(categoryName);
     setSelectedCountry(""); // Reset country filter when changing category
@@ -62,6 +69,7 @@ const QuestionsAnswers = ({ categories }) => {
     setSearchQuery(event.target.value);
   };
 
+
   return (
     <div>
       {/* Search Bar */}
@@ -73,47 +81,55 @@ const QuestionsAnswers = ({ categories }) => {
           onChange={handleSearchChange}
         />
       </div>
-
-      {/* Category Buttons */}
-      <div className="category-buttons">
-        {categories.map((category) => (
+      <div className="questions_answers-content">
+        <div>
+      <h3>Categories:</h3>
+      <div className="category-buttons filter-tags">
+        {uniqueCategoryNames.map((categoryName) => (
           <button
-            key={category.categoryName}
-            onClick={() => handleCategoryChange(category.categoryName)}
-            className={`button ${selectedCategory === category.categoryName ? "is-primary" : ""}`}
+            key={categoryName}
+            onClick={() => handleCategoryChange(categoryName)}
+            className={`button ${selectedCategory === categoryName ? "is-selected" : ""}`}
           >
-            {category.categoryName}
+            {categoryName}
           </button>
         ))}
       </div>
 
-      {/* Country Buttons */}
-      <div className="country-buttons">
-        {Array.from(new Set(categories.map(category => category.countryName))).map((country) => (
+      <h3 className="country-buttons-header">Countries</h3>
+      <div className="country-buttons filter-tags">
+        {uniqueCountryNames.map((countryName) => (
           <button
-            key={country}
-            onClick={() => handleCountryChange(country)}
-            className={`button ${selectedCountry === country ? "is-primary" : ""}`}
+            key={countryName}
+            onClick={() => handleCountryChange(countryName)}
+            className={`button ${selectedCountry === countryName ? "is-selected" : ""}`}
           >
-            {country}
+            {countryName}
           </button>
         ))}
       </div>
-
-      {/* Displayed Plans */}
-      <div className="pricing-grid">
-        {displayedPlans.map((plan, index) => (
-          <div key={index} className="pricing-card">
-            <div>
-              <h3>{plan.answer}</h3>
-              <p className="prices-paragraph">{plan.description}</p>
-              <div className="price-answer">
-                <p>{plan.priceDescription}</p>
-                <h2 className="price-main">{plan.price}</h2>
-              </div>
-            </div>
+      </div>
+      <div className="questions_answers-grid">
+      <div className="text">
+  {displayedPlans.map((plan, index) => (
+    <div key={index} className={` questions_answers-card ${activeIndex === index ? 'expanded' : 'collapsed'}`}>
+      <button className="qa-btn" onClick={() => toggleVisibility(index)}>
+        <span>{activeIndex === index ? '-' : '+'}</span>
+        {plan.answer}
+      </button>
+      {activeIndex === index && (
+        <div className="questions_answers_tab">
+          <p className="prices-paragraph">{plan.description}</p>
+          <div className="price-answer">
+            <p>{plan.subHeader}</p>
           </div>
-        ))}
+        </div>
+      )}
+    </div>
+  ))}
+</div>
+
+      </div>
       </div>
     </div>
   );
@@ -122,14 +138,13 @@ const QuestionsAnswers = ({ categories }) => {
 QuestionsAnswers.propTypes = {
   categories: PropTypes.arrayOf(
     PropTypes.shape({
-      categoryName: PropTypes.string,
-      countryName: PropTypes.string,
+      categoryName: PropTypes.arrayOf(PropTypes.string),
+      countryName: PropTypes.arrayOf(PropTypes.string),
       questions: PropTypes.arrayOf(
         PropTypes.shape({
           answer: PropTypes.string,
-          price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
           description: PropTypes.string,
-          priceDescription: PropTypes.string,
+          subHeader: PropTypes.string,
         }),
       ),
     }),
