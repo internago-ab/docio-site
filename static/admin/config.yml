@@ -263,10 +263,10 @@ collections:
                       [
                         {
                           label: Category Name,
-                          name: categoryName,
+                          name: categoryNames,
                           widget: list,
                         },
-                        { label: Country Name, name: countryName, widget: list },
+                        { label: Country Name, name: countryNames, widget: list },
                         {
                           label: Questions,
                           name: questions,
