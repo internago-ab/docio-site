@@ -11,7 +11,6 @@
 }
 
 .questions_answers-content .filter-tags button {
-    margin-right: var(--spacing-xs);
     border-radius: 5px;
     box-sizing: border-box;
     margin-top: 8px;
@@ -84,13 +83,32 @@
     border-top: 0 !important;
   }
 
+  .categories-filter, .countries-filter{
+    margin-right: var(--spacing-xs);
+    box-shadow: 2px 2px 10px rgba(0,0,0,.08);
+    padding: var(--spacing-xs);
+  }
 
+.questions_answers_paragraph{
+    font-weight: var(--fontWeight-semibold);
+}
+
+.countries-filter{
+    margin-top: var(--spacing-xs);
+}
 .filter-tags button.is-selected{
     color: var(--green);
 }
 
-.country-buttons-header{
-    margin-top: var(--spacing-xs);
+
+.search-bar input{
+    background: var(--white);
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px rgba(0,0,0,.08);
+    margin-bottom: var(--spacing-xs);
+    max-width: 500px;
+    padding: var(--spacing-xxs) var(--spacing-xs);  
+    border: 1.5px solid var(--green);
 }
 
 .price-plan {
