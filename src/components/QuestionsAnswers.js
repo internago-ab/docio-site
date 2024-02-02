@@ -116,8 +116,9 @@ const QuestionsAnswers = ({ categories }) => {
             </div>
           </div>
         </div>
-        <div className="questions_answers-grid">
-          {/* Search Bar */}
+
+         
+          <div className="questions_answers-grid">
           <div className="search-bar">
             <input
               type="text"
@@ -126,32 +127,35 @@ const QuestionsAnswers = ({ categories }) => {
               onChange={handleSearchChange}
             />
           </div>
-          <div className="text">
-            {displayedPlans.map((plan, index) => (
-              <div
-                key={index}
-                className={` questions_answers-card ${activeIndex === index ? "expanded" : "collapsed"}`}
+          {displayedPlans.map((plan, index) => (
+            <div
+              key={index}
+              className={`questions_answers-card ${activeIndex === index ? "expanded" : "collapsed"}`}
+            >
+              <button
+                className="qa-btn"
+                onClick={() => toggleVisibility(index)}
               >
-                <button
-                  className="qa-btn"
-                  onClick={() => toggleVisibility(index)}
-                >
-                  <span>{activeIndex === index ? "-" : "+"}</span>
-                  {plan.answer}
-                </button>
-                {activeIndex === index && (
-                  <div className="questions_answers_tab">
-                    <p className="questions_answers_paragraph">
-                      {plan.description}
-                    </p>
-                    <div className="price-answer">
-                      <p>{plan.subHeader}</p>
-                    </div>
+                <span>{activeIndex === index ? "-" : "+"}</span>
+                {plan.answer}
+              </button>
+              {activeIndex === index && (
+                <div className="questions_answers_tab">
+                  {/* Displaying category and country information */}
+                  <div className="category-country-info">
+                    <strong>Category:</strong> {plan.categoryNames.join(', ')} <br />
+                    <strong>Country:</strong> {plan.countryNames.join(', ')}
                   </div>
-                )}
-              </div>
-            ))}
-          </div>
+                  <p className="questions_answers_paragraph">
+                    {plan.description}
+                  </p>
+                  <div className="price-answer">
+                    <p>{plan.subHeader}</p>
+                  </div>
+                </div>
+              )}
+            </div>
+          ))}
         </div>
       </div>
     </div>

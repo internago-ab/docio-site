@@ -233,7 +233,7 @@ collections:
             }
       - file: "src/pages/qa/index.md"
         label: "Questions and Answers Page"
-        name: "Questions and Answers"
+        name: "qa"
         fields:
           - {
               label: "Template Key",
