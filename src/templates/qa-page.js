@@ -64,7 +64,7 @@ QaPageTemplate.propTypes = {
   }),
 };
 
-const ProductPage = ({ data }) => {
+const QaPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
 
   return (
@@ -83,7 +83,7 @@ const ProductPage = ({ data }) => {
   );
 };
 
-ProductPage.propTypes = {
+QaPage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
       frontmatter: PropTypes.object,
@@ -91,10 +91,10 @@ ProductPage.propTypes = {
   }),
 };
 
-export default ProductPage;
+export default QaPage;
 
-export const productPageQuery = graphql`
-  query ProductPage($id: String!) {
+export const QaPageQuery = graphql`
+  query QaPage($id: String!) {
     markdownRemark(id: { eq: $id }) {
       frontmatter {
         heading
