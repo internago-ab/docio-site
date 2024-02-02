@@ -8,7 +8,6 @@ import FullWidthImage from "../components/FullWidthImage";
 
 import "../../src/components/questionsAnswers.css";
 
-// eslint-disable-next-line
 export const QaPageTemplate = ({
   image,
   title,
