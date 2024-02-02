@@ -116,7 +116,6 @@ const QuestionsAnswers = ({ categories }) => {
             </div>
           </div>
         </div>
-
          
           <div className="questions_answers-grid">
           <div className="search-bar">
