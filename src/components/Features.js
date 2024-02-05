@@ -8,7 +8,7 @@ function FeatureGrid({ gridItems }) {
     <div>
       {gridItems.map((item, index) => (
         <section className={`section ${item.bgColor}`} key={index}>
-          <div className={`bg-text-image ${item.reverse}`}>
+          <div className={`bg-text-image ${item.reverse ? "reverse" : ""}`}>
             <div className="text-container bg-text-white">
               <h2>{item.title}</h2>
               <p
@@ -18,22 +18,26 @@ function FeatureGrid({ gridItems }) {
               <div className="link-arrow-black">
                 {item.button && (
                   <a href={item.link}>
-                    {item.button} <img alt="arrow icon" src={arrow} />
+                    {item.button} <img alt="Arrow icon" src={arrow} />
                   </a>
                 )}
               </div>
             </div>
             <div className="image-container">
-              <PreviewCompatibleImage
-                imageInfo={item}
-                alt=""
-                className="img-imagetext"
-                style={
-                  item.reverse
-                    ? { marginRight: "var(--spacing-s)" }
-                    : { marginLeft: "var(--spacing-s)" }
-                }
-              />
+              {item.image && (
+                <PreviewCompatibleImage
+                  imageInfo={{
+                    image: item.image,
+                    alt: item.alt || "Default alt text", // Use alt text if available
+                  }}
+                  className="img-imagetext"
+                  style={
+                    item.reverse
+                      ? { marginRight: "var(--spacing-s)" }
+                      : { marginLeft: "var(--spacing-s)" }
+                  }
+                />
+              )}
             </div>
           </div>
         </section>
@@ -46,10 +50,11 @@ FeatureGrid.propTypes = {
   gridItems: PropTypes.arrayOf(
     PropTypes.shape({
       image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+      alt: PropTypes.string, 
       text: PropTypes.string,
       title: PropTypes.string,
       button: PropTypes.string,
-
+      link: PropTypes.string,
     }),
   ),
 };

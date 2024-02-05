@@ -20,6 +20,7 @@ import "./../components/payroll-block.css";
 // eslint-disable-next-line
 export const IndexPageTemplate = ({
   image,
+  alt,
   title,
   heading,
   subheading,
@@ -37,6 +38,7 @@ export const IndexPageTemplate = ({
       <div className="hero">
         <FullWidthImage
           img={heroImage}
+          alt={alt}
           title={title}
           subheading={subheading}
           button={button}
@@ -54,6 +56,7 @@ export const IndexPageTemplate = ({
 
 IndexPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  alt: PropTypes.string,
   title: PropTypes.string,
   heading: PropTypes.string,
   subheading: PropTypes.string,
@@ -83,6 +86,7 @@ const IndexPage = ({ data }) => {
     <Layout>
       <IndexPageTemplate
         image={frontmatter.image}
+        alt={frontmatter.alt}
         title={frontmatter.title}
         heading={frontmatter.heading}
         subheading={frontmatter.subheading}
@@ -118,6 +122,7 @@ export const pageQuery = graphql`
             gatsbyImageData(quality: 100, layout: FULL_WIDTH)
           }
         }
+        alt
         heading
         subheading
         description
@@ -152,6 +157,7 @@ export const pageQuery = graphql`
                 gatsbyImageData(quality: 100, layout: CONSTRAINED)
               }
             }
+            alt
             text
             title
             button

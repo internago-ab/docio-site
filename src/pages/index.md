@@ -2,6 +2,7 @@
 templateKey: index-page
 title: Docio - your international <br>all-in-one payroll and HR portal.
 image: /img/meeting.jpg
+alt: image description example
 heading: For all your payroll needs
 subheading: Manage your payroll on multiple international markets with one
   online interface.
@@ -10,6 +11,7 @@ button: See all powerful features
 intro:
   blurbs:
     - image: /img/international.jpg
+      alt: image description example
       title: Peace of mind
       button: Read more
       link: /payroll
@@ -24,6 +26,7 @@ intro:
         culpa qui officia deserunt mollit anim id est laborum. Sed ut
         perspiciatis unde omnis iste natus.
     - image: /img/international.jpg
+      alt: image description example
       title: Save costs
       button: Read more
       link: /payroll
@@ -38,6 +41,7 @@ intro:
         culpa qui officia deserunt mollit anim id est laborum. Sed ut
         perspiciatis unde omnis iste natus.
     - image: /img/international.jpg
+      alt: image description example
       title: Scalability and quicker time to market
       button: Read more
       link: /payroll

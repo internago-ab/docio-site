@@ -60,10 +60,9 @@ function FeatureGrid({ gridItems, blocks }) {
             </li>
           ))}
         <div className="cta-btn show-more">
-          <a className="show-more" onClick={showMoreDocuments}>
-            {" "}
-            {limit === 6 ? "Show less" : "Show more"}
-          </a>
+        <button className="show-more cta-btn" onClick={showMoreDocuments}>
+          {limit === 6 ? "Show less" : "Show more"}
+        </button>
         </div>
       </ul>
     </section>

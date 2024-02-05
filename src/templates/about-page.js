@@ -6,7 +6,7 @@ import Content, { HTMLContent } from "../components/Content";
 import TextImage from "../components/textImage";
 import Testimonials from "../components/Testimonials";
 import FullWidthImage from "../components/FullWidthImage";
-import { getImage } from "gatsby-plugin-image";
+// import { getImage } from "gatsby-plugin-image";
 
 import "../components/testimonials.css";
 
@@ -20,7 +20,7 @@ export const AboutPageTemplate = ({
   fullImage,
 }) => {
   const PageContent = contentComponent || Content;
-  const fullWidthImage = getImage(fullImage) || fullImage;
+  // const fullWidthImage = getImage(fullImage) || fullImage;
   const imageSrc = fullImage && fullImage.childImageSharp 
   ? fullImage.childImageSharp.gatsbyImageData 
   : fullImage;

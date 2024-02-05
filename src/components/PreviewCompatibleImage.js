@@ -6,7 +6,6 @@ const PreviewCompatibleImage = ({ imageInfo }) => {
   const imageStyle = {  };
 
   const { alt = 'Default fallback alt text', childImageSharp, image } = imageInfo;
-  console.log(imageInfo.alt, 'alt')
 
   if (!!image && !!image.childImageSharp) {
     return (

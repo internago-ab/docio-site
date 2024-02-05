@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { Link, useStaticQuery, graphql } from "gatsby";
 import "./layout.css";
 import PropTypes from "prop-types";
@@ -101,32 +101,29 @@ const Layout = ({ children }) => {
   };
   
 
-  const calculateMenuHeight = () => {
+  const calculateMenuHeight = useCallback(() => {
     if (menuDisplayed) {
-      // Directly use the scrollHeight of the mobile menu as it should automatically
-      // adjust to the content inside, including the dropdown.
       const menuNode = document.querySelector('.mobile-menu');
       const height = menuNode ? menuNode.scrollHeight : 0;
   
       setMenuHeight(`${height}px`);
     } else {
-      setMenuHeight('0px'); // Reset to initial state when the menu is not displayed
+      setMenuHeight('0px');
     }
-  };
-
+  }, [menuDisplayed]); // Add any other dependencies if calculateMenuHeight uses them
+  
   useEffect(() => {
-    // Add a slight delay to account for CSS transitions (if any).
     const timeoutId = setTimeout(() => {
       if (menuDisplayed) {
         calculateMenuHeight();
       } else {
         setMenuHeight('0px');
       }
-    }, 300); // Adjust this delay based on your CSS transition durations
+    }, 300);
   
     return () => clearTimeout(timeoutId);
-  }, [menuDisplayed, isSolutionsDropdownOpen]); // Dependencies on both states
-  
+  }, [menuDisplayed, isSolutionsDropdownOpen, calculateMenuHeight]);
+
   return (
     <div className="global-wrapper">
       <Helmet>
@@ -316,7 +313,12 @@ const Layout = ({ children }) => {
                 </div>
           <ul className="menu dropdown">
             <li className="has-dropdown dropdown">
-              <div className="menu-link" onClick={toggleResourcesDropdown}>
+              <div className="menu-link"
+              onClick={toggleResourcesDropdown}
+              onKeyDown={(e) => e.key === 'Enter' && toggleResourcesDropdown()}
+              role="button"
+              tabIndex="0"
+              >
                 Resourses
                 <svg
                   className="toggle-icon"

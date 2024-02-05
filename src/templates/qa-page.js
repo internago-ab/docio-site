@@ -21,7 +21,6 @@ export const QaPageTemplate = ({
   qa,
 }) => {
   const heroImage = getImage(image) || image;
-  const fullWidthImage = getImage(fullImage) || fullImage;
 
   return (
     <div className="content">
