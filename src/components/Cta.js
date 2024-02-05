@@ -37,7 +37,7 @@ const Cta = ({ cta }) => {
 
 Cta.propTypes = {
   cta: PropTypes.shape({
-    image: PropTypes.object,
+    image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
     header: PropTypes.string,
     text: PropTypes.string,
     button: PropTypes.string,
