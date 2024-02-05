@@ -53,6 +53,7 @@ intro:
         perspiciatis unde omnis iste natus.
 mainpitch:
   image: /img/crowd.jpg
+  alt: "A crowd of people at an event"
   title: Payroll and HR Management
   description: >
     <strong> Let's be honest, international payroll can be challenging, but it
@@ -109,6 +110,7 @@ lists:
   listsHeading: Manage your payroll across multiple international markets with one online interface.
   listsDescription: Payroll portal
   image: /img/international.jpg
+  alt: "image description"
   listItem:
     - text: Gross up calculations
     - text: Payments

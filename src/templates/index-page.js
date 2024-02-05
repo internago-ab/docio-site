@@ -69,6 +69,7 @@ IndexPageTemplate.propTypes = {
   }),
   lists: PropTypes.shape({
     image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+    alt: PropTypes.string,
     listsHeading: PropTypes.string,
     listsDescription: PropTypes.string,
     listItem: PropTypes.array,
@@ -128,6 +129,7 @@ export const pageQuery = graphql`
               gatsbyImageData(quality: 100, layout: FULL_WIDTH)
             }
           }
+          alt
           title
           description
           button
@@ -164,6 +166,7 @@ export const pageQuery = graphql`
               gatsbyImageData(quality: 100, layout: FULL_WIDTH)
             }
           }
+          alt
           listsHeading
           listsDescription
           listItem {

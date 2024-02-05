@@ -209,7 +209,7 @@ const Layout = ({ children }) => {
             <div className="dropdown-flex">
                 
             <button onClick={toggleSolutionsDropdown} className={`${menuDisplayed ? "li-active" : ""} solution-button`}>Solutions</button>
-            <svg class={`${menuDisplayed ? "li-active" : ""} toggle-icon`} width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.51465 8.4652L11.9996 16.9502L20.4846 8.4652L19.0706 7.0502L11.9996 14.1222L4.92865 7.0502L3.51465 8.4652Z" fill="#4E4E4E"></path></svg>
+            <svg className={`${menuDisplayed ? "li-active" : ""} toggle-icon`} width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.51465 8.4652L11.9996 16.9502L20.4846 8.4652L19.0706 7.0502L11.9996 14.1222L4.92865 7.0502L3.51465 8.4652Z" fill="#4E4E4E"></path></svg>
             </div>
             <div
               className={`solutions-dropdown-content ${isSolutionsDropdownOpen ? "open" : ""}`}
@@ -296,7 +296,7 @@ const Layout = ({ children }) => {
         <div className="dropdown-flex menu">
                 <div className="menu-link">
                 <button onClick={toggleSolutionsDropdown} className={`${menuDisplayed ? "li-active" : ""} solution-button `}>Solutions</button>
-                <svg class={`${menuDisplayed ? "li-active" : ""} toggle-icon`} width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.51465 8.4652L11.9996 16.9502L20.4846 8.4652L19.0706 7.0502L11.9996 14.1222L4.92865 7.0502L3.51465 8.4652Z" fill="#4E4E4E"></path></svg>
+                <svg className={`${menuDisplayed ? "li-active" : ""} toggle-icon`} width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.51465 8.4652L11.9996 16.9502L20.4846 8.4652L19.0706 7.0502L11.9996 14.1222L4.92865 7.0502L3.51465 8.4652Z" fill="#4E4E4E"></path></svg>
                 </div>
                 </div>
                 <div

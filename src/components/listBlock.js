@@ -1,17 +1,17 @@
 import React from "react";
-import image from "../images/meeting.jpg";
 import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 
 import "./list-block.css";
 
 function ListBlock({ gridItems, lists }) {
-
   const content = gridItems;
-  const imageInfo = lists.image ? {
-    image: lists.image,
-    alt: lists.image.alt || "Default alt text",
-    ...lists.image, // Spread the cta.image object to capture both childImageSharp and any other structure it might have
-  } : null;
+  const imageInfo = lists.image
+    ? {
+        image: lists.image,
+        alt: lists.alt || "Default alt text",
+        ...lists.image, 
+      }
+    : null;
   return (
     <div className="section list-image">
       <div className="list-block">
@@ -30,9 +30,7 @@ function ListBlock({ gridItems, lists }) {
         </div>
       </div>
       <div className="list-block-img">
-      {imageInfo && (
-            <PreviewCompatibleImage imageInfo={imageInfo} />
-        )}
+        {imageInfo && <PreviewCompatibleImage imageInfo={imageInfo} />}
       </div>
     </div>
   );

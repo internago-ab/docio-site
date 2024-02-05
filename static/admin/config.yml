@@ -143,6 +143,7 @@ collections:
                     widget: text,
                   },
                   { label: Image, name: image, widget: image },
+                  { label: Alt, name: alt, widget: string },
                   {
                     label: ListItem,
                     name: listItem,

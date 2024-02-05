@@ -5,8 +5,8 @@ import { GatsbyImage } from "gatsby-plugin-image";
 const PreviewCompatibleImage = ({ imageInfo }) => {
   const imageStyle = {  };
 
-  const { alt, childImageSharp, image } = imageInfo;
-  console.log(imageInfo)
+  const { alt = 'Default fallback alt text', childImageSharp, image } = imageInfo;
+  console.log(imageInfo.alt, 'alt')
 
   if (!!image && !!image.childImageSharp) {
     return (
@@ -24,7 +24,7 @@ const PreviewCompatibleImage = ({ imageInfo }) => {
     );
     // for Netlify CMS 
   } else if (image) {
-    return <img style={{imageStyle}} src={image}  alt={alt} height={'400px'}/>;
+    return <img style={{imageStyle}} src={image} alt={alt} height={'400px'}/>;
   } else {
     return null
   }

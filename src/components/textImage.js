@@ -9,8 +9,9 @@ const TextImage = (mainpitch) => {
 
   const imageInfo = {
     image: mainpitch.mainpitch.image,
-    alt: `Image for ${mainpitch.mainpitch.title}`, // Provide a meaningful alt text
+    alt: mainpitch.mainpitch.alt || 'Fallback description if alt is missing',
   };
+
   return (
     <section className="section">
       <div className={`imagetext`}>
@@ -32,7 +33,10 @@ const TextImage = (mainpitch) => {
           </div>
         </div>
         <div className="imagetext-img">
-          <PreviewCompatibleImage imageInfo={imageInfo} className="img-imagetext" />
+          <PreviewCompatibleImage
+            imageInfo={imageInfo}
+            className="img-imagetext"
+          />
         </div>
       </div>
     </section>
@@ -42,6 +46,7 @@ const TextImage = (mainpitch) => {
 TextImage.propTypes = {
   mainpitch: PropTypes.shape({
     image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+    alt: PropTypes.string,
     title: PropTypes.string,
     description: PropTypes.string,
     button: PropTypes.string,
