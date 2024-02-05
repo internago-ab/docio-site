@@ -14,6 +14,21 @@ media_folder: static/img
 public_folder: /img
 
 collections:
+  - name: "solution"
+    label: "Solution"
+    folder: "src/pages/solution"
+    create: true
+    fields:
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "solution-page",
+        }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Featured Image", name: "featuredimage", widget: image }
+      - { label: "Body", name: "body", widget: "markdown" }
   - name: "blog"
     label: "Blog"
     folder: "src/pages/blog"
