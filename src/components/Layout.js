@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Link } from "gatsby";
+import React, { useState, useEffect } from "react";
+import { Link, useStaticQuery, graphql } from "gatsby";
 import "./layout.css";
 import PropTypes from "prop-types";
 import useSiteMetadata from "./SiteMetadata";
@@ -18,7 +18,14 @@ const Layout = ({ children }) => {
   const [visible] = useState(true);
 
   function toggleMenu() {
-    setMenuDisplayed(!menuDisplayed);
+    const newMenuDisplayed = !menuDisplayed;
+    setMenuDisplayed(newMenuDisplayed);
+
+    if (newMenuDisplayed) {
+      setTimeout(calculateMenuHeight, 10);
+    } else {
+      setMenuHeight("0px");
+    }
     animateHamburger();
   }
 
@@ -32,6 +39,94 @@ const Layout = ({ children }) => {
     );
   }
 
+  const data = useStaticQuery(graphql`
+    query SolutionTitlesQuery {
+      allMarkdownRemark(
+        filter: { frontmatter: { templateKey: { eq: "solution-page" } } }
+      ) {
+        edges {
+          node {
+            fields {
+              slug
+            }
+            frontmatter {
+              title
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  const solutions = data.allMarkdownRemark.edges.map((edge) => ({
+    title: edge.node.frontmatter.title,
+    slug: edge.node.fields.slug,
+  }));
+
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isSolutionsDropdownOpen, setIsSolutionsDropdownOpen] = useState(false);
+  const [menuHeight, setMenuHeight] = useState("0px");
+  const [isResourcesDropdownOpen, setIsResourcesDropdownOpen] = useState(false);
+
+  useEffect(() => {
+    const handleOutsideClick = (event) => {
+      if (!event.target.closest(".dropdown-content")) {
+        setIsDropdownOpen(false);
+      }
+    };
+
+    if (isDropdownOpen) {
+      document.addEventListener("click", handleOutsideClick);
+    }
+
+    return () => {
+      document.removeEventListener("click", handleOutsideClick);
+    };
+  }, [isDropdownOpen]);
+
+  const toggleSolutionsDropdown = () => {
+    setIsSolutionsDropdownOpen(prevState => !prevState);
+    // Ensure Resources dropdown is closed when Solutions is toggled
+    if (isResourcesDropdownOpen) {
+      setIsResourcesDropdownOpen(false);
+    }
+  };
+  
+  const toggleResourcesDropdown = () => {
+    setIsResourcesDropdownOpen(prevState => !prevState);
+    // Ensure Solutions dropdown is closed when Resources is toggled
+    if (isSolutionsDropdownOpen) {
+      setIsSolutionsDropdownOpen(false);
+    }
+  };
+  
+
+  const calculateMenuHeight = () => {
+    if (menuDisplayed) {
+      // Directly use the scrollHeight of the mobile menu as it should automatically
+      // adjust to the content inside, including the dropdown.
+      const menuNode = document.querySelector('.mobile-menu');
+      const height = menuNode ? menuNode.scrollHeight : 0;
+  
+      setMenuHeight(`${height}px`);
+    } else {
+      setMenuHeight('0px'); // Reset to initial state when the menu is not displayed
+    }
+  };
+
+  useEffect(() => {
+    // Add a slight delay to account for CSS transitions (if any).
+    const timeoutId = setTimeout(() => {
+      if (menuDisplayed) {
+        calculateMenuHeight();
+      } else {
+        setMenuHeight('0px');
+      }
+    }, 300); // Adjust this delay based on your CSS transition durations
+  
+    return () => clearTimeout(timeoutId);
+  }, [menuDisplayed, isSolutionsDropdownOpen]); // Dependencies on both states
+  
   return (
     <div className="global-wrapper">
       <Helmet>
@@ -100,7 +195,7 @@ const Layout = ({ children }) => {
             style={{
               top: visible ? "69px" : "-69px",
               overflow: menuDisplayed ? "unset" : "hidden",
-              height: menuDisplayed ? 400 : 0,
+              height: menuHeight,
             }}
           >
             <li>
@@ -111,14 +206,27 @@ const Layout = ({ children }) => {
                 Home
               </Link>
             </li>
-            <li>
-              <Link
-                to="/payroll"
-                className={`${menuDisplayed ? "li-active" : ""}`}
-              >
-                Solutions
-              </Link>
-            </li>
+            <div className="dropdown-flex">
+                
+            <button onClick={toggleSolutionsDropdown} className={`${menuDisplayed ? "li-active" : ""} solution-button`}>Solutions</button>
+            <svg class={`${menuDisplayed ? "li-active" : ""} toggle-icon`} width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.51465 8.4652L11.9996 16.9502L20.4846 8.4652L19.0706 7.0502L11.9996 14.1222L4.92865 7.0502L3.51465 8.4652Z" fill="#4E4E4E"></path></svg>
+            </div>
+            <div
+              className={`solutions-dropdown-content ${isSolutionsDropdownOpen ? "open" : ""}`}
+            >
+              {isSolutionsDropdownOpen && (
+                <ul className="dropdown-content">
+                  {solutions.map((solution) => (
+                    <li key={solution.slug}>
+                      <Link to={`${solution.slug}`}>
+                        {solution.title}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+
             <li>
               <Link to="/qa" className={`${menuDisplayed ? "li-active" : ""}`}>
                 Q&A
@@ -185,12 +293,30 @@ const Layout = ({ children }) => {
         </div>
 
         <ul className="desktop-menu">
-          <li>
-            <Link to="/solutions">Solutions</Link>
-          </li>
+        <div className="dropdown-flex menu">
+                <div className="menu-link">
+                <button onClick={toggleSolutionsDropdown} className={`${menuDisplayed ? "li-active" : ""} solution-button `}>Solutions</button>
+                <svg class={`${menuDisplayed ? "li-active" : ""} toggle-icon`} width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.51465 8.4652L11.9996 16.9502L20.4846 8.4652L19.0706 7.0502L11.9996 14.1222L4.92865 7.0502L3.51465 8.4652Z" fill="#4E4E4E"></path></svg>
+                </div>
+                </div>
+                <div
+                  className={`solutions-dropdown-content ${isSolutionsDropdownOpen ? "open" : ""}`}
+                >
+                  {isSolutionsDropdownOpen && (
+                    <ul className={`${menuDisplayed ? "li-active" : ""} dropdown-content dropdown-content-desktop submenu`}>
+                      {solutions.map((solution) => (
+                        <li key={solution.slug}>
+                          <Link to={`${solution.slug}`}>
+                            {solution.title}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
           <ul className="menu dropdown">
             <li className="has-dropdown dropdown">
-              <div className="menu-link">
+              <div className="menu-link" onClick={toggleResourcesDropdown}>
                 Resourses
                 <svg
                   className="toggle-icon"
@@ -207,19 +333,13 @@ const Layout = ({ children }) => {
                 </svg>
               </div>
 
-              <ul className="submenu">
-                <li>
-                  <Link to="/qa">Q&A</Link>
-                </li>
-                <li>
-                  <Link to="/blog">Blog</Link>
-                </li>
-                <li>
-                  <Link to="/partner">
-                    Partner <br></br>Integrations
-                  </Link>
-                </li>
-              </ul>
+              {isResourcesDropdownOpen && (
+      <ul className="submenu">
+        <li><Link to="/qa">Q&A</Link></li>
+        <li><Link to="/blog">Blog</Link></li>
+        <li><Link to="/partner">Partner Integrations</Link></li>
+      </ul>
+    )}
             </li>
           </ul>
           <li>
