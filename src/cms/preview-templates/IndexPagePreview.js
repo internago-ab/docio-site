@@ -7,6 +7,7 @@ const IndexPagePreview = ({ entry, getAsset }) => {
   
   // Processing the main image
   const image = data.image ? getAsset(data.image) : '';
+  const listsImage = data.lists && data.lists.image ? getAsset(data.lists.image) : null;
 
   // Processing the mainpitch image
   const mainpitchImage = data.mainpitch && data.mainpitch.image ? getAsset(data.mainpitch.image) : null;
