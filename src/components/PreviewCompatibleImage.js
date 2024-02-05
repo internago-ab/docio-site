@@ -24,7 +24,7 @@ const PreviewCompatibleImage = ({ imageInfo }) => {
     );
     // for Netlify CMS 
   } else if (image) {
-    return <img style={{imageStyle}} src={image}  alt={alt} />;
+    return <img style={{imageStyle}} src={image}  alt={alt} height={'400px'}/>;
   } else {
     return null
   }
