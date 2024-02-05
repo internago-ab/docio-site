@@ -5,7 +5,8 @@ import { GatsbyImage } from "gatsby-plugin-image";
 const PreviewCompatibleImage = ({ imageInfo }) => {
   const imageStyle = {  };
 
-  const { alt = "", childImageSharp, image } = imageInfo;
+  const { alt, childImageSharp, image } = imageInfo;
+  console.log(imageInfo)
 
   if (!!image && !!image.childImageSharp) {
     return (

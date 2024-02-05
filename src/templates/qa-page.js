@@ -5,6 +5,7 @@ import { getImage } from "gatsby-plugin-image";
 import Layout from "../components/Layout";
 import QuestionsAnswers from "../components/QuestionsAnswers";
 import FullWidthImage from "../components/FullWidthImage";
+import Cta from "../components/Cta";
 
 import "../../src/components/questionsAnswers.css";
 
@@ -16,6 +17,7 @@ export const QaPageTemplate = ({
   href,
   subheading,
   fullImage,
+  cta,
   qa,
 }) => {
   const heroImage = getImage(image) || image;
@@ -48,6 +50,7 @@ export const QaPageTemplate = ({
           </div>
         </div>
       </section>
+      <Cta cta={cta} />
     </div>
   );
 };
@@ -62,6 +65,7 @@ QaPageTemplate.propTypes = {
     description: PropTypes.string,
     questions: PropTypes.array,
   }),
+  cta: PropTypes.object,
 };
 
 const QaPage = ({ data }) => {
@@ -78,6 +82,7 @@ const QaPage = ({ data }) => {
         href={frontmatter.href}
         description={frontmatter.description}
         qa={frontmatter.qa}
+        cta={frontmatter.cta}
       />
     </Layout>
   );
@@ -119,6 +124,17 @@ export const QaPageQuery = graphql`
               answer
             }
           }
+        }
+        cta {
+          image {
+            childImageSharp {
+              gatsbyImageData(quality: 100, layout: FULL_WIDTH)
+            }
+          }
+          header
+          text
+          button
+          link
         }
       }
     }

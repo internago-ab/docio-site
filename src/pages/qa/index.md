@@ -43,4 +43,12 @@ qa:
         - description: "ex ea commodo consequat"
           subHeader: "Price per employee and per month"
           answer: "Custom"
+cta:
+  header: Still have more questions?
+  text: >
+    Lorem ipsum dolor sit amet. Aut voluptate deserunt ex officiis eligendi non perferendis quis sed quia autem quo dolorem odit.
+  button: Contact us
+  link: /contact
+  image: /img/crowd.jpg
+  alt: text
 ---

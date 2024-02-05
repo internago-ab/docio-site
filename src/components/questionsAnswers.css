@@ -111,6 +111,14 @@
     border: 1.5px solid var(--green);
 }
 
+.category-country-info{
+    margin-bottom: var(--spacing-xxs);
+}
+
+.category-country-info strong{
+    color: var(--green);
+}
+
 .price-plan {
   display: flex;
   padding-top: var(--spacing-xxs);
@@ -141,20 +149,30 @@
 }
 
 @media only screen and (max-width: 768px) {
-  .pricing-grid {
-    grid-template-columns: 1fr;
-  }
+    .questions_answers-content{
+        flex-direction: column;
+    }
+
+    .categories-filter, .countries-filter{
+        margin-right: 0;
+        width: 100%;
+
+    }
+
+    .questions_answers-categories{
+        display: flex;
+        margin-bottom: var(--spacing-xs);
+    }
+
+    .countries-filter {
+        margin-top: 0;
+        margin-left: var(--spacing-xs);
+    }
 
   .price-plan p {
     width: 60%;
   }
 
-  .pricing-card {
-    height: auto;
-  }
-  .prices-description {
-    max-width: 100%;
-  }
 }
 
 @media only screen and (max-width: 600px) {
@@ -164,8 +182,16 @@
     flex-direction: column;
   }
 
-  .prices-buttons button {
-    margin-top: 0;
-    margin-bottom: var(--spacing-xxs);
-  }
+  .questions_answers-categories{
+flex-direction: column;
+}
+.countries-filter {
+    margin-top: var(--spacing-xs);
+    margin-left: 0;
+}
+.questions_answers-content {
+
+    margin-top: var(--spacing-xs);
+}
+
 }

@@ -86,7 +86,7 @@ const QuestionsAnswers = ({ categories }) => {
   return (
     <div>
       <div className="questions_answers-content">
-        <div>
+        <div className="questions_answers-categories">
           <div className="categories-filter">
             <h3>Categories:</h3>
             <div className="category-buttons filter-tags">

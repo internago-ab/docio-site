@@ -289,4 +289,17 @@ collections:
                       ],
                   },
                 ],
-            }
+                {
+                label: "CTA",
+                name: "cta",
+                widget: "object",
+                fields:
+                  [
+                    { label: "Header", name: "header", widget: "string" },
+                    { label: "Text", name: "text", widget: "string" },
+                    { label: "Button", name: "button", widget: "string" },
+                    { label: "Link", name: "link", widget: "string" },
+                    { label: Image, name: image, widget: image },
+                  ],
+                },
+              }
