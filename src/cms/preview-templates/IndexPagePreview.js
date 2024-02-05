@@ -1,15 +1,16 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { IndexPageTemplate } from '../../templates/index-page'
-
 const IndexPagePreview = ({ entry, getAsset }) => {
   const data = entry.getIn(['data']).toJS()
-  const listsImage = data.lists && data.lists.image ? getAsset(data.lists.image) : null;
+  
+  // Processing the main image
+  const image = data.image ? getAsset(data.image) : '';
+
+  // Processing the mainpitch image
+  const mainpitchImage = data.mainpitch && data.mainpitch.image ? getAsset(data.mainpitch.image) : null;
 
   if (data) {
     return (
       <IndexPageTemplate
-        image={getAsset(data.image)}
+        image={image}
         title={data.title}
         heading={data.heading}
         subheading={data.subheading}
@@ -18,7 +19,7 @@ const IndexPagePreview = ({ entry, getAsset }) => {
         intro={data.intro || { blurbs: [] }}
         blocks={data.blocks || { grid: [] }}
         lists={data.lists ? { ...data.lists, image: listsImage } : { listItem: [] }}
-        mainpitch={data.mainpitch || {}}
+        mainpitch={data.mainpitch ? { ...data.mainpitch, image: mainpitchImage } : {}}
       />
     )
   } else {

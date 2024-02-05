@@ -6,6 +6,11 @@ import PropTypes from "prop-types";
 import "./text-image.css";
 
 const TextImage = (mainpitch) => {
+
+  const imageInfo = {
+    image: mainpitch.mainpitch.image,
+    alt: `Image for ${mainpitch.mainpitch.title}`, // Provide a meaningful alt text
+  };
   return (
     <section className="section">
       <div className={`imagetext`}>
@@ -27,10 +32,7 @@ const TextImage = (mainpitch) => {
           </div>
         </div>
         <div className="imagetext-img">
-          <PreviewCompatibleImage
-            imageInfo={mainpitch.mainpitch.image}
-            className="img-imagetext"
-          />
+          <PreviewCompatibleImage imageInfo={imageInfo} className="img-imagetext" />
         </div>
       </div>
     </section>
@@ -38,15 +40,13 @@ const TextImage = (mainpitch) => {
 };
 
 TextImage.propTypes = {
-  gridItems: PropTypes.arrayOf(
-    PropTypes.shape({
-      image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-      text: PropTypes.string,
-      title: PropTypes.string,
-      button: PropTypes.string,
-      link: PropTypes.string,
-    }),
-  ),
+  mainpitch: PropTypes.shape({
+    image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+    title: PropTypes.string,
+    description: PropTypes.string,
+    button: PropTypes.string,
+    link: PropTypes.string,
+  }),
 };
 
 export default TextImage;
