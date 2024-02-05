@@ -6,9 +6,10 @@ import arrow from "../images/icons/arrow-svg.svg";
 import "../components/cta.css";
 
 const Cta = ({ cta }) => {
+  console.log(cta, 'ct!!!!!!!!!a')
   // Ensure that the imageInfo includes all necessary data and fallbacks
   const imageInfo = cta.image ? {
-    image: '',
+    image: cta.image,
     alt: cta.image.alt || "Default alt text",
     ...cta.image, // Spread the cta.image object to capture both childImageSharp and any other structure it might have
   } : null;

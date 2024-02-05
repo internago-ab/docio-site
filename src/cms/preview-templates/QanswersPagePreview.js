@@ -7,6 +7,11 @@ const QaPagePreview = ({ entry, getAsset }) => {
   const entryQaCategories = entry.getIn(['data', 'qa', 'categories']);
   const qaCategories = entryQaCategories ? entryQaCategories.toJS() : [];
 
+  const ctaData = entry.getIn(['data', 'cta']) ? entry.getIn(['data', 'cta']).toJS() : {};
+
+  if (ctaData.image) {
+    ctaData.image = getAsset(ctaData.image);
+  }
   return (
     <QaPageTemplate
       image={getAsset(entry.getIn(['data', 'image']))}
@@ -20,6 +25,7 @@ const QaPagePreview = ({ entry, getAsset }) => {
         description: entry.getIn(['data', 'qa', 'description']),
         categories: qaCategories, 
       }}
+      cta={ctaData}
     />
   );
 };
