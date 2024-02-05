@@ -295,11 +295,11 @@ collections:
                 widget: "object",
                 fields:
                   [
+                    { label: Image, name: image, widget: image },
                     { label: "Header", name: "header", widget: "string" },
                     { label: "Text", name: "text", widget: "string" },
                     { label: "Button", name: "button", widget: "string" },
                     { label: "Link", name: "link", widget: "string" },
-                    { label: Image, name: image, widget: image },
                   ],
                 },
               }
