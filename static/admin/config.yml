@@ -142,6 +142,7 @@ collections:
                     name: listsDescription,
                     widget: text,
                   },
+                  { label: Image, name: image, widget: image },
                   {
                     label: ListItem,
                     name: listItem,

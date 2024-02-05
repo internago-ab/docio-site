@@ -4,6 +4,7 @@ import { IndexPageTemplate } from '../../templates/index-page'
 
 const IndexPagePreview = ({ entry, getAsset }) => {
   const data = entry.getIn(['data']).toJS()
+  const listsImage = data.lists && data.lists.image ? getAsset(data.lists.image) : null;
 
   if (data) {
     return (
@@ -16,7 +17,7 @@ const IndexPagePreview = ({ entry, getAsset }) => {
         description={data.description}
         intro={data.intro || { blurbs: [] }}
         blocks={data.blocks || { grid: [] }}
-        lists={data.lists || { listItem: [] }}
+        lists={data.lists ? { ...data.lists, image: listsImage } : { listItem: [] }}
         mainpitch={data.mainpitch || {}}
       />
     )

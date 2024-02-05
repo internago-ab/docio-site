@@ -8,7 +8,7 @@ import "./hero.css";
 
 export default function FullWidthImage(props) {
   const {
-    height = 480,
+    height = 550,
     img,
     title,
     subheading,
