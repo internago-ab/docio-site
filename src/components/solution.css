@@ -104,6 +104,12 @@
   }
 }
 
+@media only screen and (max-width: 880px) {
+    .side-title {
+        left: 2.8%;
+    }
+}
+
 @media only screen and (max-width: 800px) {
   .solution-header .columns {
     padding: var(--spacing-s) var(--spacing-m) 18rem;

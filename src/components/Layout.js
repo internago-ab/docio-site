@@ -6,7 +6,7 @@ import useSiteMetadata from "./SiteMetadata";
 import { Helmet } from "react-helmet";
 import { withPrefix } from "gatsby";
 
-import docioLogo from "../images/docio-logo.png";
+import docioLogo from "../images/docio-logo.svg";
 import linkedin from "../images/linkedin.svg";
 import twitter from "../images/twitter.svg";
 import docioLogoWhite from "../images/docio-logo-white.png";
