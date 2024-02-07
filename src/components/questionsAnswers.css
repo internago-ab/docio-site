@@ -35,6 +35,7 @@
     width: -webkit-fill-available;
     text-align: left;
     font-family: var(--font);
+    color: var(--black);
 }
 
 .qa-btn span {
