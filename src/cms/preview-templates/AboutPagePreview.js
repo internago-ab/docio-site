@@ -7,6 +7,8 @@ const AboutPagePreview = ({ entry, widgetFor, getAsset }) => {
   const entryTestimonials = entry.getIn(['data', 'testimonials']);
   const testimonials = entryTestimonials ? entryTestimonials.toJS() : [];
 
+  const mainpitchImage = data.mainpitch && data.mainpitch.image ? getAsset(data.mainpitch.image) : null;
+
   // Check if mainpitch has an image and replace it with the correct URL
   if (data.mainpitch && data.mainpitch.image) {
     const imagePath = getAsset(data.mainpitch.image);
@@ -17,9 +19,10 @@ const AboutPagePreview = ({ entry, widgetFor, getAsset }) => {
     <AboutPageTemplate
       title={entry.getIn(['data', 'title'])}
       content={widgetFor('body')}
-      mainpitch={data.mainpitch}
+      mainpitch={data.mainpitch ? { ...data.mainpitch, image: mainpitchImage } : {}}
       testimonials={testimonials}
       fullImage={getAsset(entry.getIn(['data', 'full_image']))}
+      alt={entry.getIn(['data', 'alt'])}
     />
   );
 };

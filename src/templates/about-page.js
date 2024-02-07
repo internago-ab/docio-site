@@ -14,6 +14,7 @@ import "../components/testimonials.css";
 export const AboutPageTemplate = ({
   title,
   content,
+  alt,
   contentComponent,
   mainpitch,
   testimonials,
@@ -32,12 +33,14 @@ export const AboutPageTemplate = ({
           <PageContent className="" content={content} />
         </div>
       </div>
-      <TextImage mainpitch={mainpitch} />
+      <div className='about-text-image'>
+      <TextImage mainpitch={mainpitch}/>
+      </div>
       <section id="fullImage">
         <section className="section">
           <Testimonials testimonials={testimonials} />
         </section>
-        <FullWidthImage img={imageSrc} imgPosition={"bottom"} />
+        <FullWidthImage img={imageSrc} imgPosition={"bottom"} alt={alt} />
       </section>
     </>
   );
@@ -50,6 +53,7 @@ AboutPageTemplate.propTypes = {
   mainpitch: PropTypes.object,
   testimonials: PropTypes.array,
   fullImage: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  alt: PropTypes.string,
 };
 
 const AboutPage = ({ data }) => {
@@ -64,6 +68,7 @@ const AboutPage = ({ data }) => {
         mainpitch={post.frontmatter.mainpitch}
         testimonials={post.frontmatter.testimonials}
         fullImage={post.frontmatter.full_image}
+        alt={post.frontmatter.alt}
       />
     </Layout>
   );
@@ -87,6 +92,7 @@ export const aboutPageQuery = graphql`
               gatsbyImageData(quality: 100, layout: FULL_WIDTH)
             }
           }
+          alt
           title
           description
           button
@@ -101,6 +107,7 @@ export const aboutPageQuery = graphql`
             gatsbyImageData(quality: 100, layout: FULL_WIDTH)
           }
         }
+        alt
       }
     }
   }

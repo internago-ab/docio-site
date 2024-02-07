@@ -24,8 +24,13 @@ nav {
   transition: none;
 }
 
+.logo-link{
+  padding: 4px 0;
+  line-height: 0;
+}
+
 .logo {
-  height: 3rem;
+  height: 2.7rem;
 }
 
 nav ul {
@@ -107,9 +112,10 @@ nav .portal-btn {
 
 .solution-button{
   color: var(--dark-grey);
-  font-size: var(--fontSize-p-s);
+  font-size: var(--fontSize-p-m);
   border: none;
   background: none;
+  line-height: var(--lineHeight);
 }
 /* dropdown */
 
@@ -198,6 +204,7 @@ footer {
 
 footer .docio-logo-white {
   padding-bottom: var(--spacing-xs);
+  width: 6.8em;
 }
 
 footer p,
@@ -438,6 +445,10 @@ footer .disclaimer p {
     /* transition: all 1s ease-in-out;
     animation: fadein 3s ease-in;
     animation-delay: 1s; */
+  }
+
+  .solution-button{
+    font-size: var(--fontSize-p-s);
   }
 }
 

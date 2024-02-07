@@ -16,6 +16,7 @@ const QaPagePreview = ({ entry, getAsset }) => {
     <QaPageTemplate
       image={getAsset(entry.getIn(['data', 'image']))}
       title={entry.getIn(['data', 'title'])}
+      alt={entry.getIn(['data', 'alt'])}
       heading={entry.getIn(['data', 'heading'])}
       subheading={entry.getIn(['data', 'subheading'])}
       button={entry.getIn(['data', 'button'])}

@@ -47,10 +47,10 @@
   --light-white: rgba(255, 255, 255, 0.85);
   --dark-grey: #5c5c5c;
   --light-grey: #e0e0e0;
-  --green: #93b09a;
+  --green: #00c57b;
   --lighter-grey: rgba(208, 208, 208, 0.25);
-  --lighter-green: rgba(147, 176, 154, 0.35);
-  --lightest-green: rgba(147, 176, 154, 0.25);
+  --lighter-green: rgba(3 ,197, 123,  0.4);
+  --lightest-green: rgba(3 ,197, 123,  0.25);
 }
 
 html {
@@ -270,7 +270,7 @@ section.error-page > * {
   background-color: var(--lighter-green);
   display: flex;
   flex-direction: column;
-  padding: var(--spacing-m) var(--spacing-l);
+  padding: var(--spacing-m) var(--spacing-l) var(--spacing-xl) var(--spacing-l);
   text-align: left;
 }
 
@@ -302,6 +302,10 @@ section.error-page > * {
   main {
     margin-top: 100px;
   }
+
+  .section-bg {
+    padding: var(--spacing-m) var(--spacing-m) var(--spacing-xl) var(--spacing-m);
+  }
 }
 
 @media screen and (max-width: 1440px) {
@@ -318,7 +322,7 @@ section.error-page > * {
   }
 
   .section-bg {
-    padding: var(--spacing-m);
+    padding: var(--spacing-m) var(--spacing-m) var(--spacing-xl) var(--spacing-m)
   }
 }
 
@@ -382,7 +386,11 @@ section.error-page > * {
   }
 
   .section-bg {
-    padding: var(--spacing-s) var(--spacing-xs);
+    padding: var(--spacing-s) var(--spacing-xs) var(--spacing-m);
+  }
+
+  .section-bg p{
+    max-width: 100%;
   }
 
   .show-more {

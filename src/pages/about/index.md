@@ -10,6 +10,7 @@ mainpitch:
   button: Read more
   link: /payroll
   image: /img/international.jpg
+  alt: alt text for image
 testimonials:
   - author: Lorem ipsum
     quote: >-
@@ -21,6 +22,7 @@ testimonials:
     quote: >-
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 full_image: /img/meeting.jpg
+alt: alt text for testimonial image
 ---
 
 ### Lorem Ipsum

@@ -3,6 +3,7 @@ templateKey: "product-page"
 path: /pricing
 title: Lorem ipsum dolor
 image: /img/meeting.jpg
+alt: alt text for image
 heading: Aut voluptate deserunt ex officiis
 subheading: Lorem ipsum dolor sit amet. Aut voluptate deserunt ex officiis eligendi non perferendis quis sed quia autem quo dolorem odit.
 href: /payroll

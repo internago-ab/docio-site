@@ -16,6 +16,7 @@ export const QaPageTemplate = ({
   heading,
   button,
   href,
+  alt,
   subheading,
   fullImage,
   cta,
@@ -28,6 +29,7 @@ export const QaPageTemplate = ({
       <div className="hero hero-product">
       <FullWidthImage
        img={heroImage}
+       alt={alt}
        title={title}
        subheading={subheading}
        button={button}
@@ -76,6 +78,7 @@ const QaPage = ({ data }) => {
       <QaPageTemplate
         image={frontmatter.image}
         title={frontmatter.title}
+        alt={frontmatter.alt}
         heading={frontmatter.heading}
         subheading={frontmatter.subheading}
         button={frontmatter.button}
@@ -112,6 +115,7 @@ export const QaPaqeQuery = graphql`
             gatsbyImageData(quality: 100, layout: FULL_WIDTH)
           }
         }
+        alt
         qa {
           heading
           description
@@ -131,6 +135,7 @@ export const QaPaqeQuery = graphql`
               gatsbyImageData(quality: 100, layout: FULL_WIDTH)
             }
           }
+          alt
           header
           text
           button

@@ -9,7 +9,7 @@ function ListBlock({ gridItems, lists }) {
     ? {
         image: lists.image,
         alt: lists.alt || "Default alt text",
-        ...lists.image, 
+        ...lists.image,
       }
     : null;
   return (

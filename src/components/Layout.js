@@ -9,7 +9,7 @@ import { withPrefix } from "gatsby";
 import docioLogo from "../images/docio-logo.png";
 import linkedin from "../images/linkedin.svg";
 import twitter from "../images/twitter.svg";
-import docioLogoWhite from "../images/docio-logo-white.svg";
+import docioLogoWhite from "../images/docio-logo-white.png";
 
 const Layout = ({ children }) => {
   const { title, description } = useSiteMetadata();

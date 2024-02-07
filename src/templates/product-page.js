@@ -12,6 +12,7 @@ import "../../src/components/pricing.css";
 export const ProductPageTemplate = ({
   image,
   title,
+  alt,
   heading,
   button,
   href,
@@ -28,6 +29,7 @@ export const ProductPageTemplate = ({
       <FullWidthImage
        img={heroImage}
        title={title}
+       alt={alt}
        subheading={subheading}
        button={button}
        heading={heading}
@@ -56,6 +58,7 @@ export const ProductPageTemplate = ({
 ProductPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
+  alt: PropTypes.string,
   heading: PropTypes.string,
   description: PropTypes.string,
   pricing: PropTypes.shape({
@@ -73,6 +76,7 @@ const ProductPage = ({ data }) => {
       <ProductPageTemplate
         image={frontmatter.image}
         title={frontmatter.title}
+        alt={frontmatter.alt}
         heading={frontmatter.heading}
         subheading={frontmatter.subheading}
         button={frontmatter.button}
@@ -108,6 +112,7 @@ export const productPageQuery = graphql`
             gatsbyImageData(quality: 100, layout: FULL_WIDTH)
           }
         }
+        alt
         pricing {
           heading
           description
