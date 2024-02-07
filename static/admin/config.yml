@@ -27,8 +27,10 @@ collections:
         }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Description", name: "description", widget: "text" }
-      - { label: "Featured Image", name: "featuredimage", widget: image }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Image", name: "image", widget: image }
+      - { label: "Alt", name: "alt", widget: "markdown" }
+      - { label: "Subheader", name: "subheader", widget: "markdown" }
+      - { label: "Text", name: "text", widget: "markdown" }
   - name: "blog"
     label: "Blog"
     folder: "src/pages/blog"

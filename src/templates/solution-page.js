@@ -3,41 +3,88 @@ import PropTypes from "prop-types";
 import { Helmet } from "react-helmet";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout";
+import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 
-import "./blog-post.css";
+import "../components/solution.css"
 // eslint-disable-next-line
 export const SolutionPostTemplate = ({
   description,
   title,
+  subheader,
+  text,
   helmet,
+  image,
+  alt,
 }) => {
 
+  const splitTextIntoColumns = (text, wordLimit = 50) => {
+    const words = text.split(' '); // Split text into words
+    if (words.length <= wordLimit) {
+      return [text]; // If the text is shorter than the limit, return it as is
+    }
+  
+    const firstPart = words.slice(0, wordLimit).join(' ');
+    const secondPart = words.slice(wordLimit).join(' ');
+  
+    return [firstPart, secondPart];
+  };
+  const [firstColumnText, secondColumnText] = splitTextIntoColumns(text);
+  
 
   return (
-    <section className="section ">
+    <div className=" ">
       <div className="blog-post-main">
         {helmet || ""}
-        <div className="container content blog-post">
-          <div className="columns">
+        <div className="container content solution-header">
+          <div className="columns ">
             <div className="column">
-              <h2 className="title">{title}</h2>
+            <h3 className="slogan">For all your payroll needs</h3>
+              <h1 className="title">{title}</h1>
               <p>{description}</p>
             </div>
+            <p className="mail">info@internago.com</p>
+            <p className="mail side-title">{title}</p>
           </div>
+         <div className="solution-image">
+         <PreviewCompatibleImage
+              imageInfo={{
+                image: image,
+                alt: alt || "Default alt text"
+              }}
+              />
+         </div>
+          <section className="section sub-section">
+              <div className="">
+              <h2 className="title">{subheader}</h2>
+              <div className="text-split">
+              <p className="first-text">{firstColumnText}</p>
+                {secondColumnText && ( // Only render the second column if there's text for it
+                  <div className="column">
+                    <p>{secondColumnText}</p>
+                  </div>
+                )}
+              </div>
+              
+              </div>
+            </section>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
 SolutionPostTemplate.propTypes = {
   description: PropTypes.string,
   title: PropTypes.string,
+  alt: PropTypes.string,
+  image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   helmet: PropTypes.object,
+  subheader: PropTypes.string,
+  text: PropTypes.string,
 };
 
 const SolutionPost = ({ data }) => {
-  const { markdownRemark: post} = data;
+  const { markdownRemark: post } = data;
 
   return (
     <Layout>
@@ -53,10 +100,15 @@ const SolutionPost = ({ data }) => {
           </Helmet>
         }
         title={post.frontmatter.title}
+        subheader={post.frontmatter.subheader}
+        text={post.frontmatter.text}
+        image={post.frontmatter.image}
+        alt={post.frontmatter.alt || "Default alt text"}
       />
     </Layout>
   );
 };
+
 
 SolutionPost.propTypes = {
   data: PropTypes.shape({
@@ -75,6 +127,14 @@ export const pageQuery = graphql`
       frontmatter {
         title
         description
+        subheader
+        text
+        alt
+        image {
+          childImageSharp {
+            gatsbyImageData(quality: 100, layout: FULL_WIDTH)
+          }
+        }
       }
     }
     recentPosts: allMarkdownRemark(
