@@ -72,7 +72,6 @@ export const pageQuery = graphql`
   ) {
     markdownRemark(id: { eq: $id }) {
       id
-      html
       frontmatter {
         title
         description
@@ -87,14 +86,6 @@ export const pageQuery = graphql`
           id
           fields {
             slug
-          }
-          frontmatter {
-            title
-            featuredimage {
-              childImageSharp {
-                gatsbyImageData(quality: 100, layout: CONSTRAINED)
-              }
-            }
           }
         }
       }

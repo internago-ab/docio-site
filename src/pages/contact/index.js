@@ -3,11 +3,11 @@ import { navigate } from "gatsby-link";
 import Layout from "../../components/Layout";
 import "../../components/contact.css";
 
-function encode(data) {
-  return Object.keys(data)
-    .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-    .join("&");
-}
+// function encode(data) {
+//   return Object.keys(data)
+//     .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+//     .join("&");
+// }
 
 export default class Index extends React.Component {
   constructor(props) {
