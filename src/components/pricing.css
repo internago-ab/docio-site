@@ -155,6 +155,13 @@
     flex-direction: column;
   }
 
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: 1fr !important;
+    gap: var(--spacing-xs);
+  }
+
+
   .prices-buttons button {
     margin-top: 0;
     margin-bottom: var(--spacing-xxs);
