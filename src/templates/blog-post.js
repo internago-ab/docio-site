@@ -6,7 +6,6 @@ import { graphql, Link } from "gatsby";
 import Layout from "../components/Layout";
 import Content, { HTMLContent } from "../components/Content";
 import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
-import VideoComponent from "../components/VideoComponent"; // Adjust the path as necessary
 
 import "./blog-post.css";
 // eslint-disable-next-line
@@ -20,7 +19,6 @@ export const BlogPostTemplate = ({
   recentPosts, // Make sure to receive recentPosts as a prop
   previousPost, // Add this
   nextPost,
-  videoUrl,
 }) => {
   const PostContent = contentComponent || Content;
   const safeRecentPosts = recentPosts || [];
@@ -42,7 +40,6 @@ export const BlogPostTemplate = ({
                   </Link>
                 </h3>
                 <p>{post.frontmatter?.date || "No date"}</p>
-                {videoUrl && <VideoComponent src={videoUrl} alt={`Video for ${title}`} />}
                 {post?.frontmatter?.featuredimage && (
                   <div className="featured-thumbnail">
                     <PreviewCompatibleImage
@@ -134,7 +131,6 @@ const BlogPost = ({ data }) => {
         recentPosts={recentPosts.edges.map((edge) => edge.node)} // Pass recent posts
         previousPost={previousPost}
         nextPost={nextPost}
-        videoUrl={post.frontmatter.videoUrl}
       />
     </Layout>
   );
@@ -162,7 +158,6 @@ export const pageQuery = graphql`
         title
         description
         tags
-        videoUrl
       }
     }
     recentPosts: allMarkdownRemark(

@@ -3,18 +3,15 @@ import PropTypes from "prop-types";
 import { Helmet } from "react-helmet";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout";
-import Content, { HTMLContent } from "../components/Content";
 
 import "./blog-post.css";
 // eslint-disable-next-line
 export const SolutionPostTemplate = ({
-  content,
-  contentComponent,
   description,
   title,
   helmet,
 }) => {
-  const PostContent = contentComponent || Content;
+
 
   return (
     <section className="section ">
@@ -25,7 +22,6 @@ export const SolutionPostTemplate = ({
             <div className="column">
               <h2 className="title">{title}</h2>
               <p>{description}</p>
-              <PostContent content={content} />
             </div>
           </div>
         </div>
@@ -35,8 +31,6 @@ export const SolutionPostTemplate = ({
 };
 
 SolutionPostTemplate.propTypes = {
-  content: PropTypes.node.isRequired,
-  contentComponent: PropTypes.func,
   description: PropTypes.string,
   title: PropTypes.string,
   helmet: PropTypes.object,
@@ -48,8 +42,6 @@ const SolutionPost = ({ data }) => {
   return (
     <Layout>
       <SolutionPostTemplate
-        content={post.html}
-        contentComponent={HTMLContent}
         description={post.frontmatter.description}
         helmet={
           <Helmet titleTemplate="%s | Solutions">
