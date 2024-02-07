@@ -88,7 +88,6 @@ export const pageQuery = graphql`
     }
     recentPosts: allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date] }
-      limit: 3
       filter: { frontmatter: { templateKey: { eq: "solution-page" } } }
     ) {
       edges {
