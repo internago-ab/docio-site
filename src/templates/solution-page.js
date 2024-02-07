@@ -44,8 +44,8 @@ export const SolutionPostTemplate = ({
               <p>{description}</p>
             </div>
             <div className="side">
-            <p className="mail">info@internago.com</p>
-            <p className="mail side-title">{title}</p>
+            <a className="mail" href="mailto:support@internago.com">info@internago.com</a>
+            <p className="mail side-title">Get in touch</p>
             </div>
           </div>
          <div className="solution-image">

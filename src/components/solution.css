@@ -34,27 +34,18 @@
   margin-bottom: var(--spacing-xxs);
 }
 
-.side{
-    justify-content: center;
-    top: 28%;
-    left: -4%;
-    width: fit-content;
-    display: flex;
-    position: absolute;
-    flex-direction: column;
-}
-
 .mail {
+  left: 3.5%;
   transform: rotate(-90deg);
+  position: absolute;
   color: var(--green);
-  max-width: none !important;
-  margin: 155px;
-  top: -61%;
-  position: initial;
+  top: 50%;
+  font-size: var(--fontSize-p-s);
 }
 
 .side-title {
-    margin: 0px;
+    left: 5.5%;
+  top: 75%;
 }
 
 .text-split {
@@ -69,20 +60,11 @@
   .solution-image .gatsby-image-wrapper div {
     padding-top: 50% !important;
   }
-
-  .side{
-    left: -5%;
-
-  }
 }
 
 @media only screen and (max-width: 1400px) {
   .solution-image .gatsby-image-wrapper div {
     padding-top: 60% !important;
-  }
-
-  .side{
-    left: -5.5%;
   }
 }
 
@@ -99,9 +81,13 @@
     padding-top: 60% !important;
   }
 
-  .side{
-    left: -14.5%;
+  .mail {
+    left: -1.5%;
   }
+
+  .side-title {
+    left: 2%;
+}
 }
 
 @media only screen and (max-width: 1000px) {
@@ -116,10 +102,6 @@
   .solution-image .gatsby-image-wrapper div {
     padding-top: 70% !important;
   }
-
-  .side{
-    left: -18%;
-  }
 }
 
 @media only screen and (max-width: 800px) {
@@ -131,9 +113,10 @@
     padding: 0 var(--spacing-m);
   }
 
-  .side{
-    display: none;
+  .mail {
+    left: -4.5%;
   }
+
   .solution-image {
     margin-top: -18em;
   }
@@ -153,6 +136,9 @@
   .sub-section {
     margin: var(--spacing-xs) 0;
   }
+  .side-title {
+    left: 0%;
+}
 }
 
 @media only screen and (max-width: 650px) {
@@ -164,9 +150,11 @@
     padding: 0 var(--spacing-xs);
   }
 
-  .mail {
-    left: -4.5%;
+  .mail, .side-title {
+    display: none;
   }
+
+
 
   .solution-header .columns p {
     max-width: 100%;
