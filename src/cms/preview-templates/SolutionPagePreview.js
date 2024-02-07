@@ -10,6 +10,7 @@ const SolutionPagePreview = ({ entry, getAsset }) => {
     <SolutionPostTemplate
       description={entry.getIn(['data', 'description'])}
       title={entry.getIn(['data', 'title'])}
+      slogan={entry.getIn(['data', 'slogan'])}
       alt={entry.getIn(['data', 'alt'])}
       subheader={entry.getIn(['data', 'subheader'])}
       text={entry.getIn(['data', 'text'])}
