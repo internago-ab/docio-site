@@ -10,6 +10,7 @@ import "../components/solution.css"
 export const SolutionPostTemplate = ({
   description,
   title,
+  slogan,
   subheader,
   text,
   helmet,
@@ -38,12 +39,14 @@ export const SolutionPostTemplate = ({
         <div className="container content solution-header">
           <div className="columns ">
             <div className="column">
-            <h3 className="slogan">For all your payroll needs</h3>
+            <h3 className="slogan">{slogan}</h3>
               <h1 className="title">{title}</h1>
               <p>{description}</p>
             </div>
+            <div className="side">
             <p className="mail">info@internago.com</p>
             <p className="mail side-title">{title}</p>
+            </div>
           </div>
          <div className="solution-image">
          <PreviewCompatibleImage
@@ -76,6 +79,7 @@ export const SolutionPostTemplate = ({
 SolutionPostTemplate.propTypes = {
   description: PropTypes.string,
   title: PropTypes.string,
+  slogan: PropTypes.string,
   alt: PropTypes.string,
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   helmet: PropTypes.object,
@@ -100,6 +104,7 @@ const SolutionPost = ({ data }) => {
           </Helmet>
         }
         title={post.frontmatter.title}
+        slogan={post.frontmatter.slogan}
         subheader={post.frontmatter.subheader}
         text={post.frontmatter.text}
         image={post.frontmatter.image}
@@ -125,6 +130,7 @@ export const pageQuery = graphql`
     markdownRemark(id: { eq: $id }) {
       id
       frontmatter {
+        slogan
         title
         description
         subheader

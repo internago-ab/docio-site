@@ -1,5 +1,6 @@
 ---
 templateKey: "solution-page"
+slogan: For all your payroll needs
 title: "Payslips"
 image: /img/meeting.jpg
 alt: image description example

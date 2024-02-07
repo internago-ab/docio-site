@@ -1,5 +1,6 @@
 ---
 templateKey: "solution-page"
+slogan: For all your payroll needs
 title: "Time sheets"
 image: /img/meeting.jpg
 alt: image description example
