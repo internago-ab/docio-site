@@ -108,7 +108,7 @@ const BlogRollTemplate = (props) => {
         </div>
         {/* Tags filter buttons */}
         <div className="filter-tags filter">
-          <label>Filter by Tag: </label>
+          <span>Filter by Tag: </span>
           <div className="tag-list">
             {tagsToDisplay.map((tag) => (
               <button

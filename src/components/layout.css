@@ -68,6 +68,7 @@ nav .portal-btn {
   .dropdown-content-desktop{
     position: absolute;
     background-color: var(--white);
+    left: -35px !important;
   }
   
 
@@ -360,7 +361,6 @@ footer .disclaimer p {
     text-align: center;
     left: 0;
     top: 69px;
-    transition: all 0.5s ease-in-out;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.08);
   }
 
@@ -377,11 +377,11 @@ footer .disclaimer p {
     align-items: normal;
   }
 
-  .li-active {
+  /* .li-active {
     animation-fill-mode: forwards;
     transition: all 1s ease-out;
     animation: fadein 3s ease;
-  }
+  } */
 
   .mobile-menu a {
     line-height: var(--lineHeight-large);
@@ -435,9 +435,9 @@ footer .disclaimer p {
 
   .mobile-menu li:not(:last-child) {
     margin-bottom: 5px;
-    transition: all 1s ease-in-out;
+    /* transition: all 1s ease-in-out;
     animation: fadein 3s ease-in;
-    animation-delay: 1s;
+    animation-delay: 1s; */
   }
 }
 

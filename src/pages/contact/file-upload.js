@@ -82,7 +82,7 @@ export default class Contact extends React.Component {
                   <div className="file">
                     <label className="file-label">
                       <input
-                        className="file-input"
+                        className="file-input file-btn"
                         type="file"
                         name="attachment"
                         onChange={this.handleAttachment}

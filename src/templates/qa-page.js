@@ -1,3 +1,4 @@
+/* eslint-disable limited-exports-page-templates */
 import React from "react";
 import PropTypes from "prop-types";
 import { graphql } from "gatsby";
@@ -97,7 +98,7 @@ QaPage.propTypes = {
 
 export default QaPage;
 
-export const QaPageQuery = graphql`
+export const QaPaqeQuery = graphql`
   query QaPage($id: String!) {
     markdownRemark(id: { eq: $id }) {
       frontmatter {

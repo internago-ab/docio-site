@@ -8,6 +8,7 @@ function encode(data) {
     .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
     .join("&");
 }
+
 export default class Index extends React.Component {
   constructor(props) {
     super(props);
@@ -18,16 +19,24 @@ export default class Index extends React.Component {
     this.setState({ [e.target.name]: e.target.value });
   };
 
+  // New method to handle file selection
+  handleAttachment = (e) => {
+    this.setState({ [e.target.name]: e.target.files[0] });
+  };
+
   handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
+    const formData = new FormData(form);
+
+    // Append file to formData if it exists
+    if (this.state.attachment) {
+      formData.append("attachment", this.state.attachment);
+    }
+
     fetch("/", {
       method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({
-        "form-name": form.getAttribute("name"),
-        ...this.state,
-      }),
+      body: formData, // Updated to use FormData
     })
       .then(() => navigate(form.getAttribute("action")))
       .catch((error) => alert(error));
@@ -60,6 +69,7 @@ export default class Index extends React.Component {
                 data-netlify="true"
                 data-netlify-honeypot="bot-field"
                 onSubmit={this.handleSubmit}
+                encType="multipart/form-data"
               >
                 {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
                 <input type="hidden" name="form-name" value="contact" />
@@ -112,6 +122,19 @@ export default class Index extends React.Component {
                     Message
                   </label>
                 </div>
+                <div className="field">
+                <input
+                  className="file-input"
+                  type="file"
+                  id="file" 
+                  name="attachment"
+                  onChange={this.handleAttachment}
+                  style={{ opacity: 0, position: 'absolute', zIndex: -1 }} 
+                />
+                <label htmlFor="file" className="file-btn button is-link"> 
+                  Upload File
+                </label>
+              </div>
                 <p className="form-privacy">
                   We value your privacy and we’ll only send you relevant
                   information. For full details, check out our privacy policy

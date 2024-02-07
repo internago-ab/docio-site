@@ -206,7 +206,7 @@ section .blog-page {
   font-family: var(--font);
 }
 
-.filter-tags label {
+.filter-tags span {
   color: var(--black);
   font-size: var(--fontSize-p-m);
   font-weight: var(--fontWeight-bold);

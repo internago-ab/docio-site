@@ -119,7 +119,7 @@ const Layout = ({ children }) => {
       } else {
         setMenuHeight('0px');
       }
-    }, 300);
+    }, 10);
   
     return () => clearTimeout(timeoutId);
   }, [menuDisplayed, isSolutionsDropdownOpen, calculateMenuHeight]);
@@ -275,7 +275,7 @@ const Layout = ({ children }) => {
                 href="mailto:info@internago.com"
                 className={`${menuDisplayed ? "li-active" : ""}`}
               >
-                Contact
+                Email us
               </a>
             </li>
             <li>
@@ -354,7 +354,7 @@ const Layout = ({ children }) => {
             <Link to="/contact">Contact</Link>
           </li>
           <li className="cta-btn" id="inverted">
-            <a href="mailto:info@internago.com">Contact us</a>
+            <a href="mailto:info@internago.com">Email us</a>
           </li>
           <li className="cta-btn">
             <a href="https://payroll.internago.com/">Go to portal</a>

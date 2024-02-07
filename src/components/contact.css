@@ -144,6 +144,32 @@
   font-size: var(--fontSize-h1);
 }
 
+.file-upload{
+  margin-top: var(--spacing-xxs);
+}
+
+.file-upload label{
+  position: relative;
+}
+
+.file-btn {
+  background-color: var(--lighter-green); 
+  padding: 10px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-block;
+  margin-top: var(--spacing-xxs);
+  position: initial;
+  width: auto;
+  color: var(--white);
+}
+
+
+.file-btn:hover {
+  background-color: darken(#4a4a4a, 10%);
+}
+
+
 @media only screen and (max-width: 1100px) {
   .landing-wrapper {
     width: 90%;
