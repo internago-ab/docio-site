@@ -1,15 +1,17 @@
 ---
-templateKey: "solution-page"
+templateKey: solution-page
 slogan: For all your payroll needs
-title: "Payslips"
+title: Save costs
+description: Are you looking for an efficient payroll system that reduces
+  errors, that is easy to use, and that saves you valuable time and money? We
+  have an excellent platform for you.
 image: /img/meeting.jpg
 alt: image description example
-description: >-
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit?
-  Ut enim ad minim veniam, quis nostrud exercitation
-  ullamco laboris nisi ut aliquip ex ea commodo consequat.
 subheader: More information
-text: >-
-  Lorem ipsum dolor sit amet. Aut voluptate deserunt ex officiis eligendi non perferendis quis sed quia autem quo dolorem odit. 33 odit asperiores non quis omnis sit eaque quod. Non neque tempore vel velit iusto non dolorem eveniet. Et blanditiis nulla ex error pariatur aut ratione consequatur id cupiditate quas.
-  Vel soluta exercitationem non voluptatum rerum qui ducimus omnis quo optio dicta. Est molestiae magnam aut vero sint aut modi deserunt. Nam iusto voluptates ea eligendi adipisci id dolor suscipit aut voluptate galisum qui dolore voluptatum.
+text: We provide an independent platform that equips your company with one place
+  for employers and employees to share documents and data with all file formats.
+  The streamlined, understandable and secure workflow together with our team of
+  experts make sure that no data gets lost in the process. With the scalable and
+  module based set-up you pay for what you use and it is easy to make any
+  changes directly in the system.
 ---
