@@ -5,7 +5,7 @@ title: Scalability and quicker time to market
 description: We provide you with one easy, platform independent, tool for all
   your European markets, just click to add or remove users and you are up to
   date.
-image: /img/meeting.jpg
+image: /img/docio-international-payroll-people-in-city.jpg
 alt: Two people discussing international payroll
 subheader: More information
 text: With our payroll platform we give you access to a one-stop-shop for all
