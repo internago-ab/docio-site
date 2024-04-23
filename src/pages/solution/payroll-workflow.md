@@ -5,7 +5,7 @@ title: Peace of mind
 description: If you want a payroll system that is easy to use and compliant with
   local rules and regulations on all markets, we can provide you with what you
   need.
-image: /img/meeting.jpg
+image: /img/docio-international-payroll-laughing-women.jpg
 alt: image description example
 subheader: More information
 text: With our payroll platform you can sleep well at night knowing that all
