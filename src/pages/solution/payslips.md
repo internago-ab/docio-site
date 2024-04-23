@@ -5,7 +5,7 @@ title: Save costs
 description: Are you looking for an efficient payroll system that reduces
   errors, that is easy to use, and that saves you valuable time and money? We
   have an excellent platform for you.
-image: /img/meeting.jpg
+image: /img/docio-intenational-payroll-visible-hands.jpg
 alt: image description example
 subheader: More information
 text: We provide an independent platform that equips your company with one place
