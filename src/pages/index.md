@@ -117,7 +117,7 @@ lists:
   listsHeading: Manage your payroll across multiple international markets with one
     online interface.
   listsDescription: Payroll portal
-  image: /img/international.jpg
+  image: /img/docio-international-payroll-black-and-white-office-space.jpg
   alt: image description
   listItem:
     - text: Gross up calculations
