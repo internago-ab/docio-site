@@ -12,20 +12,20 @@ intro:
   blurbs:
     - image: /img/international.jpg
       alt: image description example
-      title: Peace of mind
+      title: Payroll and HR Management
       button: Read more
       link: /payroll
       reverse: reverse
       bgColor: bg-grey
-      text: >
-        <strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit?
-        </strong><br></br> Ut enim ad minim veniam, quis nostrud exercitation
-        ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-        dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-        nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-        culpa qui officia deserunt mollit anim id est laborum. Sed ut
-        perspiciatis unde omnis iste natus.
-    - image: /img/international.jpg
+      text: <strong> Let's be honest, international payroll can be challenging, but it
+        has to be done. We have the perfect tool for managing international
+        payroll and HR related tasks for your international employees.
+        </strong><br></br> We let you store and manage all important employee
+        and payroll data in one place. In this way you will increase your
+        control and efficiency by using one online interface for all your
+        international employees. Your job is simply to check and approve in the
+        portal.
+    - image: /img/docio-intenational-payroll-visible-hands.jpg
       alt: image description example
       title: Save costs
       button: Read more
@@ -33,14 +33,16 @@ intro:
       reverse: ""
       bgColor: bg-green
       text: >
-        <strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit?
-        </strong><br></br> Ut enim ad minim veniam, quis nostrud exercitation
-        ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-        dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-        nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-        culpa qui officia deserunt mollit anim id est laborum. Sed ut
-        perspiciatis unde omnis iste natus.
-    - image: /img/international.jpg
+        <strong> We have the ideal platform for you, offering an efficient
+        payroll system that minimizes errors, is intuitive, and saves you
+        valuable time and money. </strong><br></br> We offer an independent
+        platform that centralizes document and data sharing for employers and
+        employees, supporting all file formats. Our streamlined, user-friendly,
+        and secure workflow, combined with our team of experts, ensures that no
+        data is lost during the process. With a scalable, module-based setup,
+        you only pay for the features you need, and making changes directly in
+        the system is effortless.
+    - image: /img/docio-international-payroll-people-in-city.jpg
       alt: image description example
       title: Scalability and quicker time to market
       button: Read more
@@ -48,25 +50,27 @@ intro:
       reverse: reverse
       bgColor: bg-grey
       text: >
-        <strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit?
-        </strong><br></br> Ut enim ad minim veniam, quis nostrud exercitation
-        ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-        dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-        nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-        culpa qui officia deserunt mollit anim id est laborum. Sed ut
-        perspiciatis unde omnis iste natus.
+        <strong> We offer a single, platform-independent tool for all your
+        European markets. With just a click, you can add or remove users and
+        stay up-to-date effortlessly. </strong><br></br> With our payroll
+        platform, we provide you access to a comprehensive solution for all
+        current and emerging markets. Our module-based approach offers a
+        flexible and scalable system for managing payslips, expenses, absences,
+        timesheets, and document sharing.
 mainpitch:
-  image: /img/crowd.jpg
+  image: /img/docio-international-payroll-laughing-women.jpg
   alt: "A crowd of people at an event "
-  title: Payroll and HR Management
+  title: Peace of mind
   description: >
-    <strong> Let's be honest, international payroll can be challenging, but it
-    has to be done. We have the perfect tool for managing international payroll
-    and HR related tasks for your international employees. </strong><br></br> We
-    let you store and manage all important employee and payroll data in one
-    place. In this way you will increase your control and efficiency by using
-    one online interface for all your international employees. Your job is
-    simply to check and approve in the portal.
+    <strong> If you're seeking a user-friendly payroll system that adheres to
+    local rules and regulations across all markets, look no further. We're here
+    to deliver exactly what you need. </strong><br></br> With our payroll
+    platform, you can rest assured that all company documentation is GDPR
+    compliant and securely stored. Enjoy seamless access to documents and data
+    from anywhere, at any time, and on any device—all conveniently centralized
+    in one platform. Plus, our platform seamlessly integrates with local payroll
+    software, and our team of expert payroll professionals is here to assist you
+    every step of the way.
   button: Read more
   link: /payroll
 blocks:
