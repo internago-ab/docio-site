@@ -82,38 +82,37 @@ blocks:
     controlled via one online interface. All you have to do is check and
     approve.
   grid:
-    - title: Time and absence
+    - title: Expense management
       link: /payroll
       text: >
-        Let your employees enter absence directly into the portal. You just
-        approve or reject. You will get a nice overview of all absence for all
-        your employees on all your international markets.
+        We offer a standardised expense management tool that can work for all
+        employees.
     - title: Share documents
       link: /payroll
       text: >
-        Don't know where you stored that employment contract? With our Document
-        sharing tool you will have all your sensitive documents in one place
-    - title: Expense Management
-      link: /payroll
-      text: >
-        Sick of handling excel sheets with expense reports? We offer a
-        standardised expense management tool that will work for all your
-        employees on your international markets.
-    - title: Multilingual
-      link: /payroll
-      text: >
-        Our portal comes in multiple languages. We easily integrate a new
-        language according to your needs.
+        With our sharing tool you can have employment contracts and all other
+        relevant documents in one place
     - title: Payroll workflow
       link: /payroll
       text: >
-        Do you have multiple approvers and roles? Our payroll workflow is fully
-        configurable to handle your specific needs and processes.
-    - title: Access 24/7
+        Our workflow can be fully configured to handle your specific needs and
+        processes, including multiple approvers.
+    - title: Payslip distribution
       link: /payroll
       text: >
-        Access your payroll data and employee data at any time and from anywhere
-        thanks to our mobile device login and real time notifications.
+        Your employees can access their current and historical electronic
+        payslips easily and securely directly on the platform.
+    - title: Payroll dashboard
+      link: /payroll
+      text: >
+        With the Internago platform you use one interface to get an overview of
+        all your payroll processes on multiple markets.
+    - title: Timesheet
+      link: /payroll
+      text: >
+        Your employees can register working time, enter holidays and other
+        absences directly into the portal for you to approve or decline. You
+        will have access to an overview for every employee. 
 lists:
   listsHeading: Manage your payroll across multiple international markets with one
     online interface.
