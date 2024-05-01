@@ -42,7 +42,7 @@ intro:
         data is lost during the process. With a scalable, module-based setup,
         you only pay for the features you need, and making changes directly in
         the system is effortless.
-    - image: /img/docio-international-payroll-people-in-city.jpg
+    - image: /img/businessPeople.jpg
       alt: image description example
       title: Scalability and quicker time to market
       button: Read more
