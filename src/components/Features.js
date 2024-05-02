@@ -15,13 +15,13 @@ function FeatureGrid({ gridItems }) {
                 className="paragraph"
                 dangerouslySetInnerHTML={{ __html: item.text }}
               ></p>
-              <div className="link-arrow-black">
+              {/* <div className="link-arrow-black">
                 {item.button && (
                   <a href={item.link}>
                     {item.button} <img alt="Arrow icon" src={arrow} />
                   </a>
                 )}
-              </div>
+              </div> */}
             </div>
             <div className="image-container">
               {item.image && (
