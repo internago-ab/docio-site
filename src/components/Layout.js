@@ -5,13 +5,15 @@ import PropTypes from "prop-types";
 import useSiteMetadata from "./SiteMetadata";
 import { Helmet } from "react-helmet";
 import { withPrefix } from "gatsby";
-
+import { motion, AnimatePresence } from "framer-motion";
+import { useLocation } from "@reach/router";
 import docioLogo from "../images/docio-logo.svg";
 import linkedin from "../images/linkedin.svg";
 import twitter from "../images/twitter.svg";
 import docioLogoWhite from "../images/docio-logo-white.png";
 
 const Layout = ({ children }) => {
+  const location = useLocation();
   const { title, description } = useSiteMetadata();
   const [menuDisplayed, setMenuDisplayed] = useState(false);
 
@@ -85,45 +87,69 @@ const Layout = ({ children }) => {
   }, [isDropdownOpen]);
 
   const toggleSolutionsDropdown = () => {
-    setIsSolutionsDropdownOpen(prevState => !prevState);
+    setIsSolutionsDropdownOpen((prevState) => !prevState);
     // Ensure Resources dropdown is closed when Solutions is toggled
     if (isResourcesDropdownOpen) {
       setIsResourcesDropdownOpen(false);
     }
   };
-  
+
   const toggleResourcesDropdown = () => {
-    setIsResourcesDropdownOpen(prevState => !prevState);
+    setIsResourcesDropdownOpen((prevState) => !prevState);
     // Ensure Solutions dropdown is closed when Resources is toggled
     if (isSolutionsDropdownOpen) {
       setIsSolutionsDropdownOpen(false);
     }
   };
-  
 
   const calculateMenuHeight = useCallback(() => {
     if (menuDisplayed) {
-      const menuNode = document.querySelector('.mobile-menu');
+      const menuNode = document.querySelector(".mobile-menu");
       const height = menuNode ? menuNode.scrollHeight : 0;
-  
+
       setMenuHeight(`${height}px`);
     } else {
-      setMenuHeight('0px');
+      setMenuHeight("0px");
     }
   }, [menuDisplayed]); // Add any other dependencies if calculateMenuHeight uses them
-  
+
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       if (menuDisplayed) {
         calculateMenuHeight();
       } else {
-        setMenuHeight('0px');
+        setMenuHeight("0px");
       }
     }, 10);
-  
+
     return () => clearTimeout(timeoutId);
   }, [menuDisplayed, isSolutionsDropdownOpen, calculateMenuHeight]);
+  const duration = 0.5;
 
+  const variants = {
+    initial: {
+      opacity: 0,
+      x: window.innerWidth,
+    },
+    animate: {
+      opacity: 1,
+      y: 0,
+      x: 0,
+      transition: {
+        type: "spring",
+        mass: 0.35,
+        stiffness: 75,
+        duration: duration,
+        delay: duration,
+        when: "beforeChildren",
+      },
+    },
+    exit: {
+      opacity: 0,
+      y: 200,
+      transition: { duration: duration },
+    },
+  };
   return (
     <div className="global-wrapper">
       <Helmet>
@@ -204,9 +230,25 @@ const Layout = ({ children }) => {
               </Link>
             </li>
             <div className="dropdown-flex">
-                
-            <button onClick={toggleSolutionsDropdown} className={`${menuDisplayed ? "li-active" : ""} solution-button`}>Solutions</button>
-            <svg className={`${menuDisplayed ? "li-active" : ""} toggle-icon`} width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.51465 8.4652L11.9996 16.9502L20.4846 8.4652L19.0706 7.0502L11.9996 14.1222L4.92865 7.0502L3.51465 8.4652Z" fill="#4E4E4E"></path></svg>
+              {/* <button
+                onClick={toggleSolutionsDropdown}
+                className={`${menuDisplayed ? "li-active" : ""} solution-button`}
+              >
+                Solutions
+              </button> */}
+              {/* <svg
+                className={`${menuDisplayed ? "li-active" : ""} toggle-icon`}
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M3.51465 8.4652L11.9996 16.9502L20.4846 8.4652L19.0706 7.0502L11.9996 14.1222L4.92865 7.0502L3.51465 8.4652Z"
+                  fill="#4E4E4E"
+                ></path>
+              </svg> */}
             </div>
             <div
               className={`solutions-dropdown-content ${isSolutionsDropdownOpen ? "open" : ""}`}
@@ -215,16 +257,14 @@ const Layout = ({ children }) => {
                 <ul className="dropdown-content">
                   {solutions.map((solution) => (
                     <li key={solution.slug}>
-                      <Link to={`${solution.slug}`}>
-                        {solution.title}
-                      </Link>
+                      <Link to={`${solution.slug}`}>{solution.title}</Link>
                     </li>
                   ))}
                 </ul>
               )}
             </div>
 
-            <li>
+            {/* <li>
               <Link to="/qa" className={`${menuDisplayed ? "li-active" : ""}`}>
                 Q&A
               </Link>
@@ -252,16 +292,16 @@ const Layout = ({ children }) => {
               >
                 Pricing
               </Link>
-            </li>
+            </li> */}
 
-            <li>
+            {/* <li>
               <Link
                 to="/about"
                 className={`${menuDisplayed ? "li-active" : ""}`}
               >
                 About us
               </Link>
-            </li>
+            </li> */}
             <li>
               <Link
                 to="/contact"
@@ -290,34 +330,54 @@ const Layout = ({ children }) => {
         </div>
 
         <ul className="desktop-menu">
-        <div className="dropdown-flex menu">
-                <div className="menu-link">
-                <button onClick={toggleSolutionsDropdown} className={`${menuDisplayed ? "li-active" : ""} solution-button `}>Solutions</button>
-                <svg className={`${menuDisplayed ? "li-active" : ""} toggle-icon`} width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.51465 8.4652L11.9996 16.9502L20.4846 8.4652L19.0706 7.0502L11.9996 14.1222L4.92865 7.0502L3.51465 8.4652Z" fill="#4E4E4E"></path></svg>
-                </div>
-                </div>
-                <div
-                  className={`solutions-dropdown-content ${isSolutionsDropdownOpen ? "open" : ""}`}
-                >
-                  {isSolutionsDropdownOpen && (
-                    <ul className={`${menuDisplayed ? "li-active" : ""} dropdown-content dropdown-content-desktop submenu`}>
-                      {solutions.map((solution) => (
-                        <li key={solution.slug}>
-                          <Link to={`${solution.slug}`}>
-                            {solution.title}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </div>
-          <ul className="menu dropdown">
+          {/* <div className="dropdown-flex menu">
+            <div className="menu-link">
+              <button
+                onClick={toggleSolutionsDropdown}
+                className={`${menuDisplayed ? "li-active" : ""} solution-button `}
+              >
+                Solutions
+              </button>
+              <svg
+                className={`${menuDisplayed ? "li-active" : ""} toggle-icon`}
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M3.51465 8.4652L11.9996 16.9502L20.4846 8.4652L19.0706 7.0502L11.9996 14.1222L4.92865 7.0502L3.51465 8.4652Z"
+                  fill="#4E4E4E"
+                ></path>
+              </svg>
+            </div>
+          </div> */}
+          {/* <div
+            className={`solutions-dropdown-content ${isSolutionsDropdownOpen ? "open" : ""}`}
+          >
+            {isSolutionsDropdownOpen && (
+              <ul
+                className={`${menuDisplayed ? "li-active" : ""} dropdown-content dropdown-content-desktop submenu`}
+              >
+                {solutions.map((solution) => (
+                  <li key={solution.slug}>
+                    <Link to={`${solution.slug}`}>{solution.title}</Link>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div> */}
+          {/* <ul className="menu dropdown">
             <li className="has-dropdown dropdown">
-              <div className="menu-link"
-              onClick={toggleResourcesDropdown}
-              onKeyDown={(e) => e.key === 'Enter' && toggleResourcesDropdown()}
-              role="button"
-              tabIndex="0"
+              <div
+                className="menu-link"
+                onClick={toggleResourcesDropdown}
+                onKeyDown={(e) =>
+                  e.key === "Enter" && toggleResourcesDropdown()
+                }
+                role="button"
+                tabIndex="0"
               >
                 Resourses
                 <svg
@@ -336,20 +396,26 @@ const Layout = ({ children }) => {
               </div>
 
               {isResourcesDropdownOpen && (
-      <ul className="submenu">
-        <li><Link to="/qa">Q&A</Link></li>
-        <li><Link to="/blog">Blog</Link></li>
-        <li><Link to="/partner">Partner Integrations</Link></li>
-      </ul>
-    )}
+                <ul className="submenu">
+                  <li>
+                    <Link to="/qa">Q&A</Link>
+                  </li>
+                  <li>
+                    <Link to="/blog">Blog</Link>
+                  </li>
+                  <li>
+                    <Link to="/partner">Partner Integrations</Link>
+                  </li>
+                </ul>
+              )}
             </li>
-          </ul>
-          <li>
+          </ul> */}
+          {/* <li>
             <Link to="/pricing">Pricing</Link>
           </li>
           <li>
             <Link to="/about">About us</Link>
-          </li>
+          </li> */}
           <li>
             <Link to="/contact">Contact</Link>
           </li>
@@ -362,8 +428,17 @@ const Layout = ({ children }) => {
         </ul>
       </nav>
 
-      <main>{children}</main>
-
+      <AnimatePresence>
+        <motion.main
+          key={location.pathname}
+          variants={variants}
+          initial="initial"
+          animate="animate"
+          exit="exit"
+        >
+          <main>{children}</main>
+        </motion.main>
+      </AnimatePresence>
       <footer>
         <img
           src={docioLogoWhite}
