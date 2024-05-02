@@ -16,6 +16,7 @@ const Layout = ({ children }) => {
   const location = useLocation();
   const { title, description } = useSiteMetadata();
   const [menuDisplayed, setMenuDisplayed] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(0); // Default to 0 or sensible default
 
   const [visible] = useState(true);
 
@@ -126,10 +127,15 @@ const Layout = ({ children }) => {
   }, [menuDisplayed, isSolutionsDropdownOpen, calculateMenuHeight]);
   const duration = 0.5;
 
+  useEffect(() => {
+    // This effect will only run on the client-side
+    setWindowWidth(window.innerWidth);
+  }, []);
+
   const variants = {
     initial: {
       opacity: 0,
-      x: window.innerWidth,
+      x: windowWidth, // Use state that updates on client side
     },
     animate: {
       opacity: 1,
